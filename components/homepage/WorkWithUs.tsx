@@ -10,8 +10,9 @@ import {ButtonStyle} from "../BookButton";
 export const WorkWithUs = () => {
     const theme = useTheme();
     const largerThanLG = useMediaQuery(theme.breakpoints.up('lg'));
+    const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     return (
-        <Box p={4} mb={4}>
+        <Box p={largerThanMD ? 4 : 1} mb={4}>
             <Container>
                 <Typography variant='h4' component='h2' my={8} textAlign='center'>
                     How you can <span style={{ color: theme.palette.purple.main }}>work with us</span>
@@ -139,7 +140,8 @@ const ServiceCard = ({title, description, nots, title1, wants, main, flex }: Ser
              sx={{
                  border: 'solid 4px',
                  borderRadius: 12,
-                 margin: 2,
+                 mx: largerThanLG ? 2 : 0,
+                 my: 3,
                  flex,
                  background: bg,
                  maxWidth: '600px'
