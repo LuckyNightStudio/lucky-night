@@ -5,7 +5,7 @@ import {CSSProperties} from "react";
 import * as React from "react";
 import Image from 'next/image'
 import placeholder from '../../public/placeholder.png'
-import {Sun, Hearts, Eyes} from "./icons";
+import {Sun, Hearts, Eyes} from "../icons";
 
 const highLightWordStyle: CSSProperties = {
     content: '',

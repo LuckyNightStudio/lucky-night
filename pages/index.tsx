@@ -14,11 +14,13 @@ const Home: NextPage = () => {
       <Banner />
       <IntroText />
       <Section2 />
-      <WorkWithUs />
-      <QuizSection />
-      <PreviousProjects />
-      <DownloadSection />
-      <FinalCTA />
+      <div id="services">
+          <WorkWithUs />
+          <QuizSection />
+          <PreviousProjects />
+          <DownloadSection />
+          <FinalCTA />
+      </div>
     </>
   )
 }

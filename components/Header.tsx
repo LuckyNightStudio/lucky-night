@@ -7,7 +7,7 @@ import {Theme} from "@mui/material/styles";
 import {BookButton} from "./BookButton";
 
 const pages = [
-    {title: 'Services', link: '/services'},
+    {title: 'Services', link: '/#services'},
     {title: 'Our Work', link: '/our-work'},
     {title: 'Blog', link: '/blog'},
     {title: 'Contact Us', link: '/contact'}

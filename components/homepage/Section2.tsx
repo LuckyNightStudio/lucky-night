@@ -3,10 +3,10 @@ import {BookButton, ButtonStyle} from "../BookButton";
 import placeholder from '../../public/placeholder1.png'
 import Image from "next/image";
 import * as React from "react";
-import {Sun, GreenSun} from "./icons";
+import {Sun, GreenSun} from "../icons";
 import {theme} from "../../utils/theme";
 
-export const underlineStyle = { width: '100%', height: 10, marginTop: '-14px', display: 'block', background: 'white '}
+export const underlineStyle = { width: '100%', height: 10, marginTop: '-10px', display: 'block', background: 'white '}
 
 export const Section2 = () => {
     const theme = useTheme();

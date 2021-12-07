@@ -1,11 +1,11 @@
 import {Container, Typography, Box, Button, useTheme, useMediaQuery} from "@mui/material";
-import {theme} from "../../utils/theme";
 import step1 from "../../public/step1.png";
 import step3 from "../../public/step3.png";
 import step2 from "../../public/step2.png";
 import Image from "next/image";
 import * as React from "react";
 import {ButtonStyle} from "../BookButton";
+import Link from "next/link";
 
 export const WorkWithUs = () => {
     const theme = useTheme();
@@ -57,13 +57,16 @@ export const WorkWithUs = () => {
                 </Box>
                 <Box display='flex' justifyContent='space-between' my={6} alignItems='center' flexDirection={largerThanLG ? 'row': 'column'}>
                     {services.map((service, i) => (
-                        <ServiceCard {...service} key={i} />
+                        <ServiceCard {...service} key={i} index={i}/>
                     ))}
                 </Box>
             </Container>
         </Box>
     )
 }
+
+const links = ['./services/personal-business', '', '']
+
 const services = [
     {
         flex: 5,
@@ -129,9 +132,10 @@ interface ServiceProp {
     nots: string[],
     main: boolean,
     flex: number
+    index: number
 }
 
-const ServiceCard = ({title, description, nots, title1, wants, main, flex }: ServiceProp) => {
+const ServiceCard = ({title, description, nots, title1, wants, main, flex, index }: ServiceProp) => {
     const bg = main ? 'linear-gradient(to bottom, rgba(212,192,242,1) 20%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 100%)' : 'linear-gradient(to bottom, rgba(246,159,185,1) 20%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 100%)'
     const theme = useTheme();
     const largerThanLG = useMediaQuery(theme.breakpoints.up('lg'));
@@ -177,9 +181,11 @@ const ServiceCard = ({title, description, nots, title1, wants, main, flex }: Ser
                     </Typography>
                 ))}
                 <Box textAlign='center'>
-                    <Button variant='contained' color={main ? 'greenLight' as any : 'yellow' as any} sx={{...ButtonStyle, marginBottom: -8, marginTop: 2 }}>
-                        FULL DETAILS
-                    </Button>
+                    <Link href={links[index]} passHref>
+                        <Button variant='contained' color={main ? 'greenLight' as any : 'yellow' as any} sx={{...ButtonStyle, marginBottom: -8, marginTop: 2 }}>
+                            FULL DETAILS
+                        </Button>
+                    </Link>
                 </Box>
             </Box>
         </Box>
