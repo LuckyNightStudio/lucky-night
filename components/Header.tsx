@@ -52,7 +52,7 @@ const SmallNav = () => {
                     <Box sx={modalOverlayStyle}>
                         <Box sx={{ position: 'absolute', top: 20, right: 20, color: 'white', fontSize: 30, cursor: 'pointer' }} onClick={() => setIsModalOpen(false)}>X</Box>
                         <Box sx={{ width: 200}}>
-                            <Link href="/" passHref>
+                            <Link href="/" c>
                                 <a>
                                     <Logo />
                                 </a>

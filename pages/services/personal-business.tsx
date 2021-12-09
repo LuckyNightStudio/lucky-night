@@ -7,6 +7,7 @@ import {AdditionalExtras} from "../../components/services/AdditionalExtra";
 import {Plan} from "../../components/services/Plan";
 import {FinalCTA} from "../../components/homepage/FinalCTA";
 import {theme} from "../../utils/theme";
+import {Typography} from "@mui/material";
 
 
 const includes = [
@@ -33,19 +34,6 @@ const nots = [
 ]
 
 
-const included = [
-    'Logo',
-    'Secondary logo',
-    'Sub mark(s)',
-    'Brand patterns',
-    'Brand assets (illustrations, shapes etc)',
-    'Business card designs',
-    'Brand colour scheme and typefaces',
-    'Social media templates in Canva or Adobe (your choice)',
-    'Examples of stock imagery and photography'
-]
-
-
 const steps = [
     {
         title: 'Scheduling',
@@ -60,22 +48,12 @@ const steps = [
     {
         title: 'Visuals',
         subtitle: 'Weeks 2 - 4',
-        description: 'From the strategy sessions, you’ll sign off keywords and moodboards that Naomi will turn into gorgeous full-scale visual branding. Work begins on designing your website using brand guidelines.'
-    },
-    {
-        title: 'Website Build',
-        subtitle: 'Weeks 4 - 5',
-        description: 'While your brand guidelines and strategy guides are finished off, your new website will be being built - ready for all your amazing content.'
-    },
-    {
-        title: 'Website Presentation',
-        subtitle: 'Weeks 5 - 6',
-        description: 'Your website will be signed off by you after any amends. We will then go through testing and organising the SEO.',
+        description: 'From the strategy sessions, you’ll sign off keywords and moodboards that Naomi will turn into gorgeous full-scale visual branding.'
     },
     {
         title: 'Sign Off',
         subtitle: 'End of Project',
-        description: 'Your branding is signed off, and we’ve made sure you’re happy with your new site and any documents. It’s time for project sign off and any final balance payments.'
+        description: 'Your branding is signed off, and we’ve made sure you’re happy with your documents. It’s time for project sign off and any final balance payments.'
     }
 ]
 
@@ -83,15 +61,22 @@ const Service: NextPage = () => {
     return (
         <>
             <Banner
-                includes={includes}
                 title='Personal Business'
                 subtitle='Branding & Strategy'
                 description='Full brand strategy and visual design experience to give you all the tools to grow your business in your ideal market.'
                 price='2,295'
                 color={theme.palette.yellow.main}
-            />
+            >
+                <ul>
+                    {includes.map((text) => (
+                        <Typography variant='body1' component='li' key={text}>
+                            {text}
+                        </Typography>
+                    ))}
+                </ul>
+            </Banner>
             <FitsSection fits={fits} nots={nots}/>
-            <PackageIncludes included={included}/>
+            <PackageIncludes color={theme.palette.secondary.main}/>
             <AdditionalExtras />
             <Plan steps={steps}/>
             <FinalCTA />

@@ -8,6 +8,7 @@ declare module '@mui/material/styles' {
         green: Palette['primary'];
         greenLight: Palette['primary'];
         yellowDarker: Palette['primary'];
+        blue: Palette['primary'];
     }
     interface PaletteOptions {
         red: PaletteOptions['primary'];
@@ -16,6 +17,7 @@ declare module '@mui/material/styles' {
         green: PaletteOptions['primary'];
         greenLight: PaletteOptions['primary'];
         yellowDarker: PaletteOptions['primary'];
+        blue: PaletteOptions['primary'];
     }
 }
 
@@ -48,6 +50,10 @@ export const theme = createTheme({
         },
         yellowDarker: {
             main: '#FECD2F'
+        },
+        blue: {
+            main: '#74A5D8',
+            contrastText: '#ffff'
         }
     },
     typography: {

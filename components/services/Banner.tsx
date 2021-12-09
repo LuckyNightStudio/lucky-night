@@ -9,21 +9,12 @@ interface Props {
     subtitle: string
     description: string
     price: string
-    includes: string[]
     color: string
     buttonColor?: string
+    children: JSX.Element
 }
 
-const personalBusiness = [
-    'Approx 3 hours of brand strategy sessions',
-    'Full logo suite to include submarks and secondary logos',
-    'Brand patterns & imagery examples',
-    '50 page brand guidelines and strategy document',
-    'Social media templates in Adobe or Canva',
-    'Business card designs ready for print'
-]
-
-export const Banner = ({includes, title, subtitle, description, price, color, buttonColor}: Props) => {
+export const Banner = ({title, subtitle, description, price, color, buttonColor, children}: Props) => {
     return (
         <Container>
             <Box sx={{ display: 'flex' }} component='section'>
@@ -42,13 +33,7 @@ export const Banner = ({includes, title, subtitle, description, price, color, bu
                     <Typography variant='body1' fontWeight='600'>
                         Includes
                     </Typography>
-                    <ul>
-                        {includes.map((text) => (
-                            <Typography variant='body1' component='li' key={text}>
-                                {text}
-                            </Typography>
-                        ))}
-                    </ul>
+                    {children}
                     <Typography fontWeight='600' mb={4} mt={3}>
                         Package starting from £{price}
                     </Typography>

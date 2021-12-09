@@ -1,6 +1,6 @@
 import {Box, Container, Typography, useMediaQuery, useTheme} from "@mui/material";
 import * as React from "react";
-import {Laptop, OkHands, Pencil, Swatches} from "../icons";
+import {Eyes, Laptop, OkHands, Pencil, Swatches, YumComputer} from "../icons";
 
 const iconColors: string[] = ['#fecd2f', '#F69FB9', '#9ED8BF', '#D4C0F2', '#fecd2f', '#F69FB9']
 
@@ -57,16 +57,22 @@ export const Plan = ({steps}: Props) => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
+
+    const extra = steps.length > 4
+
     return (
         <Box component='section' px={4} py={10} position='relative'>
             <Box sx={{ display: 'flex'}}>
                 <Box flex={1} sx={{ position: 'relative', display: largerThanSM ? 'inline-block' : 'none' }}>
-                    <Box sx={{ position: 'absolute', top: '2%', left: largerThanMD ? 30 : 0, width: '80%', transform: 'rotate(-16deg)' }}>
+                    <Box sx={{ position: 'absolute', top: '2%', left: largerThanMD ? 30 : 0, width: '70%', transform: 'rotate(-16deg)' }}>
                         <Laptop />
                     </Box>
-                    <Box sx={{ position: 'absolute', top: '50%', left: largerThanMD ? 30 : 0, width: '100%'}}>
+                    <Box sx={{ position: 'absolute', top: extra ? '30%' : '50%', left: largerThanMD ? 30 : 0, width: '80%'}}>
                         <Swatches />
                     </Box>
+                    {extra && <Box sx={{position: 'absolute', bottom: '10%', left: largerThanMD ? 30 : 0, width: '80%'}}>
+                        <YumComputer/>
+                    </Box>}
                 </Box>
                 <Box flex={2}>
                     <Container maxWidth='sm' sx={{ margin: 'auto' }}>
@@ -74,12 +80,15 @@ export const Plan = ({steps}: Props) => {
                     </Container>
                 </Box>
                 <Box flex={1} sx={{ position: 'relative', display: largerThanSM ? 'inline-block' : 'none'}}>
-                    <Box sx={{ position: 'absolute', top: '20%', right: largerThanMD ? 30 : 0, width: '80%'}}>
+                    <Box sx={{ position: 'absolute', top: '10%', right: largerThanMD ? 30 : 0, width: '60%'}}>
                         <Pencil />
                     </Box>
-                    <Box sx={{ position: 'absolute', bottom: 0, right: largerThanMD ? 30 : 0, width: '80%' }}>
+                    <Box sx={{ position: 'absolute', bottom: extra ? '30%' : 0, right: largerThanMD ? 30 : 0, width: '60%' }}>
                         <OkHands />
                     </Box>
+                    {extra && <Box sx={{position: 'absolute', bottom: 0, right: largerThanMD ? 30 : 0, width: '70%'}}>
+                        <Eyes/>
+                    </Box>}
                 </Box>
             </Box>
         </Box>

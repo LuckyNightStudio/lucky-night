@@ -15,29 +15,32 @@ const includes = [
     'Brand patterns & imagery examples',
     '50 page brand guidelines and strategy document',
     'Social media templates in Adobe or Canva',
-    'Business card designs ready for print'
-]
-
-const includes2 = [
-    'Fully responsive, mobile-first design',
+    'Business card designs ready for print',
     'Considered, well-designed user experience and journey',
     'Integrated contact forms and email signups',
     'Full hosting set up',
+]
+
+const includes2 = [
+    'Unique, custom theme for your Shopify site',
+    'Beautifully designed and easily manageable online shop features ',
+    'Fully responsive, mobile-first design',
+    'Reliability and security of financial info via Shopify platform',
     'Complete SEO optimisation to guarantee speed and ranking success'
 ]
 
 const fits = [
-    'You want to reach your following of dream customers across physical & digital touchpoints',
-    'You want to convert dream buyers with your unique values and story',
-    'You want a fully custom, conversion-focussed  web experience alongside your stunning visual assets',
+    'You want to sell and manage physical inventory and payments (POS) through your website',
+    'You want to showcase your unique values and story to stand out from the competition',
+    'You want a fully custom web and shop experience alongside your stunning visual assets',
     'You’re ready to increase brand trust and loyalty, share your unique story and see real growth'
 ]
 
 const nots = [
-    'You’ll be using your website to sell (check out our e-commerce service)',
-    'You’re not ready to collaborate and share your inspiring vision & story',
-    'You’re not ready to invest in building your dream business  (check out our brand & web audit)',
-    'You can’t commit to our 6 week project turnaround time'
+    'You’re not interested in selling products or building a loyal customer base through your website',
+    'You can’t commit to our 8 week project turnaround time',
+    'You’re not ready to collaborate and share your amazing vision & story',
+    'You’re not ready to invest in building your dream business (check out our brand & web audit)\n'
 ]
 
 const steps = [
@@ -57,19 +60,19 @@ const steps = [
         description: 'From the strategy sessions, you’ll sign off keywords and moodboards that Naomi will turn into gorgeous full-scale visual branding. Work begins on designing your website using brand guidelines.'
     },
     {
-        title: 'Website Build',
+        title: 'E-commerce Site Build',
         subtitle: 'Weeks 4 - 5',
-        description: 'While your brand guidelines and strategy guides are finished off, your new website will be being built - ready for all your amazing content.'
+        description: 'While your brand and strategy guides are finished off, your new website and shop functionality will be being built - ready for populating with all your amazing content and products.'
     },
     {
-        title: 'Website Presentation',
+        title: 'E-commerce Site',
         subtitle: 'Weeks 5 - 6',
-        description: 'Your website will be signed off by you after any amends. We will then go through testing and organising the SEO.',
+        description: 'Your new e-commerce site will be signed off by you after any amends. We will then go through testing and organising the SEO.',
     },
     {
         title: 'Sign Off',
         subtitle: 'End of Project',
-        description: 'Your branding is signed off, and we’ve made sure you’re happy with your new site and any documents. It’s time for project sign off and any final balance payments.'
+        description: 'Your branding is signed off, and we’ve made sure you’re happy with your new site, online shop and any documents. It’s time for project sign off and any final balance payments..'
     }
 ]
 
@@ -77,19 +80,19 @@ const Service: NextPage = () => {
     return (
         <>
             <Banner
-                title='Service Business'
-                subtitle='Branding, Strategy and Website Design & Build'
-                description='Full brand strategy, visual design and custom, conversion-focussed  website creation. This service will cement you as a trustworthy, exciting key player among your dream audience and have them desperate to work with you!'
-                price='4,395'
-                color={theme.palette.greenLight.main}
-                buttonColor='purple'
+                title='E-Commerce Business'
+                subtitle='Branding, Strategy and Website Design & Build with Shop'
+                description='Branding, Strategy and Website Design & Build with Shop'
+                price='6,195'
+                color={theme.palette.purple.main}
+                buttonColor='secondary'
             >
                 <ul>
                     <li>
                         <Accordion sx={{ boxShadow: 'none' }}>
                             <AccordionSummary sx={{ padding: 0, minHeight: '50px !important'}}>
                                 <Typography variant='body1'>
-                                    Everything Brand & Strategy from the <span style={{color: theme.palette.primary.main}}> Personal Business Package</span><span style={{ marginLeft: 10, fontWeight: 600 }}>v</span>
+                                    Everything Brand & Strategy from the <span style={{color: theme.palette.primary.main}}> Service Business Package</span><span style={{ marginLeft: 10, fontWeight: 600 }}>v</span>
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
@@ -115,8 +118,8 @@ const Service: NextPage = () => {
                     </ul>
                 </ul>
             </Banner>
-            <FitsSection fits={fits} nots={nots} bgColor='secondary.main' cardColor='rgba(246,236,110,1)' buttonColor='primary' handsIcon={false}/>
-            <PackageIncludes webdesign={true} color={theme.palette.yellow.main} price='4,395'/>
+            <FitsSection fits={fits} nots={nots} bgColor='yellow.main' cardColor='rgba(212,192,242,1)' buttonColor='blue' handsIcon={false}/>
+            <PackageIncludes ecommerce={true} color={theme.palette.secondary.main} price='6,195'/>
             <AdditionalExtras />
             <Plan steps={steps}/>
             <FinalCTA />
