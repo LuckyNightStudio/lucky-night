@@ -65,7 +65,7 @@ export const WorkWithUs = () => {
     )
 }
 
-const links = ['./services/personal-business', './services/service-business', './services/ecommerce-business']
+const links = ['/services/personal-business', '/services/service-business', '/services/ecommerce-business']
 
 const services = [
     {

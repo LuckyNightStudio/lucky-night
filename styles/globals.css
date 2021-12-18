@@ -13,3 +13,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+nav a {
+  transition: color 0.45s;
+}
+nav a:hover {
+  color: white;
+}

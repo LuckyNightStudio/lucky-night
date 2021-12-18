@@ -1,3 +1,6 @@
+import {CSSProperties} from "react";
+import {motion} from "framer-motion";
+
 export const Sun = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243.698 238.38">
@@ -210,5 +213,82 @@ export const YumComputer = () => {
             </g>
             </g>
         </svg>
+    )
+}
+
+const navIconStyle:CSSProperties = {
+    position: 'absolute',
+    height: '100%',
+    left: 'calc(50% - 10px)',
+    transformOrigin: 'bottom'
+}
+
+const variants = {
+    enter: { opacity: 1, y: 0, transition: { type: 'spring', bounce: 0.55 } },
+    initial: { opacity: 0, y: -60 },
+}
+
+export const Heart = () => {
+    return (
+        <motion.svg
+            variants={variants}
+            animate='enter'
+            initial='initial'
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 270.24 250.69"
+            style={navIconStyle}>
+            <path fill="#e71b09"
+                  d="M238,27c-30.51-20.15-69.22-.4-86.47,44.11-.64,1.63-1.21,3.42-1.75,5.28-.41-1.27-.83-2.52-1.29-3.67-17.47-44.36-55.2-64.51-84.28-45S25.76,99,43.23,143.38c17.35,44.05,107.12,105.51,108.41,106.39v0l0,0,0,0v0c1.26-.83,93.16-61.49,110.3-105.69C279.26,99.57,268.52,47.16,238,27Z"/>
+            <path fill="none" stroke='#000' strokeLinecap='round' strokeLinejoin="round" strokeWidth="20px"
+                  d="M213.58,17.89c-30.51-20.14-69.22-.4-86.47,44.11-.64,1.63-1.21,3.42-1.75,5.28-.41-1.27-.83-2.51-1.29-3.67-17.47-44.36-55.2-64.5-84.28-45s-38.48,71.29-21,115.65c17.35,44,107.12,105.5,108.41,106.38v0l0,0,0,0v0c1.26-.83,93.16-61.49,110.3-105.69C254.81,90.45,244.07,38,213.58,17.89Z"/>
+        </motion.svg>
+    )
+}
+
+
+export const Triangle = () => {
+    return (
+        <motion.svg
+            variants={variants}
+            animate='enter'
+            initial='initial'
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 281.7 263.31"
+            style={navIconStyle}>
+                <path  fill="#27bb8e" d="M131.32,48.6,30.19,223.76A26.37,26.37,0,0,0,53,263.31H255.29a26.36,26.36,0,0,0,22.83-39.55L177,48.6A26.38,26.38,0,0,0,131.32,48.6Z"/>
+                <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="20px" d="M114.7,23.18,13.57,198.34A26.37,26.37,0,0,0,36.41,237.9H238.67a26.37,26.37,0,0,0,22.83-39.56L160.37,23.18A26.37,26.37,0,0,0,114.7,23.18Z"/>
+        </motion.svg>
+    )
+}
+
+export const Moon = () => {
+    return (
+        <motion.svg
+            variants={variants}
+            animate='enter'
+            initial='initial'
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 317.6 237.52"
+            style={navIconStyle}>
+            <path fill="#d4c0f2" d="M186.22,139.79A119,119,0,0,1,57.36,31.57c-.25-3-.39-5.93-.42-8.86a1.87,1.87,0,0,0-3.46-1A141.57,141.57,0,0,0,33.9,111.12C42.29,186.13,109,242,184.28,237.23A142.3,142.3,0,0,0,298.2,23.51a1.81,1.81,0,0,0-3.37.89A119,119,0,0,1,186.22,139.79Z"/>
+            <path fill="none" stroke="#000" strokeMiterlimit="10pox" strokeWidth="20px" d="M163.22,129A119,119,0,0,1,34.36,20.73q-.37-4.45-.42-8.86a1.87,1.87,0,0,0-3.46-1A141.6,141.6,0,0,0,10.9,100.29c8.39,75,75.07,130.91,150.38,126.1A142.3,142.3,0,0,0,275.2,12.67a1.81,1.81,0,0,0-3.37.89A119,119,0,0,1,163.22,129Z"/>
+        </motion.svg>
+    )
+}
+
+export const Star = () => {
+    return (
+        <motion.svg
+            variants={variants}
+            animate='enter'
+            initial='initial'
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 304.48 296.78"
+            style={navIconStyle}>
+            <path fill="#f6ec6e"
+                  d="M181.14,40.63l29.51,59.79a17.31,17.31,0,0,0,13,9.46l66,9.59a17.29,17.29,0,0,1,9.58,29.5L251.49,195.5a17.33,17.33,0,0,0-5,15.31l11.27,65.71a17.3,17.3,0,0,1-25.1,18.23l-59-31a17.28,17.28,0,0,0-16.09,0l-59,31a17.3,17.3,0,0,1-25.1-18.23l11.27-65.71a17.33,17.33,0,0,0-5-15.31L32,149a17.29,17.29,0,0,1,9.58-29.5l66-9.59a17.31,17.31,0,0,0,13-9.46l29.51-59.79A17.29,17.29,0,0,1,181.14,40.63Z"/>
+            <path fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="20px"
+                  d="M164.35,19.64l29.51,59.79a17.28,17.28,0,0,0,13,9.46l66,9.58a17.3,17.3,0,0,1,9.59,29.5L234.7,174.51a17.3,17.3,0,0,0-5,15.31L241,255.53a17.29,17.29,0,0,1-25.09,18.23l-59-31a17.3,17.3,0,0,0-16.1,0l-59,31a17.29,17.29,0,0,1-25.09-18.23L68,189.82a17.3,17.3,0,0,0-5-15.31L15.24,128a17.3,17.3,0,0,1,9.59-29.5l66-9.58a17.31,17.31,0,0,0,13-9.46l29.5-59.79A17.3,17.3,0,0,1,164.35,19.64Z"/>
+        </motion.svg>
     )
 }

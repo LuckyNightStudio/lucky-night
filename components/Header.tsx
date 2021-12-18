@@ -1,16 +1,25 @@
 import {Container, Box, Typography, useMediaQuery, useTheme, Slide, Modal} from "@mui/material";
 import {Logo} from "./Logo";
 import Link from 'next/link'
-import {useState} from "react";
+import {CSSProperties, useState} from "react";
 import {SxProps} from "@mui/system";
 import {Theme} from "@mui/material/styles";
 import {BookButton} from "./BookButton";
+import {Heart, Moon, Star, Triangle} from "./icons";
+import {useRouter} from "next/router";
+import {theme} from "../utils/theme";
+
+const subCat = [
+    {title: 'Personal Business', link: '/services/personal-business'},
+    {title: 'Service Business', link: '/services/service-business'},
+    {title: 'E-Commerce Business', link: '/services/ecommerce-business'}
+]
 
 const pages = [
-    {title: 'Services', link: '/#services'},
-    {title: 'Our Work', link: '/our-work'},
-    {title: 'Blog', link: '/blog'},
-    {title: 'Contact Us', link: '/contact'}
+    {title: 'Services', link: '/#services', Icon: Star},
+    {title: 'Our Work', link: '/our-work', Icon: Heart},
+    {title: 'Blog', link: '/blog', Icon: Moon},
+    {title: 'Contact Us', link: '/contact', Icon: Triangle}
 ]
 
 const MenuIcon = () => {
@@ -21,15 +30,53 @@ const MenuIcon = () => {
     )
 }
 
+const iconContainerStyle: CSSProperties = {
+    height: 20,
+    position: 'relative'
+}
+
 const LargeNav = () => {
+    const {pathname} = useRouter()
+    const [showDropdown, setShowDropdown] = useState(false)
+
+    const handleMouseOver = (title: string): void => {
+        setShowDropdown(title === 'Services')
+    }
+
     return (
-        <Box sx={{display: 'flex', justifyContent: 'flex-end'}}>
+        <Box sx={{display: 'flex', justifyContent: 'flex-end'}} component='nav'>
             <Box sx={{display: 'flex', justifyContent: 'space-between', mr: 4}}>
-                {pages.map(({title, link}) => (
-                    <Link href={link} passHref key={link}>
-                        <Typography component='a' variant='subtitle1' p={2}>{title}</Typography>
-                    </Link>
-                ))}
+                <Box>
+                    <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+                    {pages.map(({title, link, Icon}) => (
+                            <Link href={link} passHref key={title}>
+                                <div style={{cursor: pathname.includes(link.replace('#', '')) ? 'default' : 'pointer', color: pathname.includes(link.replace('#', '')) ? 'white' : 'inherit'}}
+                                     onMouseOver={() => handleMouseOver(title)} onMouseLeave={() => setShowDropdown(false)}>
+                                    <div style={iconContainerStyle} >
+                                        {(pathname.includes(link.replace('#', ''))) && (
+                                            <Icon />
+                                        )}
+                                    </div>
+                                    <Typography component='a' variant='subtitle1' p={2}>{title}</Typography>
+                                </div>
+                            </Link>
+                    ))}
+                    </Box>
+                    {showDropdown && <Box sx={{flex: 1, display: 'flex', mt: 2, mb: -3}} onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
+                        {subCat?.map(({title, link}) => (
+                            <Link href={link} passHref key={title}>
+                                <div style={{cursor: pathname.includes(link.replace('#', '')) ? 'default' : 'pointer', pointerEvents: pathname.includes(link.replace('#', '')) ? 'none' : 'auto'}}>
+                                    <Typography component='a' variant='subtitle1' sx={{
+                                        color: pathname.includes(link) ? theme.palette.red.main : 'inherit',
+                                        p: 2
+                                    }}>
+                                        {title}
+                                    </Typography>
+                                </div>
+                            </Link>
+                        ))}
+                    </Box>}
+                </Box>
             </Box>
             <Box sx={{marginTop: '-60px', minWidth: 180, width: 180, marginBottom: '-100px' }}>
                 <BookSVGButton/>
