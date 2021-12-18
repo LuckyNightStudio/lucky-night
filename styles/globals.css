@@ -20,3 +20,8 @@ nav a {
 nav a:hover {
   color: white;
 }
+
+.MuiBackdrop-root {
+  background: #9ED8BF;
+  opacity: 0.8 !important;
+}
