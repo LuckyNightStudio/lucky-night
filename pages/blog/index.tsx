@@ -30,10 +30,25 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
     return (
         <Container>
             <Box p={4}>
-                <Box my={4} mx={2}>
-                    <Typography sx={{display: 'inline'}} mr={2}>Tags:</Typography>
+                <Box mt={4} mx={2} sx={{display: 'flex', flexWrap: 'wrap'}}>
+                    <Typography sx={{display: 'inline'}} mr={2} mt={1}>Tags:</Typography>
                     {allTags.map(({name, color}: {name: string, color: string}) => (
-                        <Box sx={{ background: color, borderRadius: 8, display:'inline', py: 1, px: 1, mr: 1, cursor: 'pointer', opacity: getOpacity(name) }}
+                        <Box sx={{
+                            background: color,
+                            borderRadius: 8,
+                            display:'inline',
+                            py: 1,
+                            px: 1,
+                            mr: 1,
+                            mb: 1,
+                            transition: 'opacity 0.4s',
+                            cursor: 'pointer',
+                            opacity: getOpacity(name),
+                            whiteSpace: 'nowrap',
+                            '&:hover': {
+                                opacity: 0.6
+                            }
+                        }}
                              key={name}
                              onClick={() => handleClick(name)}>
                             <Typography sx={{display: 'inline'}}>{name}</Typography>
