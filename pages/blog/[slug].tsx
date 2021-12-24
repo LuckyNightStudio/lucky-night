@@ -173,8 +173,7 @@ export const getStaticProps = async (context: { params: { slug: string; }; }) =>
         props: {
             page,
             blocks: blocksWithChildren
-        },
-        revalidate: 1,
+        }
     };
 };
 
