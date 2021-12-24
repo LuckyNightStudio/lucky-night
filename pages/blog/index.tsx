@@ -159,7 +159,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     return {
         props: {
-            posts: database,
+            posts: database?.filter((post: any) => post?.properties.status.select.name === 'published'),
         }
     };
 };
