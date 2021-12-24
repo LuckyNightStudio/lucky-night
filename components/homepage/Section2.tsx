@@ -1,10 +1,9 @@
 import {Box, Button, Container, Typography, useMediaQuery, useTheme} from "@mui/material";
 import {BookButton, ButtonStyle} from "../BookButton";
-import placeholder from '../../public/placeholder1.png'
+import louiseAndNaomiLaughing from '../../public/louiseAndNaomiLaughing.png'
 import Image from "next/image";
 import * as React from "react";
 import {Sun, GreenSun} from "../icons";
-import {theme} from "../../utils/theme";
 
 export const underlineStyle = { width: '100%', height: 10, marginTop: '-10px', display: 'block', background: 'white '}
 
@@ -24,10 +23,10 @@ export const Section2 = () => {
                                 <GreenSun />
                             </Box>
                             <Image
-                                src={placeholder.src}
+                                src={louiseAndNaomiLaughing.src}
                                 alt="Picture of Louise and Naomi"
-                                width={placeholder.width}
-                                height={placeholder.height}
+                                width={louiseAndNaomiLaughing.width}
+                                height={louiseAndNaomiLaughing.height}
                             />
                         </Box>
                         <Typography variant="h6" component="p" width='max-content' mb={3} mt={2}>

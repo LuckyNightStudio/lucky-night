@@ -3,7 +3,7 @@ import {BookButton} from "../BookButton";
 import {CSSProperties} from "react";
 import * as React from "react";
 import Image from 'next/image'
-import placeholder from '../../public/placeholder.png'
+import louiseAndNaomi from '../../public/louiseAndNaomi.png'
 import {Sun, Hearts, Eyes} from "../icons";
 
 const highLightWordStyle: CSSProperties = {
@@ -53,10 +53,10 @@ export const Banner = () => {
                                 <Sun/>
                             </Box>
                             <Image
-                                src={placeholder.src}
+                                src={louiseAndNaomi.src}
                                 alt="Picture of Louise and Naomi"
-                                width={placeholder.width}
-                                height={placeholder.height}
+                                width={louiseAndNaomi.width}
+                                height={louiseAndNaomi.height}
                             />
                             <Box sx={{width: '50%', position: 'absolute', bottom: -25, left: -50}}>
                                 <Hearts/>
