@@ -1,7 +1,7 @@
 import {Container, Box, Typography, useMediaQuery, useTheme, Slide, Modal} from "@mui/material";
 import {Logo} from "./Logo";
 import Link from 'next/link'
-import {CSSProperties, useState} from "react";
+import {CSSProperties, useEffect, useState} from "react";
 import {SxProps} from "@mui/system";
 import {Theme} from "@mui/material/styles";
 import {BookButton} from "./BookButton";
@@ -37,7 +37,13 @@ const iconContainerStyle: CSSProperties = {
 
 const LargeNav = () => {
     const {pathname} = useRouter()
-    const [showDropdown, setShowDropdown] = useState(false)
+    const [showDropdown, setShowDropdown] = useState(pathname.includes('services'))
+
+    useEffect(() => {
+        if(pathname.includes('services')) {
+            setShowDropdown(true)
+        }
+    }, [pathname])
 
     const handleMouseOver = (title: string): void => {
         setShowDropdown(title === 'Services')
@@ -51,7 +57,7 @@ const LargeNav = () => {
                     {pages.map(({title, link, Icon}) => (
                             <Link href={link} passHref key={title}>
                                 <div style={{cursor: 'pointer', color: pathname.includes(link.replace('#', '')) ? 'white' : 'inherit'}}
-                                     onMouseOver={() => handleMouseOver(title)} onMouseLeave={() => setShowDropdown(false)}>
+                                     onMouseOver={() => handleMouseOver(title)} onMouseLeave={() => pathname.includes('services') ? {} : setShowDropdown(false)}>
                                     <div style={iconContainerStyle} >
                                         {(pathname.includes(link.replace('#', ''))) && (
                                             <Icon />
@@ -62,10 +68,13 @@ const LargeNav = () => {
                             </Link>
                     ))}
                     </Box>
-                    {showDropdown && <Box sx={{flex: 1, display: 'flex', mt: 2, mb: -3}} onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
-                        {subCat?.map(({title, link}) => (
+                    <Box sx={{flex: 1, display: 'flex', mt: 2, mb: -3, height: 28}} onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => pathname.includes('services') ? {} :  setShowDropdown(false)}>
+                        {showDropdown && (subCat?.map(({title, link}) => (
                             <Link href={link} passHref key={title}>
-                                <div style={{cursor: pathname.includes(link.replace('#', '')) ? 'default' : 'pointer', pointerEvents: pathname.includes(link.replace('#', '')) ? 'none' : 'auto'}}>
+                                <div style={{
+                                    cursor: pathname.includes(link.replace('#', '')) ? 'default' : 'pointer',
+                                    pointerEvents: pathname.includes(link.replace('#', '')) ? 'none' : 'auto'
+                                }}>
                                     <Typography component='a' variant='subtitle1' sx={{
                                         color: pathname.includes(link) ? theme.palette.red.main : 'inherit',
                                         p: 2
@@ -74,8 +83,8 @@ const LargeNav = () => {
                                     </Typography>
                                 </div>
                             </Link>
-                        ))}
-                    </Box>}
+                        )))}
+                    </Box>
                 </Box>
             </Box>
             <Box sx={{marginTop: '-60px', minWidth: 180, width: 180, marginBottom: '-100px' }}>
