@@ -1,5 +1,4 @@
 import {Box, Container, Typography, useMediaQuery, useTheme} from "@mui/material";
-import {theme} from "../../utils/theme";
 import {BookButton} from "../BookButton";
 import {CSSProperties} from "react";
 import * as React from "react";

@@ -11,7 +11,6 @@ import {ConfettiContext} from "./context/ConfettiContext";
 export const Layout = ({ children }: {children: JSX.Element}) => {
     const [width, height] = useWindowSize()
     const {showConfetti} = useContext(ConfettiContext)
-    console.log(showConfetti)
 
     return (
         <ThemeProvider theme={theme}>

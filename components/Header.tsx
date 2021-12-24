@@ -50,7 +50,7 @@ const LargeNav = () => {
                     <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
                     {pages.map(({title, link, Icon}) => (
                             <Link href={link} passHref key={title}>
-                                <div style={{cursor: pathname.includes(link.replace('#', '')) ? 'default' : 'pointer', color: pathname.includes(link.replace('#', '')) ? 'white' : 'inherit'}}
+                                <div style={{cursor: 'pointer', color: pathname.includes(link.replace('#', '')) ? 'white' : 'inherit'}}
                                      onMouseOver={() => handleMouseOver(title)} onMouseLeave={() => setShowDropdown(false)}>
                                     <div style={iconContainerStyle} >
                                         {(pathname.includes(link.replace('#', ''))) && (

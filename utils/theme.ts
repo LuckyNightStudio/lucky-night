@@ -46,7 +46,8 @@ export const theme = createTheme({
             contrastText: '#ffff'
         },
         greenLight: {
-            main: '#9ED8BF'
+            main: '#9ED8BF',
+            light:'#D9F0E6',
         },
         yellowDarker: {
             main: '#FECD2F'
