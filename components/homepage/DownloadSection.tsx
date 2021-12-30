@@ -2,12 +2,13 @@ import {Box, Button, Container, Typography, useMediaQuery, useTheme} from "@mui/
 import {ButtonStyle} from "../BookButton";
 import * as React from "react";
 import {underlineStyle} from "./Section2";
+import {Eyes} from "../icons";
 
-export const DownloadSection = () => {
+export const DownloadSection = ({color ='purple.main'}: {color?: string}) => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     return (
-        <Box component='section' px={4} py={10} bgcolor='purple.main'>
+        <Box component='section' px={4} pt={10} pb={2} bgcolor={color}>
             <Container>
                 <Box sx={{ display: 'flex', flexDirection: largerThanMD ? 'row': 'column'}}>
                     <Box flex={1}>img</Box>
@@ -18,9 +19,16 @@ export const DownloadSection = () => {
                         <Typography variant='body1' my={4}>
                             Discover the core essence of your brand’s personality so that you can learn how to show up and serve your customers in the most authentic way possible. Should humour be part of your marketing strategy? Maybe you could learn to break the rules sometimes? No matter the result you get, this quiz is guaranteed to give you some clarity and purpose when it comes to your messaging and marketing efforts.
                         </Typography>
-                        <Button variant='contained' sx={{...ButtonStyle, backgroundColor: 'white', color: 'black' }}>
-                            Download Now
-                        </Button>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+                            <Box>
+                                <Button variant='contained' sx={{...ButtonStyle, backgroundColor: 'white', color: 'black' }}>
+                                    Download Now
+                                </Button>
+                            </Box>
+                            <Box sx={{maxWidth: 150, marginLeft: 'auto', mt: 2}}>
+                                <Eyes/>
+                            </Box>
+                        </Box>
                     </Box>
                 </Box>
             </Container>

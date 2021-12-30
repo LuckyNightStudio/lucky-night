@@ -11,6 +11,22 @@ import image8 from "../../public/puppa-fresh/logo.jpg";
 import image9 from "../../public/puppa-fresh/home.jpg";
 import image10 from "../../public/puppa-fresh/services.jpg";
 import image11 from "../../public/puppa-fresh/book an appointment.jpg";
+import brandImg1 from "../../public/puppa-fresh/puppa-fresh-brand-1.jpg";
+import brandImg2 from "../../public/puppa-fresh/puppa-fresh-brand-2.jpg";
+import brandImg3 from "../../public/puppa-fresh/puppa-fresh-brand-3.jpg";
+import brandImg4 from "../../public/puppa-fresh/puppa-fresh-brand-4.jpg";
+import brandImg5 from "../../public/puppa-fresh/puppa-fresh-brand-5.jpg";
+import brandImg6 from "../../public/puppa-fresh/puppa-fresh-brand-6.jpg";
+import brandImg7 from "../../public/puppa-fresh/puppa-fresh-brand-7.jpg";
+import brandImg8 from "../../public/puppa-fresh/puppa-fresh-brand-8.jpg";
+import brandImg9 from "../../public/puppa-fresh/puppa-fresh-brand-9.jpg";
+import brandImg10 from "../../public/puppa-fresh/puppa-fresh-brand-10.jpg";
+import brandImg11 from "../../public/puppa-fresh/puppa-fresh-brand-11.jpg";
+import brandImg12 from "../../public/puppa-fresh/puppa-fresh-brand-12.jpg";
+import brandImg13 from "../../public/puppa-fresh/puppa-fresh-brand-13.jpg";
+import brandImg14 from "../../public/puppa-fresh/puppa-fresh-brand-14.jpg";
+import brandImg15 from "../../public/puppa-fresh/puppa-fresh-brand-15.jpg";
+import brandImg16 from "../../public/puppa-fresh/puppa-fresh-brand-16.jpg";
 import Masonry from '@mui/lab/Masonry';
 import Image from "next/image";
 import * as React from "react";
@@ -20,6 +36,10 @@ import {BookButton} from "../../components/BookButton";
 import step2 from "../../public/step2.png";
 import {DownloadSection} from "../../components/homepage/DownloadSection";
 
+const siteLink = 'https://puppa-fresh.netlify.app/'
+
+const brandImg = [brandImg1, brandImg2, brandImg3, brandImg4, brandImg5, brandImg6, brandImg7, brandImg8, brandImg9, brandImg10, brandImg11, brandImg12, brandImg13, brandImg14, brandImg15, brandImg16]
+
 const PuppaFresh: NextPage = () => {
     const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
 
@@ -28,12 +48,14 @@ const PuppaFresh: NextPage = () => {
         <Container>
             <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column' }} pt={8}>
                 <Box sx={{flex: 1, px: 2, mb: 4, alignSelf: 'center'}}>
-                    <Image
-                        src={image1.src}
-                        alt="Puppa fresh logo"
-                        width={image1.width}
-                        height={image1.height}
-                    />
+                    <a href={siteLink} target='_blank' rel="noreferrer">
+                        <Image
+                            src={image1.src}
+                            alt="Puppa fresh logo"
+                            width={image1.width}
+                            height={image1.height}
+                        />
+                    </a>
                 </Box>
                 <Box sx={{flex: 1, px: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}} >
                     <Box>
@@ -61,21 +83,25 @@ const PuppaFresh: NextPage = () => {
             </Box>
             <Box sx={{display: 'flex'}}>
                 <Box sx={{flex: 1, m: 2}}>
-                    <Image
-                        src={image2.src}
-                        alt="Puppa fresh brand guide mockup"
+                    <a href={siteLink} target='_blank' rel="noreferrer">
+                        <Image
+                            src={image2.src}
+                            alt="Puppa fresh brand guide mockup"
 
-                        width={image2.width}
-                        height={image2.height}
-                    />
+                            width={image2.width}
+                            height={image2.height}
+                        />
+                    </a>
                 </Box>
                 <Box sx={{flex: 1, m: 2}}>
-                    <Image
-                        src={image3.src}
-                        alt="Puppa fresh Brown Bag"
-                        width={image3.width}
-                        height={image3.height}
-                    />
+                    <a href={siteLink} target='_blank' rel="noreferrer">
+                        <Image
+                            src={image3.src}
+                            alt="Puppa fresh Brown Bag"
+                            width={image3.width}
+                            height={image3.height}
+                        />
+                    </a>
                 </Box>
             </Box>
             <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column', alignItems: 'center' }} py={4}>
@@ -98,22 +124,26 @@ const PuppaFresh: NextPage = () => {
                         </ul>
                     </Box>
                     <Box sx={{flex: 1, px: 2, mb: 4, alignSelf: 'center'}}>
-                        <Image
-                            src={image4.src}
-                            alt="Puppa fresh on shampoo"
-                            width={image4.width}
-                            height={image4.height}
-                        />
+                        <a href={siteLink} target='_blank' rel="noreferrer">
+                            <Image
+                                src={image4.src}
+                                alt="Puppa fresh on shampoo"
+                                width={image4.width}
+                                height={image4.height}
+                            />
+                        </a>
                     </Box>
                 </Box>
             <Box sx={{display: 'flex', alignItems: 'center', flexDirection: largerThanSM ? 'row': 'column'}}>
                 <Box sx={{flex: 1, m: 2}}>
-                    <Image
-                        src={image5.src}
-                        alt="Puppa fresh website"
-                        width={image5.width}
-                        height={image5.height}
-                    />
+                    <a href={siteLink} target='_blank' rel="noreferrer">
+                        <Image
+                            src={image5.src}
+                            alt="Puppa fresh website"
+                            width={image5.width}
+                            height={image5.height}
+                        />
+                    </a>
                 </Box>
                 <Box sx={{flex: 1, m: 2}}>
                     <Typography fontWeight={600} mb={2}>
@@ -129,31 +159,36 @@ const PuppaFresh: NextPage = () => {
             </Box>
             <Box sx={{display: 'flex'}}>
                 <Box sx={{flex: 1, m: 2}}>
-                    <Image
-                        src={image6.src}
-                        alt="Puppa fresh website mockup"
-
-                        width={image6.width}
-                        height={image6.height}
-                    />
+                    <a href={siteLink} target='_blank' rel="noreferrer">
+                        <Image
+                            src={image6.src}
+                            alt="Puppa fresh website mockup"
+                            width={image6.width}
+                            height={image6.height}
+                        />
+                    </a>
                 </Box>
                 <Box sx={{flex: 1, m: 2}}>
-                    <Image
-                        src={image7.src}
-                        alt="Puppa fresh Quote"
-                        width={image7.width}
-                        height={image7.height}
-                    />
+                    <a href={siteLink} target='_blank' rel="noreferrer">
+                        <Image
+                            src={image7.src}
+                            alt="Puppa fresh Quote"
+                            width={image7.width}
+                            height={image7.height}
+                        />
+                    </a>
                 </Box>
             </Box>
             <Box sx={{ maxWidth: 'sm', margin: 'auto', my: 6 }}>
                 <Box width={50} margin='auto' pb={2}>
-                    <Image
-                        src={step2.src}
-                        alt="Step 2"
-                        width={step2.width}
-                        height={step2.height}
-                    />
+                    <a href={siteLink} target='_blank' rel="noreferrer">
+                        <Image
+                            src={step2.src}
+                            alt="Step 2"
+                            width={step2.width}
+                            height={step2.height}
+                        />
+                    </a>
                 </Box>
                 <Typography textAlign='center'>
                     Want to work with us on a custom brand &/or website design that will captivate & convert your dream audience?
@@ -163,30 +198,36 @@ const PuppaFresh: NextPage = () => {
                 </Box>
             </Box>
             <Box m={4}>
-                <Image
-                    src={image8.src}
-                    alt="Puppa Fresh logo"
-                    width={image8.width}
-                    height={image8.height}
-                />
+                <a href={siteLink} target='_blank' rel="noreferrer">
+                    <Image
+                        src={image8.src}
+                        alt="Puppa Fresh logo"
+                        width={image8.width}
+                        height={image8.height}
+                    />
+                </a>
             </Box>
             <Box m={2}>
                 <Masonry columns={2} spacing={2}>
                     <Box sx={{ width: '50%'}}>
+                        <a href={siteLink} target='_blank' rel="noreferrer">
                         <Image
                             src={image9.src}
                             alt="Puppa Fresh logo"
                             width={image9.width}
                             height={image9.height}
                         />
+                        </a>
                     </Box>
                     <Box sx={{ width: '50%'}}>
+                        <a href={siteLink} target='_blank' rel="noreferrer">
                         <Image
                             src={image10.src}
                             alt="Puppa Fresh logo"
                             width={image10.width}
                             height={image10.height}
                         />
+                        </a>
                     </Box>
                     <Box sx={{ width: '50%'}}>
                         <Image
@@ -206,8 +247,20 @@ const PuppaFresh: NextPage = () => {
                     <BookButton color='secondary' />
                 </Box>
             </Box>
+            <Box sx={{display: 'flex', flexWrap: 'wrap' }}>
+                {brandImg.map((imgRef, index) => (
+                    <Box key={index} sx={{ width: '50%'}}>
+                        <Image
+                            src={imgRef.src}
+                            alt={`branding image ${index}`}
+                            width={imgRef.width}
+                            height={imgRef.height}
+                        />
+                    </Box>
+                ))}
+            </Box>
         </Container>
-    <DownloadSection />
+    <DownloadSection color='green.light' />
     </>
 )
 }
