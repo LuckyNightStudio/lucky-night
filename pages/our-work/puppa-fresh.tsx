@@ -259,6 +259,14 @@ const PuppaFresh: NextPage = () => {
                     </Box>
                 ))}
             </Box>
+            <Box sx={{ mx: 'auto', my: 12, maxWidth: 'md'}}>
+                <Typography textAlign='center'>
+                    Ready to leave ineffective marketing behind? Work with us to create a delightful brand & website to captivate and convert your dream audience. Get back to the work you’re most passionate about!
+                </Typography>
+                <Box sx={{ my: 4, textAlign: 'center'}}>
+                    <BookButton color='yellow'/>
+                </Box>
+            </Box>
         </Container>
     <DownloadSection color='green.light' />
     </>
