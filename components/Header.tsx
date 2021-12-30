@@ -16,7 +16,7 @@ const subCat = [
 ]
 
 const pages = [
-    {title: 'Services', link: '/#services', Icon: Star},
+    {title: 'Services', link: '/services', Icon: Star},
     {title: 'Our Work', link: '/our-work', Icon: Heart},
     {title: 'Blog', link: '/blog', Icon: Moon},
     {title: 'Contact Us', link: '/contact', Icon: Triangle}
