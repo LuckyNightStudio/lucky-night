@@ -28,7 +28,7 @@ const brandImg = [brandImg1, brandImg2, brandImg3, brandImg4, brandImg5, brandIm
 
 const siteLink = 'https://puppa-fresh.netlify.app/'
 
-const PuppaFresh: NextPage = () => {
+const Page: NextPage = () => {
     const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
 
     return (
@@ -181,7 +181,7 @@ const PuppaFresh: NextPage = () => {
                         Want to work with us on a custom brand &/or website design that will captivate & convert your dream audience?
                     </Typography>
                     <Box sx={{ my: 4, textAlign: 'center'}}>
-                        <BookButton color='secondary' />
+                        <BookButton />
                     </Box>
                 </Box>
                 <Box m={4}>
@@ -209,7 +209,7 @@ const PuppaFresh: NextPage = () => {
                         Want to work with us on a custom brand &/or website design that will captivate & convert your dream audience?
                     </Typography>
                     <Box sx={{ my: 4, textAlign: 'center'}}>
-                        <BookButton color='secondary' />
+                        <BookButton />
                     </Box>
                 </Box>
                 <Box sx={{display: 'flex', flexWrap: 'wrap', my: 8}}>
@@ -238,4 +238,4 @@ const PuppaFresh: NextPage = () => {
     )
 }
 
-export default PuppaFresh
+export default Page
