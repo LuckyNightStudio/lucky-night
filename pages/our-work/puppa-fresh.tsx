@@ -247,7 +247,7 @@ const PuppaFresh: NextPage = () => {
                     <BookButton color='secondary' />
                 </Box>
             </Box>
-            <Box sx={{display: 'flex', flexWrap: 'wrap' }}>
+            <Box sx={{display: 'flex', flexWrap: 'wrap', my: 8}}>
                 {brandImg.map((imgRef, index) => (
                     <Box key={index} sx={{ width: '50%'}}>
                         <Image
