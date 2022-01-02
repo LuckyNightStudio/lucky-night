@@ -135,7 +135,7 @@ const SignUp = () => {
                     <Typography variant='h6' textAlign='center' mb={2}>
                         Sign up to our mailing list! There will be hints, tips and resources on brand & web design as well as info on what we’re working on.                    </Typography>
                     <Box sx={{ textAlign: 'center', mt: 4}}>
-                        <a href="https://mailchi.mp/fb542ba7c412/subscribe" target="_blank">
+                        <a href="https://mailchi.mp/fb542ba7c412/subscribe" target="_blank" rel="noreferrer">
                             <Button variant='contained' color={'yellow' as 'primary'} sx={{...ButtonStyle, width: 270}}>
                                 SIGN UP TO OUR LIST
                             </Button>
