@@ -1,10 +1,149 @@
 import type { NextPage } from 'next'
+import {Container, Box, Typography, TextField, styled, Button, useTheme, useMediaQuery} from "@mui/material";
+import {underlineStyle} from "../components/homepage/Section2";
+import * as React from "react";
+import {BookButton, ButtonStyle} from "../components/BookButton";
+import {Pencil} from "../components/icons";
+import Image from 'next/image'
+import {useRouter} from "next/router";
+import image2 from "../public/insta/255527567_60676265w7438425_502380147576019928_n.jpg";
+import image1 from "../public/insta/257398611_290550352811259_2240237154052651417_n.jpg";
+import image4 from "../public/insta/257842264_1017110856544216_1831152685212589293_n.jpg";
+import image3 from "../public/insta/261265494_950049152261409_227492296801417435_n.jpg";
+import image5 from "../public/insta/262400205_9276323459627072_2187892821914597133_n.jpg";
+import image6 from "../public/insta/259147053_1244781899349668_5266051204009672799_n.jpg";
+import Pattern from "../public/LN pattern.png";
+import {PreviousProjects} from "../components/homepage/PreviousProjects";
+import {DownloadSection} from "../components/homepage/DownloadSection";
+
+const Input = styled(TextField)({
+    margin: '10px 4px',
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            border: 'solid 4px',
+            borderRadius: 38
+        },
+    },
+    '& .MuiInputLabel-root, & .MuiOutlinedInput-notchedOutline': {
+        paddingLeft: 20
+    },
+    '& .MuiOutlinedInput-input' : {
+        paddingLeft: 20,
+        paddingRight: 20
+    }
+});
+
+const images = [image1, image2, image3, image4, image5, image6]
+
+const Form = () => (
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action='/contact?success'>
+        <input type="hidden" name="form-name" value="contact" />
+        <Box sx={{ display: 'flex'}}>
+            <Input label="Name" variant="outlined" name='name' sx={{ flex: 1 }}/>
+            <Input label="Email" variant="outlined" type='email' name='email' sx={{ flex: 1 }} />
+        </Box>
+        <Input label="Message" variant="outlined" multiline  name='message' rows={4} fullWidth/>
+        <Button variant='contained' type='submit' color={'purple' as 'primary'} sx={{...ButtonStyle, mx: 2}}>
+            Submit
+        </Button>
+    </form>
+)
+
+const SuccessMessage = () => (
+    <Box sx={{ my: 8}}>
+        <Typography>
+            Thanks for getting in contact, we will be in touch soon.
+        </Typography>
+    </Box>
+)
 
 const Contact: NextPage = () => {
+    const theme = useTheme();
+    const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
+    const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
+    const {asPath} = useRouter()
+
     return (
-        <div>
-            Contact us
-        </div>
+        <>
+            <Container component='section'>
+                <Box sx={{ display: 'flex', p: 4, my: 6}}>
+                    {largerThanMD && <Box sx={{flex: 2}}>
+                        img
+                    </Box>}
+                    <Box  sx={{ flex: 3}}>
+                        <Typography variant='h4' component='h1' mx={2}>
+                            Contact Us
+                        </Typography>
+                        <Typography mx={2} mb={2}>
+                            <span style={{ display: 'inline-block', width: 'max-content' }}>
+                                Book a Free Consultation or Fill Out the Form Below
+                                <span style={{...underlineStyle, background: theme.palette.yellow.main}} />
+                            </span>
+                        </Typography>
+                        {asPath.includes('success') ? <SuccessMessage /> : <Form/>}
+                        <Box sx={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', mx: 2}}>
+                            <Box>
+                                <Typography sx={{ mb: 2, mt: 2 }}>
+                                    Ready to talk about a specific project instead?
+                                </Typography>
+                                <BookButton color='secondary' />
+                            </Box>
+                            {largerThanSM && <Box sx={{maxWidth: 120, ml: 4, mt: -4}}>
+                                <Pencil/>
+                            </Box>}
+                        </Box>
+                    </Box>
+                </Box>
+            </Container>
+            <Box component='section'>
+                <Typography textAlign='center' variant='h4' m={8}>
+                    <a href="https://www.instagram.com/luckynightstudio/" target="_blank" rel="noreferrer">
+                        Join us on <span style={{ color: theme.palette.secondary.main}}>Instagram</span>
+                    </a>
+                </Typography>
+                <Box sx={{ display: 'flex' }}>
+                    {images.map((img, i) => (
+                        <Box key={i} sx={{ flex: 1 }}>
+                            <a href="https://www.instagram.com/luckynightstudio/" target="_blank" rel="noreferrer">
+                                <Image
+                                    src={img.src}
+                                    alt="Picture of Louise and Naomi"
+                                    width={img.width}
+                                    height={img.height}
+                                />
+                            </a>
+                        </Box>
+                    ))}
+                </Box>
+            </Box>
+            <SignUp />
+            <PreviousProjects />
+            <DownloadSection color='green.light' />
+        </>
+    )
+}
+
+const SignUp = () => {
+    const theme = useTheme();
+    return (
+        <Box component='section' bgcolor='secondary.main' sx={{ backgroundImage: `url('${Pattern.src}')`}} px={4} py={8}>
+            <Container maxWidth='md'>
+                <Box p={5} sx={{ backgroundColor: 'rgba(255,255,255,0.95)', borderRadius: 8}}>
+                    <Typography variant='h4' textAlign='center' mb={2}>
+                        Want to <span style={{color: theme.palette.primary.main}}>stay</span> up to date?
+                    </Typography>
+                    <Typography variant='h6' textAlign='center' mb={2}>
+                        Sign up to our mailing list! There will be hints, tips and resources on brand & web design as well as info on what we’re working on.                    </Typography>
+                    <Box sx={{ textAlign: 'center', mt: 4}}>
+                        <a href="https://mailchi.mp/fb542ba7c412/subscribe" target="_blank">
+                            <Button variant='contained' color={'yellow' as 'primary'} sx={{...ButtonStyle, width: 270}}>
+                                SIGN UP TO OUR LIST
+                            </Button>
+                        </a>
+                    </Box>
+                </Box>
+            </Container>
+        </Box>
     )
 }
 
