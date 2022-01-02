@@ -68,7 +68,7 @@ export const OurWorkGrid = () => (
         {work.map(({image, alt, link, title, sub}, index) => (
             <Box key={index} sx={style}>
                 <Link href={link} passHref>
-                    <>
+                    <div>
                         <Image
                             src={image.src}
                             alt={alt}
@@ -81,7 +81,7 @@ export const OurWorkGrid = () => (
                             <Typography variant='h4'>{title}</Typography>
                             <Typography>{sub}</Typography>
                         </Box>
-                    </>
+                    </div>
                 </Link>
             </Box>
         ))}
