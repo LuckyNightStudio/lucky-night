@@ -8,7 +8,7 @@ import {Plan} from "../../components/services/Plan";
 import {FinalCTA} from "../../components/homepage/FinalCTA";
 import {theme} from "../../utils/theme";
 import {Typography} from "@mui/material";
-
+import img from '../../public/personal-product-image.webp'
 
 const includes = [
     'Approx 3 hours of brand strategy sessions',
@@ -66,6 +66,7 @@ const Service: NextPage = () => {
                 description='Full brand strategy and visual design experience to give you all the tools to grow your business in your ideal market.'
                 price='2,295'
                 color={theme.palette.yellow.main}
+                img={img}
             >
                 <ul>
                     {includes.map((text) => (

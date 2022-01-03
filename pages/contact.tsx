@@ -12,9 +12,10 @@ import image4 from "../public/insta/257842264_1017110856544216_18311526852125892
 import image3 from "../public/insta/261265494_950049152261409_227492296801417435_n.jpg";
 import image5 from "../public/insta/262400205_9276323459627072_2187892821914597133_n.jpg";
 import image6 from "../public/insta/259147053_1244781899349668_5266051204009672799_n.jpg";
-import Pattern from "../public/LN pattern.png";
+import Pattern from "../public/pink-pattern.webp";
 import {PreviousProjects} from "../components/homepage/PreviousProjects";
 import {DownloadSection} from "../components/homepage/DownloadSection";
+import img from '../public/louise-and-naomi-img.webp'
 
 const Input = styled(TextField)({
     margin: '10px 4px',
@@ -66,9 +67,22 @@ const Contact: NextPage = () => {
     return (
         <>
             <Container component='section'>
-                <Box sx={{ display: 'flex', p: 4, my: 6}}>
-                    {largerThanMD && <Box sx={{flex: 2}}>
-                        img
+                <Box sx={{ display: 'flex', p: 4, my: 6, flexDirection: largerThanMD ? 'row' : 'row-reverse'}}>
+                    {largerThanSM && <Box sx={{ flex: 2, position: 'relative'}}>
+                        <Box sx={{
+                            position: 'absolute',
+                            right: 0,
+                            top: '50%',
+                            width: largerThanMD ? '140%' : '100%',
+                            transform: 'translate(0, -50%)'
+                        }}>
+                            <Image
+                                src={img.src}
+                                alt='Louise And Naomi Picture'
+                                width={img.width}
+                                height={img.height}
+                            />
+                        </Box>
                     </Box>}
                     <Box  sx={{ flex: 3}}>
                         <Typography variant='h4' component='h1' mx={2}>

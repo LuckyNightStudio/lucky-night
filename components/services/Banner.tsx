@@ -1,8 +1,8 @@
-import {Box, Container, Typography} from "@mui/material";
+import {Box, Container, Typography, useMediaQuery, useTheme} from "@mui/material";
 import {underlineStyle} from "../homepage/Section2";
-import {theme} from "../../utils/theme";
 import {BookButton} from "../BookButton";
 import * as React from "react";
+import Image from "next/image";
 
 interface Props {
     title: string
@@ -12,14 +12,33 @@ interface Props {
     color: string
     buttonColor?: string
     children: JSX.Element
+    img: any
 }
 
-export const Banner = ({title, subtitle, description, price, color, buttonColor, children}: Props) => {
+export const Banner = ({title, subtitle, description, price, color, buttonColor, children, img}: Props) => {
+    const theme = useTheme();
+    const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
+    const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Container>
-            <Box sx={{ display: 'flex' }} component='section'>
-                <Box sx={{width: '50%'}}>img</Box>
-                <Box py={8} px={3}>
+            <Box sx={{ display: 'flex', flexDirection: largerThanMD ? 'row' : 'row-reverse' }} component='section'>
+                {largerThanSM && <Box sx={{ flex: 2, position: 'relative'}}>
+                    <Box sx={{
+                        position: 'absolute',
+                        right: 0,
+                        top: '50%',
+                        width: largerThanMD ? '140%' : '100%',
+                        transform: 'translate(0, -50%)'
+                    }}>
+                        <Image
+                            src={img.src}
+                            alt={title}
+                            width={img.width}
+                            height={img.height}
+                        />
+                    </Box>
+                </Box>}
+                <Box py={8} px={3} sx={{ flex: 3}}>
                     <Typography variant='h4' component='h1'>
                         {title}
                     </Typography>

@@ -1,5 +1,5 @@
 import {Box, Container, Typography} from "@mui/material";
-import Pattern from "../../public/luckypattern.png";
+import Pattern from "../../public/luckypattern.jpg";
 import {BookButton} from "../BookButton";
 
 export const FinalCTA = () => {

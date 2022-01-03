@@ -36,6 +36,8 @@ const iconContainerStyle: CSSProperties = {
 }
 
 const LargeNav = () => {
+    const theme = useTheme();
+    const largerThanLG = useMediaQuery(theme.breakpoints.up('lg'));
     const {pathname} = useRouter()
     const [showDropdown, setShowDropdown] = useState(pathname.includes('services'))
 
@@ -69,11 +71,15 @@ const LargeNav = () => {
                     ))}
                     </Box>
                     <Box sx={{flex: 1, display: 'flex', mt: 2, mb: -3, height: 28}} onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => pathname.includes('services') ? {} :  setShowDropdown(false)}>
-                        {showDropdown && (subCat?.map(({title, link}) => (
+                        {largerThanLG && showDropdown && (subCat?.map(({title, link}) => (
                             <Link href={link} passHref key={title}>
                                 <div style={{
                                     cursor: pathname.includes(link.replace('#', '')) ? 'default' : 'pointer',
-                                    pointerEvents: pathname.includes(link.replace('#', '')) ? 'none' : 'auto'
+                                    pointerEvents: pathname.includes(link.replace('#', '')) ? 'none' : 'auto',
+                                    background: theme.palette.purple.main,
+                                    height: 36,
+                                    paddingTop: 5,
+                                    whiteSpace: 'nowrap'
                                 }}>
                                     <Typography component='a' variant='subtitle1' sx={{
                                         color: pathname.includes(link) ? theme.palette.red.main : 'inherit',
@@ -100,8 +106,10 @@ const SmallNav = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
     return (
         <>
-            <Box onClick={() => setIsModalOpen(true)} sx={{ cursor: 'pointer', width: 40, color: 'red.main' }}>
-                <MenuIcon />
+            <Box sx={{flex: 1, display: 'flex', alignItems: 'center'}}>
+                <Box onClick={() => setIsModalOpen(true)} sx={{ cursor: 'pointer', width: 40, color: 'red.main', ml: 'auto' }}>
+                    <MenuIcon />
+                </Box>
             </Box>
             <Modal open={isModalOpen}>
                 <Slide direction="up" in={isModalOpen} mountOnEnter unmountOnExit>
@@ -137,11 +145,14 @@ export const Header = () => {
             <header>
                 <Container>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 4}}>
-                        <Link href='/' passHref>
-                            <Box  sx={{ cursor: 'pointer', minWidth: 190, width: 190 }} mt={1}>
-                                <Logo />
-                            </Box>
-                        </Link>
+                        {!largerThanMD && <Box sx={{ flex: 1}}/>}
+                        <Box sx={{flex: 2}}>
+                            <Link href='/' passHref>
+                                <Box  sx={{ cursor: 'pointer', minWidth: 190, width: largerThanMD ? 190 : '100%' }} mt={1}>
+                                    <Logo />
+                                </Box>
+                            </Link>
+                        </Box>
                         {largerThanMD ? <LargeNav /> : <SmallNav />}
                     </Box>
                 </Container>

@@ -8,6 +8,8 @@ import {Plan} from "../../components/services/Plan";
 import {FinalCTA} from "../../components/homepage/FinalCTA";
 import {theme} from "../../utils/theme";
 import {Accordion, AccordionDetails, AccordionSummary, Typography} from "@mui/material";
+import img from '../../public/e-commerce-product-image.webp'
+
 
 const includes = [
     'Approx 3 hours of brand strategy sessions',
@@ -86,6 +88,7 @@ const Service: NextPage = () => {
                 price='6,195'
                 color={theme.palette.purple.main}
                 buttonColor='secondary'
+                img={img}
             >
                 <ul>
                     <li>
