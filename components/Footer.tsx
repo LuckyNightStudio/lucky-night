@@ -1,4 +1,4 @@
-import {Box, Container} from "@mui/material";
+import {Box, Container, Typography} from "@mui/material";
 import {Logo} from "./Logo";
 import {Instagram, Linkedin, Twitter} from "./icons";
 import {theme} from "../utils/theme";
@@ -41,6 +41,11 @@ export const Footer = () => {
                                 </Box>
                             </Box>
                         </Box>
+                    </Box>
+                    <Box sx={{ textAlign: 'center', mt: 2}}>
+                        <Typography variant='caption'>
+                            Lucky Night Studio © {new Date().getFullYear()}
+                        </Typography>
                     </Box>
                 </footer>
             </Container>
