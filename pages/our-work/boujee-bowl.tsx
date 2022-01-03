@@ -26,7 +26,7 @@ import brandImg6 from "../../public/boujee-bowl/Boujee-bowl-branding-6.jpg";
 
 const brandImg = [brandImg1, brandImg2, brandImg3, brandImg4, brandImg5, brandImg6]
 
-const siteLink = 'https://puppa-fresh.netlify.app/'
+// const siteLink = 'https://puppa-fresh.netlify.app/'
 
 const Page: NextPage = () => {
     const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
@@ -36,14 +36,14 @@ const Page: NextPage = () => {
             <Container>
                 <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column' }} pt={8}>
                     <Box sx={{flex: 1, px: 2, mb: 4, alignSelf: 'center'}}>
-                        <a href={siteLink} target='_blank' rel="noreferrer">
+                        {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
                                 src={image1.src}
                                 alt="Boujee Bowl logo"
                                 width={image1.width}
                                 height={image1.height}
                             />
-                        </a>
+                        {/*</a>*/}
                     </Box>
                     <Box sx={{flex: 1, px: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}} >
                         <Box>
@@ -71,24 +71,24 @@ const Page: NextPage = () => {
                 </Box>
                 <Box sx={{display: 'flex'}}>
                     <Box sx={{flex: 1, m: 2}}>
-                        <a href={siteLink} target='_blank' rel="noreferrer">
+                        {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
                                 src={image2.src}
                                 alt="Boujee Bowl logo"
                                 width={image2.width}
                                 height={image2.height}
                             />
-                        </a>
+                        {/*</a>*/}
                     </Box>
                     <Box sx={{flex: 1, m: 2}}>
-                        <a href={siteLink} target='_blank' rel="noreferrer">
+                        {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
                                 src={image3.src}
                                 alt="Boujee Bowl coffee"
                                 width={image3.width}
                                 height={image3.height}
                             />
-                        </a>
+                        {/*</a>*/}
                     </Box>
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column', alignItems: 'center' }} py={4}>
@@ -112,26 +112,26 @@ const Page: NextPage = () => {
                         </ul>
                     </Box>
                     <Box sx={{flex: 1, px: 2, mb: 4, alignSelf: 'center'}}>
-                        <a href={siteLink} target='_blank' rel="noreferrer">
+                        {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
                                 src={image4.src}
                                 alt="Boujee Bowl logo pink"
                                 width={image4.width}
                                 height={image4.height}
                             />
-                        </a>
+                        {/*</a>*/}
                     </Box>
                 </Box>
                 <Box sx={{display: 'flex', alignItems: 'center', flexDirection: largerThanSM ? 'row': 'column'}}>
                     <Box sx={{flex: 1, m: 2}}>
-                        <a href={siteLink} target='_blank' rel="noreferrer">
+                        {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
                                 src={image5.src}
                                 alt="Boujee Bowl phone mockup"
                                 width={image5.width}
                                 height={image5.height}
                             />
-                        </a>
+                        {/*</a>*/}
                     </Box>
                     <Box sx={{flex: 1, m: 2}}>
                         <Typography fontWeight={600} mb={2}>
@@ -146,36 +146,36 @@ const Page: NextPage = () => {
                 </Box>
                 <Box sx={{display: 'flex'}}>
                     <Box sx={{flex: 1, m: 2}}>
-                        <a href={siteLink} target='_blank' rel="noreferrer">
+                        {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
                                 src={image6.src}
                                 alt="Boujee Bowl brand guide"
                                 width={image6.width}
                                 height={image6.height}
                             />
-                        </a>
+                        {/*</a>*/}
                     </Box>
                     <Box sx={{flex: 1, m: 2}}>
-                        <a href={siteLink} target='_blank' rel="noreferrer">
+                        {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
                                 src={image7.src}
                                 alt="Boujee Bowl socials"
                                 width={image7.width}
                                 height={image7.height}
                             />
-                        </a>
+                        {/*</a>*/}
                     </Box>
                 </Box>
                 <Box sx={{ maxWidth: 'sm', margin: 'auto', my: 6 }}>
                     <Box width={50} margin='auto' pb={2}>
-                        <a href={siteLink} target='_blank' rel="noreferrer">
+                        {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
                                 src={step2.src}
                                 alt="Step 2"
                                 width={step2.width}
                                 height={step2.height}
                             />
-                        </a>
+                        {/*</a>*/}
                     </Box>
                     <Typography textAlign='center'>
                         Want to work with us on a custom brand &/or website design that will captivate & convert your dream audience?
@@ -185,24 +185,24 @@ const Page: NextPage = () => {
                     </Box>
                 </Box>
                 <Box m={4}>
-                    <a href={siteLink} target='_blank' rel="noreferrer">
+                    {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                         <Image
                             src={image8.src}
                             alt="Boujee Bowl laptop mockup"
                             width={image8.width}
                             height={image8.height}
                         />
-                    </a>
+                    {/*</a>*/}
                 </Box>
                 <Box sx={{my: 4, maxWidth: 800, mx: 'auto' }}>
-                        <a href={siteLink} target='_blank' rel="noreferrer">
+                        {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
                                 src={image9.src}
                                 alt="Boujee Bowl web design"
                                 width={image9.width}
                                 height={image9.height}
                             />
-                        </a>
+                        {/*</a>*/}
                 </Box>
                 <Box sx={{ maxWidth: 'sm', margin: 'auto', my: 8 }}>
                     <Typography textAlign='center'>
