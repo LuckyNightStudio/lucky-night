@@ -15,7 +15,7 @@ import image6 from "../public/insta/259147053_1244781899349668_52660512040096727
 import Pattern from "../public/pink-pattern.webp";
 import {PreviousProjects} from "../components/homepage/PreviousProjects";
 import {DownloadSection} from "../components/homepage/DownloadSection";
-import img from '../public/louise-and-naomi-img.webp'
+import img from '../public/louise-and-naomi-img.png'
 
 const Input = styled(TextField)({
     margin: '10px 4px',
