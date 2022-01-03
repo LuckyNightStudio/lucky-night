@@ -23,9 +23,13 @@ export const Layout = ({ children }: {children: JSX.Element}) => {
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
             </Head>
-            <Box sx={{position: 'fixed', top: 0, left: 0, zIndex: 1500}}>
-                <Confetti width={width} height={height} numberOfPieces={showConfetti ? 600 : 0} />
-            </Box>
+            {
+                (width > 0 && height > 0) && (
+                    <Box sx={{position: 'fixed', top: 0, left: 0, zIndex: 1500 }} className='confetti'>
+                        <Confetti width={width} height={height} numberOfPieces={showConfetti ? 600 : 0} />
+                    </Box>
+                )
+            }
             <Header />
             <main>{children}</main>
             <Footer />

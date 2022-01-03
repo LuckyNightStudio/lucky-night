@@ -16,6 +16,8 @@ import Pattern from "../public/pink-pattern.webp";
 import {PreviousProjects} from "../components/homepage/PreviousProjects";
 import {DownloadSection} from "../components/homepage/DownloadSection";
 import img from '../public/louise-and-naomi-img.png'
+import {useContext, useEffect} from "react";
+import {ConfettiContext} from "../components/context/ConfettiContext";
 
 const Input = styled(TextField)({
     margin: '10px 4px',
@@ -36,44 +38,69 @@ const Input = styled(TextField)({
 
 const images = [image1, image2, image3, image4, image5, image6]
 
-const Form = () => (
-    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action='/contact?success'>
-        <input type="hidden" name="form-name" value="contact" />
-        <Box sx={{ display: 'flex'}}>
-            <Input label="Name" variant="outlined" name='name' sx={{ flex: 1 }}/>
-            <Input label="Email" variant="outlined" type='email' name='email' sx={{ flex: 1 }} />
-        </Box>
-        <Input label="Message" variant="outlined" multiline  name='message' rows={4} fullWidth/>
-        <Button variant='contained' type='submit' color={'purple' as 'primary'} sx={{...ButtonStyle, mx: 2}}>
-            Submit
-        </Button>
-    </form>
-)
+const Form = () => {
+    const theme = useTheme();
+    const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
+    return (
+        (
+            <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action='/contact?success'>
+                <input type="hidden" name="form-name" value="contact" />
+                <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
+                    <Input label="Name" variant="outlined" name='name' sx={{ flex: 1 }}/>
+                    <Input label="Email" variant="outlined" type='email' name='email' sx={{ flex: 1 }} />
+                </Box>
+                <Input label="Message" variant="outlined" multiline  name='message' rows={4} fullWidth/>
+                <Button variant='contained' type='submit' color={'purple' as 'primary'} sx={{...ButtonStyle, mx: 2}}>
+                    Submit
+                </Button>
+            </form>
+        )
+    )
+}
 
-const SuccessMessage = () => (
-    <Box sx={{ my: 8}}>
-        <Typography>
-            Thanks for getting in contact, we will be in touch soon.
-        </Typography>
-    </Box>
-)
+const SuccessMessage = () => {
+    const theme = useTheme();
+    const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
+    return (
+        (
+            <Box sx={{ my: 8, minHeight: largerThanMD ? 265 : 'unset' }}>
+                <Typography textAlign='center'>
+                    Thanks for getting in contact, we will be in touch soon.
+                </Typography>
+            </Box>
+        )
+    )
+}
 
 const Contact: NextPage = () => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
     const {asPath} = useRouter()
+    const {setShowConfetti} = useContext(ConfettiContext)
+
+    useEffect(() => {
+        if(asPath.includes('success')) {
+            setShowConfetti(true)
+            setTimeout(() => setShowConfetti(false), 60 * 60)
+        }
+        return () => {
+            setShowConfetti(false)
+        }
+    }, [asPath, setShowConfetti])
+
+    const instaImages = largerThanSM ? images.slice(0, 6) : images.slice(0, 3)
 
     return (
         <>
             <Container component='section'>
                 <Box sx={{ display: 'flex', p: 4, my: 6, flexDirection: largerThanMD ? 'row' : 'row-reverse'}}>
-                    {largerThanSM && <Box sx={{ flex: 2, position: 'relative'}}>
+                    {largerThanMD && <Box sx={{ flex: 2, position: 'relative', m: 2}}>
                         <Box sx={{
                             position: 'absolute',
                             right: 0,
                             top: '50%',
-                            width: largerThanMD ? '140%' : '100%',
+                            width: '140%',
                             transform: 'translate(0, -50%)'
                         }}>
                             <Image
@@ -84,14 +111,14 @@ const Contact: NextPage = () => {
                             />
                         </Box>
                     </Box>}
-                    <Box  sx={{ flex: 3}}>
+                    <Box  sx={{ flex: 3, maxWidth: '100%'}}>
                         <Typography variant='h4' component='h1' mx={2}>
                             Contact Us
                         </Typography>
                         <Typography mx={2} mb={2}>
-                            <span style={{ display: 'inline-block', width: 'max-content' }}>
+                            <span style={{ display: 'inline-block', width: 'max-content', maxWidth: '100%' }}>
                                 Book a Free Consultation or Fill Out the Form Below
-                                <span style={{...underlineStyle, background: theme.palette.yellow.main}} />
+                                {largerThanSM && <span style={{...underlineStyle, background: theme.palette.yellow.main}}/>}
                             </span>
                         </Typography>
                         {asPath.includes('success') ? <SuccessMessage /> : <Form/>}
@@ -110,13 +137,13 @@ const Contact: NextPage = () => {
                 </Box>
             </Container>
             <Box component='section'>
-                <Typography textAlign='center' variant='h4' m={8}>
+                <Typography textAlign='center' variant='h4' mt={10} mb={3}>
                     <a href="https://www.instagram.com/luckynightstudio/" target="_blank" rel="noreferrer">
                         Join us on <span style={{ color: theme.palette.secondary.main}}>Instagram</span>
                     </a>
                 </Typography>
                 <Box sx={{ display: 'flex' }}>
-                    {images.map((img, i) => (
+                    {instaImages.map((img, i) => (
                         <Box key={i} sx={{ flex: 1 }}>
                             <a href="https://www.instagram.com/luckynightstudio/" target="_blank" rel="noreferrer">
                                 <Image
