@@ -35,7 +35,7 @@ const iconContainerStyle: CSSProperties = {
     position: 'relative'
 }
 
-const LargeNav = () => {
+export const LargeNav = ({isFooter = false}: {isFooter?: boolean}) => {
     const theme = useTheme();
     const largerThanLG = useMediaQuery(theme.breakpoints.up('lg'));
     const {pathname} = useRouter()
@@ -71,7 +71,7 @@ const LargeNav = () => {
                     ))}
                     </Box>
                     <Box sx={{flex: 1, display: 'flex', mt: 2, mb: -3, height: 28}} onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => pathname.includes('services') ? {} :  setShowDropdown(false)}>
-                        {largerThanLG && showDropdown && (subCat?.map(({title, link}) => (
+                        {!isFooter && largerThanLG && showDropdown && (subCat?.map(({title, link}) => (
                             <Link href={link} passHref key={title}>
                                 <div style={{
                                     cursor: pathname.includes(link.replace('#', '')) ? 'default' : 'pointer',
@@ -103,7 +103,11 @@ const LargeNav = () => {
 const modalOverlayStyle: SxProps<Theme> = { p: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', justifyContent: 'center', bgcolor: 'secondary.main'}
 
 const SmallNav = () => {
+    const {pathname} = useRouter()
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+    useEffect(() => {
+        setIsModalOpen(false)
+    }, [pathname])
     return (
         <>
             <Box sx={{flex: 1, display: 'flex', alignItems: 'center'}}>

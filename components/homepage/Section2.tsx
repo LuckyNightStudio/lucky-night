@@ -2,6 +2,7 @@ import {Box, Button, Container, Typography, useMediaQuery, useTheme} from "@mui/
 import {BookButton, ButtonStyle} from "../BookButton";
 import louiseAndNaomiLaughing from '../../public/louiseAndNaomiLaughing.png'
 import Image from "next/image";
+import Link from "next/link";
 import * as React from "react";
 import {Sun, GreenSun} from "../icons";
 
@@ -50,9 +51,11 @@ export const Section2 = () => {
                         <Typography variant='body1' pb={2} paragraph>
                             Hiyeee, we’re Louise, a developer and software engineer; and Naomi, a visual designer and branding obsessive. We founded Lucky Night Studio because we believe that our combined 20 years’ experience in our respective fields mixed with your passion and drive is the perfect recipe to get your business booming. We’ll get to know everything about you and your goals, struggles and processes so that we can build you a plan and create the assets to make them a reality.
                         </Typography>
-                        <Button variant='contained' sx={ButtonStyle}>
-                            Our Work
-                        </Button>
+                        <Link href='/our-work' passHref>
+                            <Button variant='contained' sx={ButtonStyle}>
+                                Our Work
+                            </Button>
+                        </Link>
                         <Typography variant='body1' pb={2} pt={3} paragraph fontWeight={600}>
                             You’re rightly very picky about who you choose to work with, and so are we. That’s why we offer a totally free, zero-obligation consultation call prior to booking so that we can ensure that we’re the very best fit for your project.
                         </Typography>

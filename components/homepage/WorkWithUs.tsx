@@ -6,6 +6,8 @@ import Image from "next/image";
 import * as React from "react";
 import {ButtonStyle} from "../BookButton";
 import Link from "next/link";
+import {useState} from "react";
+import {BookingModal} from "../BookModal";
 
 export const WorkWithUs = () => {
     const theme = useTheme();
@@ -139,6 +141,9 @@ const ServiceCard = ({title, description, nots, title1, wants, main, flex, index
     const bg = main ? 'linear-gradient(to bottom, rgba(212,192,242,1) 20%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 100%)' : 'linear-gradient(to bottom, rgba(246,159,185,1) 20%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 100%)'
     const theme = useTheme();
     const largerThanLG = useMediaQuery(theme.breakpoints.up('lg'));
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+
     return (
         <Box component='section'
              sx={{
@@ -160,10 +165,16 @@ const ServiceCard = ({title, description, nots, title1, wants, main, flex, index
             </Box>
             <Box px={4} pb={4}>
                 <Box textAlign='center'>
-                    <Button variant='contained' sx={{...ButtonStyle, backgroundColor: 'white', color: 'black', marginTop: -2.5 }}>
+                    <Button variant='contained'
+                            onClick={() => setIsModalOpen(true)}
+                            sx={{...ButtonStyle, marginTop: -2.5, ':hover': {
+                            bgcolor: 'green.light',
+                            color: 'white', }}}
+                            color={'white' as 'primary'}>
                         BOOK A DISCOVERY CALL
                     </Button>
                 </Box>
+                <BookingModal isOpen={isModalOpen} setIsOpen={setIsModalOpen}/>
                 <Typography variant='h6' component='p' mt={4} textAlign={largerThanLG ? 'left' : 'center'}>
                     Perfect if you want:
                 </Typography>

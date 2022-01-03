@@ -61,7 +61,7 @@ export const FitsSection = ({fits, nots, bgColor = 'primary.light', cardColor = 
                         </Box>
                     </Box>
                     <Box sx={{...BoxStyle, m: largerThanMD ? 4 : '30px auto', width: largerThanMD ? '50%' : '100%', background}}>
-                        <Box sx={{width: handsIcon ? 140 : 200, position: 'absolute', bottom: handsIcon ? -20 : -50, right: handsIcon ? -110 : -140 }}>
+                        <Box sx={{width: handsIcon ? 140 : 200, position: 'absolute', bottom: handsIcon ? -20 : -60, right: handsIcon ? -110 : -150 }}>
                             {handsIcon ? <Image
                                 src={step2.src}
                                 alt="Step 2"
@@ -108,7 +108,7 @@ export const FitsSection = ({fits, nots, bgColor = 'primary.light', cardColor = 
                                 )
                             )
                         })}
-                        <Link href="/#services" passHref>
+                        <Link href="/services" passHref>
                             <Button variant='contained' color={buttonColor as any} sx={{...ButtonStyle, ...ButtonBottom}}>
                                 VIEW OTHER SERVICES
                             </Button>

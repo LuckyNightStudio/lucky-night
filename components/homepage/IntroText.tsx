@@ -6,6 +6,7 @@ import {Drinks, Laptop} from "../icons";
 
 export const IntroText = () => {
     const theme = useTheme();
+    const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     const largerThanLG = useMediaQuery(theme.breakpoints.up('lg'));
     return (
@@ -17,11 +18,11 @@ export const IntroText = () => {
                             <Drinks/>
                         </Box>
                     )}
-                    <Box width={largerThanMD ? '400px' : '100%'} px={4} sx={{ display: largerThanMD ? 'inline' : 'flex' }}>
+                    <Box width={largerThanMD ? '400px' : '100%'} px={4} sx={{ display: 'flex', flexDirection: largerThanSM ? 'row' : 'column' }}>
                         <Typography variant='h5' pb={4}>
                             You’re <span style={{color: theme.palette.red.main }}>crazy</span> about the work you do & making real impact. Don’t allow poor brand strategy or lack of clarity to interfere with your <span style={{color: theme.palette.green.main}}>wildest dreams</span>
                         </Typography>
-                        <Box sx={{ width: '170px', minWidth: '100px', ml: 2 }}>
+                        <Box sx={{ width: '170px', minWidth: '100px', mr: largerThanSM ? 0 : 'auto', ml: largerThanSM ? 2 : 'auto', mb: largerThanSM ? 0 : 3 }}>
                             <Laptop />
                         </Box>
                     </Box>
@@ -32,7 +33,9 @@ export const IntroText = () => {
                         <Typography variant='body1' pb={4}>
                             <span style={{ fontWeight: 600 }}>No tricks, no jargon, no bullshit.</span> Just expert, strategy-led brand identity and websites that build deep emotional connections & convert the right buyers while simplifying your marketing efforts.
                         </Typography>
-                        <BookButton />
+                        <Box mb={4}>
+                            <BookButton />
+                        </Box>
                     </Box>
                 </Box>
             </Container>

@@ -11,7 +11,6 @@ import {ConfettiContext} from "./context/ConfettiContext";
 export const Layout = ({ children }: {children: JSX.Element}) => {
     const [width, height] = useWindowSize()
     const {showConfetti} = useContext(ConfettiContext)
-
     return (
         <ThemeProvider theme={theme}>
             <Head>
@@ -25,7 +24,7 @@ export const Layout = ({ children }: {children: JSX.Element}) => {
             </Head>
             {
                 (width > 0 && height > 0) && (
-                    <Box sx={{position: 'fixed', top: 0, left: 0, zIndex: 1500 }} className='confetti'>
+                    <Box sx={{position: 'sticky', top: 0, left: 0, zIndex: 1500 }} className='confetti'>
                         <Confetti width={width} height={height} numberOfPieces={showConfetti ? 600 : 0} />
                     </Box>
                 )

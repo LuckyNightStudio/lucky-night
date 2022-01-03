@@ -39,12 +39,13 @@ export const Banner = ({title, subtitle, description, price, color, buttonColor,
                     </Box>
                 </Box>}
                 <Box py={8} px={3} sx={{ flex: 3}}>
-                    <Typography variant='h4' component='h1'>
+                    <Typography variant='h4' component='h1' sx={{ display: largerThanMD ? 'block' : 'inline-block' }}>
                         {title}
+                        {!largerThanMD && <span style={{...underlineStyle, background: color}}/>}
                     </Typography>
                     <Typography variant='h6' component='h3' mb={2} sx={{ display: 'inline-block' }}>
                         {subtitle}
-                        <span style={{...underlineStyle, background: color}} />
+                        {largerThanMD && <span style={{...underlineStyle, background: color}}/>}
                     </Typography>
                     <Typography variant='body1' mb={2}>
                         {description}

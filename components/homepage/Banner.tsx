@@ -9,13 +9,13 @@ import {Sun, Hearts, Eyes} from "../icons";
 const highLightWordStyle: CSSProperties = {
     content: '',
     position: 'absolute',
-    top: 0,
+    top: '10%',
     left: 0,
-    height: '100%',
+    height: '90%',
     width: '100%',
     background: 'white',
     zIndex: -1,
-    transform: 'rotate(-4deg)'
+    transform: 'rotate(-3deg)'
 }
 
 const dividerStyle: CSSProperties = {
@@ -65,8 +65,8 @@ export const Banner = () => {
                     )}
                     <Box flex={2} alignSelf='center' my={4}>
                         <Typography variant="h3" component="h1">
-                            Strategy-led <span style={{color: theme.palette.red.main }}>branding & web design</span> for playful
-                            young businesses with <span style={{position: 'relative', zIndex: 1}}>immense<span style={highLightWordStyle}/></span> ambitions
+                            Strategy-led <span style={{color: theme.palette.red.main }}>branding & web design</span> <span style={{position: 'relative', zIndex: 3}}>for playful
+                            young businesses with </span><span style={{position: 'relative', zIndex: 1}}>immense<span style={highLightWordStyle}/></span> ambitions
                         </Typography>
                         <Typography variant='body1' py={4}>
                             Feel like you spend most of your time on ineffective marketing? Lucky Night Studio

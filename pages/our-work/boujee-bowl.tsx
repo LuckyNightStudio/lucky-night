@@ -69,7 +69,7 @@ const Page: NextPage = () => {
                         </Box>
                     </Box>
                 </Box>
-                <Box sx={{display: 'flex'}}>
+                <Box sx={{display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
                     <Box sx={{flex: 1, m: 2}}>
                         {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
@@ -144,7 +144,7 @@ const Page: NextPage = () => {
                             SEO was set up strong using keywords, image optimisation and solid page mark-up (particularly important for single page sites). The team had training on content creation and were keen to write frequent blogs and new event listings which will set them up for high page authority in no time!                        </Typography>
                     </Box>
                 </Box>
-                <Box sx={{display: 'flex'}}>
+                <Box sx={{display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
                     <Box sx={{flex: 1, m: 2}}>
                         {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
@@ -214,7 +214,7 @@ const Page: NextPage = () => {
                 </Box>
                 <Box sx={{display: 'flex', flexWrap: 'wrap', my: 8}}>
                     {brandImg.map((imgRef, index) => (
-                        <Box key={index} sx={{ width: '50%'}}>
+                        <Box key={index} sx={{ width: largerThanSM ? '50%' : '90%', m: 'auto'}}>
                             <Image
                                 src={imgRef.src}
                                 alt={`branding image ${index}`}

@@ -13,7 +13,7 @@ export const DownloadSection = ({color ='purple.main'}: {color?: string}) => {
         <Box component='section' px={4} pt={10} pb={2} bgcolor={color}>
             <Container>
                 <Box sx={{ display: 'flex', flexDirection: largerThanMD ? 'row': 'column'}}>
-                    <Box flex={1}>
+                    <Box sx={{ flex: 1, maxWidth: 380, margin: 'auto'}}>
                         <Image
                             src={img.src}
                             alt='Seo guide image'
@@ -30,7 +30,7 @@ export const DownloadSection = ({color ='purple.main'}: {color?: string}) => {
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
                             <Box>
                                 <a href='./docs/SEO_Checklist.pdf' target='_blank'>
-                                    <Button variant='contained' sx={{...ButtonStyle, backgroundColor: 'white', color: 'black' }}>
+                                    <Button variant='contained' sx={{...ButtonStyle, backgroundColor: 'white', color: 'black', mb: 4 }}>
                                         Download Now
                                     </Button>
                                 </a>

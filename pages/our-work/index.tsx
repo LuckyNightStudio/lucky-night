@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
-import {Container, Typography, Box} from "@mui/material";
+import {Container, Typography, Box, useTheme, useMediaQuery} from "@mui/material";
 import Masonry from '@mui/lab/Masonry';
 import puppaFresh from  "../../public/puppa-fresh/home.jpg";
 import boujeeBowl from "../../public/boujee-bowl/bb-laptop-man.jpg";
@@ -16,21 +16,24 @@ const work = [
         alt: 'Puppa fresh',
         link: '/our-work/puppa-fresh',
         title: 'Puppa Fresh',
-        sub: 'Strategy - Branding - Web Design'
+        sub: 'Strategy - Branding - Web Design',
+        color: 'primary.main'
     },
     {
         image: boujeeBowl,
         alt: 'Boujee Bowl',
         link: '/our-work/boujee-bowl',
         title: 'Boujee Bowl',
-        sub: 'Strategy - Branding - Web Design'
+        sub: 'Strategy - Branding - Web Design',
+        color: 'secondary.main'
     },
     {
         image: tiredGirlsCopyClub,
         alt: 'Tired Girls Copy Club',
         link: '/our-work/tired-girls-copy-club',
         title: 'Tired Girls Copy Club',
-        sub: 'Strategy - Branding - Web Design'
+        sub: 'Strategy - Branding - Web Design',
+        color: 'purple.main'
     }
 ]
 
@@ -44,13 +47,12 @@ const style: SxProps<Theme> = {
         opacity: 1
     },
     '&:hover img': {
-        opacity: 0.7
+        opacity: 0.3
     }
 }
 
 const overlayStyle: SxProps<Theme> = {
     transition: '0.4s',
-    backgroundColor: 'rgba(39, 187, 142, 0.7)',
     position: 'absolute',
     opacity: 0,
     top:'50% ',
@@ -63,30 +65,35 @@ const overlayStyle: SxProps<Theme> = {
     textAlign: 'center'
 }
 
-export const OurWorkGrid = () => (
-    <Masonry columns={2} spacing={3}>
-        {work.map(({image, alt, link, title, sub}, index) => (
-            <Box key={index} sx={style}>
-                <Link href={link} passHref>
-                    <div>
-                        <Image
-                            src={image.src}
-                            alt={alt}
-                            width={image.width}
-                            height={image.height}
-                        />
-                        <Box
-                            className='overlay'
-                            sx={overlayStyle}>
-                            <Typography variant='h4'>{title}</Typography>
-                            <Typography>{sub}</Typography>
+export const OurWorkGrid = () => {
+    const theme = useTheme();
+    const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
+
+    return (
+        <Masonry columns={largerThanSM ? 2 : 1} spacing={3}>
+            {work.map(({image, alt, link, title, sub, color}, index) => (
+                <Box key={index} sx={style}>
+                    <Link href={link} passHref>
+                        <Box bgcolor={color} p={0} height={'calc(100% - 6px)'}>
+                            <Image
+                                src={image.src}
+                                alt={alt}
+                                width={image.width}
+                                height={image.height}
+                            />
+                            <Box
+                                className='overlay'
+                                sx={overlayStyle}>
+                                <Typography variant='h4'>{title}</Typography>
+                                <Typography>{sub}</Typography>
+                            </Box>
                         </Box>
-                    </div>
-                </Link>
-            </Box>
-        ))}
-    </Masonry>
-)
+                    </Link>
+                </Box>
+            ))}
+        </Masonry>
+    )
+}
 
 const OurWork: NextPage = () => {
     return (

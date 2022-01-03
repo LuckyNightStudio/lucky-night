@@ -34,7 +34,7 @@ export const QuizSection = () => {
         return () => {
             setShowConfetti(false)
         }
-    }, [])
+    }, [setShowConfetti])
 
     return (
         <Box component='section' bgcolor='secondary.main' sx={{ backgroundImage: `url('${Pattern.src}')`}} px={4} py={8}>
@@ -64,7 +64,7 @@ export const QuizSection = () => {
                     aria-describedby="modal-modal-description"
                 >
                 <Box>
-                    <Card sx={{ p: 5, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', borderRadius: 5, background: theme.palette.blue.main }}>
+                    <Card sx={{ p: 5, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', borderRadius: 5, background: theme.palette.yellow.main }}>
                         <CardContent>
                             <Typography variant='h4' textAlign='center' mb={3} color='white'>
                                 {quizStates[quizState].title}

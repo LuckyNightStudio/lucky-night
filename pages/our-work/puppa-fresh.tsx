@@ -81,13 +81,12 @@ const PuppaFresh: NextPage = () => {
                     </Box>
                 </Box>
             </Box>
-            <Box sx={{display: 'flex'}}>
+            <Box sx={{display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
                 <Box sx={{flex: 1, m: 2}}>
                     <a href={siteLink} target='_blank' rel="noreferrer">
                         <Image
                             src={image2.src}
                             alt="Puppa fresh brand guide mockup"
-
                             width={image2.width}
                             height={image2.height}
                         />
@@ -157,7 +156,7 @@ const PuppaFresh: NextPage = () => {
                     </Typography>
                 </Box>
             </Box>
-            <Box sx={{display: 'flex'}}>
+            <Box sx={{display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
                 <Box sx={{flex: 1, m: 2}}>
                     <a href={siteLink} target='_blank' rel="noreferrer">
                         <Image
@@ -208,7 +207,7 @@ const PuppaFresh: NextPage = () => {
                 </a>
             </Box>
             <Box m={2}>
-                <Masonry columns={2} spacing={2}>
+                <Masonry columns={largerThanSM ? 2 : 1} spacing={2}>
                     <Box sx={{ width: '50%'}}>
                         <a href={siteLink} target='_blank' rel="noreferrer">
                         <Image
@@ -249,7 +248,7 @@ const PuppaFresh: NextPage = () => {
             </Box>
             <Box sx={{display: 'flex', flexWrap: 'wrap', my: 8}}>
                 {brandImg.map((imgRef, index) => (
-                    <Box key={index} sx={{ width: '50%'}}>
+                    <Box key={index} sx={{ width: largerThanSM ? '50%' : '90%', m: 'auto'}}>
                         <Image
                             src={imgRef.src}
                             alt={`branding image ${index}`}
