@@ -1,6 +1,6 @@
 import {Box, Button, Container, Typography, useMediaQuery, useTheme, Modal, Card, CardContent, CardActions } from "@mui/material";
 import {BookButton, ButtonStyle} from "../BookButton";
-import Pattern from '../../public/pink-pattern.webp'
+import Pattern from '../../public/pattern-green.jpg'
 import {useContext, useEffect, useState} from "react";
 import Link from "next/link";
 import {ConfettiContext} from "../context/ConfettiContext";
@@ -37,7 +37,7 @@ export const QuizSection = () => {
     }, [setShowConfetti])
 
     return (
-        <Box component='section' bgcolor='secondary.main' sx={{ backgroundImage: `url('${Pattern.src}')`}} px={4} py={8}>
+        <Box component='section' bgcolor='secondary.main' sx={{ backgroundImage: `url('${Pattern.src}')`, backgroundSize: '300px 300px'}} px={4} py={8}>
             <Container maxWidth='md'>
                 <Box p={5} sx={{ backgroundColor: 'rgba(255,255,255,0.95)', borderRadius: 8}}>
                     <Typography variant='h4' textAlign='center' mb={2}>
