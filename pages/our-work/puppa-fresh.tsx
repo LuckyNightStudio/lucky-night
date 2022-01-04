@@ -10,7 +10,7 @@ import image7 from "../../public/puppa-fresh/quote.jpg";
 import image8 from "../../public/puppa-fresh/logo.jpg";
 import image9 from "../../public/puppa-fresh/home.jpg";
 import image10 from "../../public/puppa-fresh/services.jpg";
-import image11 from "../../public/puppa-fresh/book an appointment.jpg";
+import image11 from "../../public/puppa-fresh/book-an-appointment.jpg";
 import brandImg1 from "../../public/puppa-fresh/puppa-fresh-brand-1.jpg";
 import brandImg2 from "../../public/puppa-fresh/puppa-fresh-brand-2.jpg";
 import brandImg3 from "../../public/puppa-fresh/puppa-fresh-brand-3.jpg";
@@ -212,7 +212,7 @@ const PuppaFresh: NextPage = () => {
                         <a href={siteLink} target='_blank' rel="noreferrer">
                         <Image
                             src={image9.src}
-                            alt="Puppa Fresh logo"
+                            alt="Puppa Fresh website mockup"
                             width={image9.width}
                             height={image9.height}
                         />
@@ -222,7 +222,7 @@ const PuppaFresh: NextPage = () => {
                         <a href={siteLink} target='_blank' rel="noreferrer">
                         <Image
                             src={image10.src}
-                            alt="Puppa Fresh logo"
+                            alt="Puppa Fresh website mockup2"
                             width={image10.width}
                             height={image10.height}
                         />
@@ -231,7 +231,7 @@ const PuppaFresh: NextPage = () => {
                     <Box sx={{ width: '50%'}}>
                         <Image
                             src={image11.src}
-                            alt="Puppa Fresh logo"
+                            alt="Puppa Fresh website mockup3"
                             width={image11.width}
                             height={image11.height}
                         />

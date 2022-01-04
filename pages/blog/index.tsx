@@ -5,6 +5,22 @@ import {flatMap, uniqBy, xor, intersection } from 'lodash'
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
+import {theme} from "../../utils/theme";
+
+const colors = {
+    green: theme.palette.green.light,
+    purple: theme.palette.purple.main,
+    yellow: theme.palette.yellow.main
+}
+
+export const getColor = (key: string): string => {
+    // @ts-ignore
+    return colors[key]
+}
+
+export const getTitle = (entry: any) => {
+    return entry.title.map(({plain_text}: {plain_text: string}) => plain_text).join('')
+}
 
 const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter()
@@ -20,6 +36,8 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
         setSelectedTags(xor(selectedTags, [name]))
     }
 
+    console.log(posts)
+
     useEffect(() => {
         router.replace({
             pathname: '/blog',
@@ -34,7 +52,7 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
                     <Typography sx={{display: 'inline'}} mr={2} mt={1}>Tags:</Typography>
                     {allTags.map(({name, color}: {name: string, color: string}) => (
                         <Box sx={{
-                            background: color,
+                            background: getColor(color),
                             borderRadius: 8,
                             display:'inline',
                             py: 1,
@@ -51,7 +69,7 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
                         }}
                              key={name}
                              onClick={() => handleClick(name)}>
-                            <Typography sx={{display: 'inline'}}>{name}</Typography>
+                            <Typography sx={{display: 'inline'}} variant='caption'>{name}</Typography>
                         </Box>
                     ))}
                 </Box>
@@ -60,6 +78,7 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
                         <Card sx={{
                             margin: 2,
                             flex: 1,
+                            maxWidth: '50%',
                             minWidth: 300,
                             display: selectedTags.length === 0 || intersection(selectedTags, post.properties.Tags.multi_select.map(({name}) => name)).length > 0 ? 'flex' : 'none',
                             flexDirection: 'column',
@@ -71,15 +90,15 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
                                 alt={post.properties.entry.title[0]?.plain_text}
                             />
                             <CardContent>
-                                <Box sx={{ marginTop: -6, marginBottom: 4 }}>
+                                <Box sx={{ marginBottom: 2, display: 'flex', flexWrap: 'wrap' }}>
                                     {post?.properties?.Tags?.multi_select.map(({name, color}) => (
-                                        <Box sx={{ background: color, borderRadius: 8, display:'inline', py: '3px', px: 1, mr: 1}} key={name}>
+                                        <Box sx={{ background: getColor(color) , borderRadius: 8, display:'inline', py: '3px', px: 1, mr: 1, whiteSpace: 'nowrap', mt: 1}} key={name}>
                                             <Typography variant='caption'>{name}</Typography>
                                         </Box>
                                     ))}
                                 </Box>
                                 <Typography gutterBottom variant="h5" mb={0}>
-                                    {post.properties.entry.title[0]?.plain_text}
+                                    {getTitle(post.properties.entry)}
                                 </Typography>
                                 <Typography gutterBottom variant="caption">
                                     {new Date(post.last_edited_time).toDateString()}
@@ -100,7 +119,7 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
                                             textOverflow: 'ellipsis',
                                             textTransform: 'none'
                                         }}>
-                                        Read {post.properties.entry.title[0]?.plain_text}
+                                        Read {getTitle(post.properties.entry)}
                                         </Typography>
                                     </Button>
                                 </Link>

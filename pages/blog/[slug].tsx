@@ -3,6 +3,7 @@ import Link from 'next/link'
 import {getBlocks, getDatabase, getId, getPage} from "../../lib/notion";
 import {Container, Typography, Box} from "@mui/material";
 import { Text } from "../../components/notionComponents/text";
+import {getColor, getTitle} from "./index";
 
 const renderBlock = (block: any) => {
     const { type, id } = block;
@@ -78,7 +79,7 @@ const renderBlock = (block: any) => {
             )
         case 'callout':
             return (
-                <Box sx={{display: 'flex', bgcolor: 'primary.main', p: 4, color: 'white', my: 4, justifyContent: 'center', alignItems: 'center'}}>
+                <Box sx={{display: 'flex', bgcolor: 'purple.main', p: 4, color: 'white', my: 4, justifyContent: 'center', alignItems: 'center'}}>
                     <Box sx={{mr: 2, fontSize: 25 }}>
                         {value.icon.emoji}
                     </Box>
@@ -94,7 +95,7 @@ const renderBlock = (block: any) => {
 
 
 const Page: NextPage = ({page, blocks}: any) => {
-    const title = page?.properties?.entry?.title[0].plain_text;
+    const title = getTitle(page?.properties?.entry);
     const tags = page?.properties?.Tags?.multi_select;
     const date = page?.last_edited_time && new Date(page.last_edited_time).toDateString();
     return (
@@ -106,11 +107,11 @@ const Page: NextPage = ({page, blocks}: any) => {
                     </Typography>
                     {date && <Typography variant='caption'>{date}</Typography>}
                     {tags && (
-                        <Box sx={{display: 'flex', mt: 2}}>
+                        <Box sx={{display: 'flex', mt: 2, flexWrap: 'wrap'}}>
                             {
                                 tags.map(({name, color}: {name: string, color: string}) => (
                                     <Link href={`/blog?filter=${name}`} passHref key={name}>
-                                        <Box sx={{ background: color, borderRadius: 8, display:'inline', py: '3px', px: 1, mr: 1, cursor: 'pointer'}}>
+                                        <Box sx={{ background: getColor(color), borderRadius: 8, display:'inline', py: '3px', px: 1, mr: 1, mt: 1, cursor: 'pointer'}}>
                                             <Typography variant='caption'>{name}</Typography>
                                         </Box>
                                     </Link>
