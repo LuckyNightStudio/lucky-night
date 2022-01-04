@@ -1,5 +1,6 @@
 import {Container, Box, Typography, useMediaQuery, useTheme, Slide, Modal, keyframes} from "@mui/material";
 import {Logo} from "./Logo";
+import {motion} from "framer-motion";
 import Link from 'next/link'
 import {CSSProperties, useEffect, useState} from "react";
 import {SxProps} from "@mui/system";
@@ -35,6 +36,29 @@ const iconContainerStyle: CSSProperties = {
     position: 'relative'
 }
 
+const list = {
+    visible: {
+        opacity: 1,
+        transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.3,
+        }},
+    hidden: {
+        opacity: 0,
+        transition: {
+            when: "afterChildren",
+        },
+    },
+}
+
+const item = {
+    visible: { opacity: 1, x: 0,
+        transition: {
+            duration: 0.3
+    }},
+    hidden: { opacity: 0, x: 100},
+}
+
 export const LargeNav = ({isFooter = false}: {isFooter?: boolean}) => {
     const theme = useTheme();
     const largerThanLG = useMediaQuery(theme.breakpoints.up('lg'));
@@ -55,21 +79,29 @@ export const LargeNav = ({isFooter = false}: {isFooter?: boolean}) => {
         <Box sx={{display: 'flex', justifyContent: 'flex-end'}} component='nav'>
             <Box sx={{display: 'flex', justifyContent: 'space-between', mr: 4}}>
                 <Box>
-                    <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-                    {pages.map(({title, link, Icon}) => (
-                            <Link href={link} passHref key={title}>
-                                <div style={{cursor: 'pointer', color: pathname.includes(link.replace('#', '')) ? 'white' : 'inherit'}}
-                                     onMouseOver={() => handleMouseOver(title)} onMouseLeave={() => pathname.includes('services') ? {} : setShowDropdown(false)}>
-                                    <div style={iconContainerStyle} >
-                                        {(pathname.includes(link.replace('#', ''))) && (
-                                            <Icon />
-                                        )}
-                                    </div>
-                                    <Typography component='a' variant='subtitle1' p={2}>{title}</Typography>
-                                </div>
-                            </Link>
-                    ))}
-                    </Box>
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={list}
+                    >
+                        <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+                        {pages.map(({title, link, Icon}) => (
+                                <Link href={link} passHref key={title}>
+                                    <motion.div
+                                        style={{cursor: 'pointer', color: pathname.includes(link.replace('#', '')) ? 'white' : 'inherit'}}
+                                        variants={item}
+                                         onMouseOver={() => handleMouseOver(title)} onMouseLeave={() => pathname.includes('services') ? {} : setShowDropdown(false)}>
+                                        <div style={iconContainerStyle} >
+                                            {(pathname.includes(link.replace('#', ''))) && (
+                                                <Icon />
+                                            )}
+                                        </div>
+                                        <Typography component='a' variant='subtitle1' p={2}>{title}</Typography>
+                                    </motion.div>
+                                </Link>
+                        ))}
+                        </Box>
+                    </motion.div>
                     <Box sx={{flex: 1, display: 'flex', mt: 2, mb: -3, height: 28}} onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => pathname.includes('services') ? {} :  setShowDropdown(false)}>
                         {!isFooter && largerThanLG && showDropdown && (subCat?.map(({title, link}) => (
                             <Link href={link} passHref key={title}>
@@ -151,7 +183,7 @@ export const Header = () => {
                     {!largerThanMD && <Box sx={{ flex: 1}}/>}
                     <Box sx={{flex: 2}}>
                         <Link href='/' passHref>
-                            <Box  sx={{ cursor: 'pointer', minWidth: 190, width: largerThanMD ? 190 : '100%' }} mt={1}>
+                            <Box sx={{ cursor: 'pointer', minWidth: 190, width: largerThanMD ? 190 : '100%' }} mt={1}>
                                 <Logo />
                             </Box>
                         </Link>
@@ -193,7 +225,7 @@ const styles = {
 const BookSVGButton = ({isFooter}: {isFooter: boolean}) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     return (
-        <>
+        <motion.div initial={{opacity: 0, y: -80}} animate={{opacity: 1, y: 0, transition: {duration: 0.8}}}>
             <Box sx={styles} onClick={() => setIsModalOpen(true)}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286.723 287.416">
                     <g id="booksvg1">
@@ -208,6 +240,6 @@ const BookSVGButton = ({isFooter}: {isFooter: boolean}) => {
                 </svg>
             </Box>
             <BookingModal isOpen={isModalOpen} setIsOpen={setIsModalOpen}/>
-        </>
+        </motion.div>
     )
 }

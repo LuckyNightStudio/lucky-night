@@ -5,6 +5,7 @@ import * as React from "react";
 import Image from 'next/image'
 import louiseAndNaomi from '../../public/louiseAndNaomi.webp'
 import {Sun, Hearts, Eyes} from "../icons";
+import { motion } from "framer-motion"
 
 const highLightWordStyle: CSSProperties = {
     content: '',
@@ -52,30 +53,49 @@ export const Banner = () => {
                             <Box sx={{width: '50%', position: 'absolute', top: -40, right: 20}}>
                                 <Sun/>
                             </Box>
-                            <Image
-                                src={louiseAndNaomi.src}
-                                alt="Picture of Louise and Naomi"
-                                width={louiseAndNaomi.width}
-                                height={louiseAndNaomi.height}
-                                blurDataURL={louiseAndNaomi.blurDataURL}
-                                placeholder='blur'
-                            />
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{
+                                    opacity: 1,
+                                    transition: {
+                                        duration: 0.8
+                                    }
+                                }}
+                            >
+                                <Image
+                                    src={louiseAndNaomi.src}
+                                    alt="Picture of Louise and Naomi"
+                                    width={louiseAndNaomi.width}
+                                    height={louiseAndNaomi.height}
+                                />
+                            </motion.div>
                             <Box sx={{width: '50%', position: 'absolute', bottom: -25, left: -50}}>
                                 <Hearts/>
                             </Box>
                         </Box>
                     )}
                     <Box flex={2} alignSelf='center' my={4}>
-                        <Typography variant="h3" component="h1">
-                            Strategy-led <span style={{color: theme.palette.red.main }}>branding & web design</span> <span style={{position: 'relative', zIndex: 3}}>for playful
-                            young businesses with </span><span style={{position: 'relative', zIndex: 1}}>immense<span style={highLightWordStyle}/></span> ambitions
-                        </Typography>
-                        <Typography variant='body1' py={4}>
-                            Feel like you spend most of your time on ineffective marketing? Lucky Night Studio
-                            strategically creates delightful brands & websites that captivate & convert your dream
-                            audience so that you can get back to the work you’re most passionate about.
-                        </Typography>
-                        <BookButton color='yellow'/>
+                        <motion.div
+                            initial={{ opacity: 0, x: 80}}
+                            animate={{
+                                opacity: 1,
+                                x: 0,
+                                transition: {
+                                    duration: 0.8
+                                }
+                            }}
+                        >
+                            <Typography variant="h3" component="h1">
+                                Strategy-led <span style={{color: theme.palette.red.main }}>branding & web design</span> <span style={{position: 'relative', zIndex: 3}}>for playful
+                                young businesses with </span><span style={{position: 'relative', zIndex: 1}}>immense<span style={highLightWordStyle}/></span> ambitions
+                            </Typography>
+                            <Typography variant='body1' py={4}>
+                                Feel like you spend most of your time on ineffective marketing? Lucky Night Studio
+                                strategically creates delightful brands & websites that captivate & convert your dream
+                                audience so that you can get back to the work you’re most passionate about.
+                            </Typography>
+                            <BookButton color='yellow'/>
+                        </motion.div>
                     </Box>
                 </Box>
             </Container>
