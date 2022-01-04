@@ -4,6 +4,7 @@ import {BookButton} from "../BookButton";
 import * as React from "react";
 import Image from "next/image";
 import step1 from "../../public/step1.png";
+import {FadeInWhenVisible} from "../FadeIn";
 
 interface Props {
     title: string
@@ -22,6 +23,7 @@ export const Banner = ({title, subtitle, description, price, color, buttonColor,
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Container>
+            <FadeInWhenVisible>
             <Box sx={{ display: 'flex', flexDirection: largerThanMD ? 'row' : 'row-reverse' }} component='section'>
                 {largerThanSM && <Box sx={{ flex: 2, position: 'relative'}}>
                     <Box sx={{
@@ -63,6 +65,7 @@ export const Banner = ({title, subtitle, description, price, color, buttonColor,
                     <BookButton color={buttonColor}/>
                 </Box>
             </Box>
+            </FadeInWhenVisible>
         </Container>
     )
 }

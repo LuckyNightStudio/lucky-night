@@ -4,6 +4,7 @@ import {underlineStyle} from "../homepage/Section2";
 import {BookButton} from "../BookButton";
 import * as React from "react";
 import {theme} from "../../utils/theme";
+import {FadeInWhenVisible} from "../FadeIn";
 
 const brand = [
     'Logo',
@@ -95,7 +96,8 @@ export const PackageIncludes = ({webdesign = false, ecommerce = false, color, pr
                 <Sun />
             </Box>
             <Container>
-                <Box px={4} py={8} component='section'>
+                <FadeInWhenVisible>
+                    <Box px={4} py={8} component='section'>
                     <Typography variant='h4' textAlign='center' mb={5}>
                         This package includes
                     </Typography>
@@ -139,6 +141,7 @@ export const PackageIncludes = ({webdesign = false, ecommerce = false, color, pr
                         <BookButton color='purple' />
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
             </Container>
         </Box>
     )

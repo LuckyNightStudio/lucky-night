@@ -42,7 +42,7 @@ export const FitsSection = ({fits, nots, bgColor = 'primary.light', cardColor = 
     const background = largerThanMD ? `linear-gradient(to bottom, ${cardColor} 130px, rgba(255,255,255,1) 130px, rgba(255,255,255,1) 100%)` : `linear-gradient(to bottom, ${cardColor} 100px, rgba(255,255,255,1) 100px, rgba(255,255,255,1) 100%)`
     return (
         <Box bgcolor={bgColor} px={4} py={8} sx={{ position: 'relative', overflow: 'hidden'}}>
-            <Box sx={{ backgroundImage: `url('${Pattern.src}')`, position: 'absolute', top: 0, left: 0, height: '100%', width: '100%', opacity: 0.3, zIndex: 0}} />
+            <Box sx={{ backgroundImage: `url('${Pattern.src}')`, position: 'absolute', top: 0, left: 0, height: '100%', width: '100%', opacity: 0.3, zIndex: 0, backgroundAttachment: 'fixed'}} />
             <Container maxWidth='md'>
                 <Box sx={{ display: 'flex', zIndex: 1, position: 'relative', flexDirection: largerThanMD ? 'row': 'column' }} component='section'>
                     <Box sx={{...BoxStyle, m: largerThanMD ? 4 : '30px auto', width: largerThanMD ? '50%' : '100%', background}}>
