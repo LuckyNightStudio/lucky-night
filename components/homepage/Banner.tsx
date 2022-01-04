@@ -57,6 +57,8 @@ export const Banner = () => {
                                 alt="Picture of Louise and Naomi"
                                 width={louiseAndNaomi.width}
                                 height={louiseAndNaomi.height}
+                                blurDataURL={louiseAndNaomi.blurDataURL}
+                                placeholder='blur'
                             />
                             <Box sx={{width: '50%', position: 'absolute', bottom: -25, left: -50}}>
                                 <Hearts/>

@@ -8,6 +8,7 @@ import {ButtonStyle} from "../BookButton";
 import Link from "next/link";
 import {useState} from "react";
 import {BookingModal} from "../BookModal";
+import img from "../../public/seo-guide-image.webp";
 
 export const WorkWithUs = () => {
     const theme = useTheme();
@@ -27,6 +28,8 @@ export const WorkWithUs = () => {
                                 alt="Step 1"
                                 width={step1.width}
                                 height={step1.height}
+                                blurDataURL={step1.blurDataURL}
+                                placeholder='blur'
                             />
                         </Box>
                         <Typography variant='body1' fontWeight='500'>Step 1: Book A Discovery Call</Typography>
@@ -39,6 +42,8 @@ export const WorkWithUs = () => {
                                 alt="Step 2"
                                 width={step2.width}
                                 height={step2.height}
+                                blurDataURL={step2.blurDataURL}
+                                placeholder='blur'
                             />
                         </Box>
                         <Typography variant='body1' fontWeight='500'>Step 2: Get Booked In</Typography>
@@ -51,6 +56,8 @@ export const WorkWithUs = () => {
                                 alt="Step 3"
                                 width={step3.width}
                                 height={step3.height}
+                                blurDataURL={step3.blurDataURL}
+                                placeholder='blur'
                             />
                         </Box>
                         <Typography variant='body1' fontWeight='500'>Step 3: Get Started</Typography>

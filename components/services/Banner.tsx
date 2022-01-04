@@ -3,6 +3,7 @@ import {underlineStyle} from "../homepage/Section2";
 import {BookButton} from "../BookButton";
 import * as React from "react";
 import Image from "next/image";
+import step1 from "../../public/step1.png";
 
 interface Props {
     title: string
@@ -35,6 +36,8 @@ export const Banner = ({title, subtitle, description, price, color, buttonColor,
                             alt={title}
                             width={img.width}
                             height={img.height}
+                            blurDataURL={img.blurDataURL}
+                            placeholder='blur'
                         />
                     </Box>
                 </Box>}

@@ -54,6 +54,8 @@ const PuppaFresh: NextPage = () => {
                             alt="Puppa fresh logo"
                             width={image1.width}
                             height={image1.height}
+                            blurDataURL={image1.blurDataURL}
+                            placeholder='blur'
                         />
                     </a>
                 </Box>
@@ -89,6 +91,8 @@ const PuppaFresh: NextPage = () => {
                             alt="Puppa fresh brand guide mockup"
                             width={image2.width}
                             height={image2.height}
+                            blurDataURL={image2.blurDataURL}
+                            placeholder='blur'
                         />
                     </a>
                 </Box>
@@ -99,6 +103,8 @@ const PuppaFresh: NextPage = () => {
                             alt="Puppa fresh Brown Bag"
                             width={image3.width}
                             height={image3.height}
+                            blurDataURL={image3.blurDataURL}
+                            placeholder='blur'
                         />
                     </a>
                 </Box>
@@ -129,6 +135,8 @@ const PuppaFresh: NextPage = () => {
                                 alt="Puppa fresh on shampoo"
                                 width={image4.width}
                                 height={image4.height}
+                                blurDataURL={image4.blurDataURL}
+                                placeholder='blur'
                             />
                         </a>
                     </Box>
@@ -141,6 +149,8 @@ const PuppaFresh: NextPage = () => {
                             alt="Puppa fresh website"
                             width={image5.width}
                             height={image5.height}
+                            blurDataURL={image5.blurDataURL}
+                            placeholder='blur'
                         />
                     </a>
                 </Box>
@@ -164,6 +174,8 @@ const PuppaFresh: NextPage = () => {
                             alt="Puppa fresh website mockup"
                             width={image6.width}
                             height={image6.height}
+                            blurDataURL={image6.blurDataURL}
+                            placeholder='blur'
                         />
                     </a>
                 </Box>
@@ -174,6 +186,8 @@ const PuppaFresh: NextPage = () => {
                             alt="Puppa fresh Quote"
                             width={image7.width}
                             height={image7.height}
+                            blurDataURL={image7.blurDataURL}
+                            placeholder='blur'
                         />
                     </a>
                 </Box>
@@ -186,6 +200,8 @@ const PuppaFresh: NextPage = () => {
                             alt="Step 2"
                             width={step2.width}
                             height={step2.height}
+                            blurDataURL={step2.blurDataURL}
+                            placeholder='blur'
                         />
                     </a>
                 </Box>
@@ -203,6 +219,8 @@ const PuppaFresh: NextPage = () => {
                         alt="Puppa Fresh logo"
                         width={image8.width}
                         height={image8.height}
+                        blurDataURL={image8.blurDataURL}
+                        placeholder='blur'
                     />
                 </a>
             </Box>
@@ -215,6 +233,8 @@ const PuppaFresh: NextPage = () => {
                             alt="Puppa Fresh website mockup"
                             width={image9.width}
                             height={image9.height}
+                            blurDataURL={image9.blurDataURL}
+                            placeholder='blur'
                         />
                         </a>
                     </Box>
@@ -225,6 +245,8 @@ const PuppaFresh: NextPage = () => {
                             alt="Puppa Fresh website mockup2"
                             width={image10.width}
                             height={image10.height}
+                            blurDataURL={image10.blurDataURL}
+                            placeholder='blur'
                         />
                         </a>
                     </Box>
@@ -234,6 +256,8 @@ const PuppaFresh: NextPage = () => {
                             alt="Puppa Fresh website mockup3"
                             width={image11.width}
                             height={image11.height}
+                            blurDataURL={image11.blurDataURL}
+                            placeholder='blur'
                         />
                     </Box>
                 </Masonry>
@@ -254,6 +278,8 @@ const PuppaFresh: NextPage = () => {
                             alt={`branding image ${index}`}
                             width={imgRef.width}
                             height={imgRef.height}
+                            blurDataURL={imgRef.blurDataURL}
+                            placeholder='blur'
                         />
                     </Box>
                 ))}

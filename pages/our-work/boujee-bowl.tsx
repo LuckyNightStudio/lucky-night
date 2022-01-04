@@ -22,6 +22,7 @@ import brandImg3 from "../../public/boujee-bowl/Boujee-bowl-branding-3.jpg";
 import brandImg4 from "../../public/boujee-bowl/Boujee-bowl-branding-4.jpg";
 import brandImg5 from "../../public/boujee-bowl/Boujee-bowl-branding-5.jpg";
 import brandImg6 from "../../public/boujee-bowl/Boujee-bowl-branding-6.jpg";
+import step1 from "../../public/step1.png";
 
 
 const brandImg = [brandImg1, brandImg2, brandImg3, brandImg4, brandImg5, brandImg6]
@@ -42,6 +43,8 @@ const Page: NextPage = () => {
                                 alt="Boujee Bowl logo"
                                 width={image1.width}
                                 height={image1.height}
+                                blurDataURL={image1.blurDataURL}
+                                placeholder='blur'
                             />
                         {/*</a>*/}
                     </Box>
@@ -77,6 +80,8 @@ const Page: NextPage = () => {
                                 alt="Boujee Bowl logo"
                                 width={image2.width}
                                 height={image2.height}
+                                blurDataURL={image2.blurDataURL}
+                                placeholder='blur'
                             />
                         {/*</a>*/}
                     </Box>
@@ -87,6 +92,8 @@ const Page: NextPage = () => {
                                 alt="Boujee Bowl coffee"
                                 width={image3.width}
                                 height={image3.height}
+                                blurDataURL={image3.blurDataURL}
+                                placeholder='blur'
                             />
                         {/*</a>*/}
                     </Box>
@@ -118,6 +125,8 @@ const Page: NextPage = () => {
                                 alt="Boujee Bowl logo pink"
                                 width={image4.width}
                                 height={image4.height}
+                                blurDataURL={image4.blurDataURL}
+                                placeholder='blur'
                             />
                         {/*</a>*/}
                     </Box>
@@ -130,6 +139,8 @@ const Page: NextPage = () => {
                                 alt="Boujee Bowl phone mockup"
                                 width={image5.width}
                                 height={image5.height}
+                                blurDataURL={image5.blurDataURL}
+                                placeholder='blur'
                             />
                         {/*</a>*/}
                     </Box>
@@ -152,6 +163,8 @@ const Page: NextPage = () => {
                                 alt="Boujee Bowl brand guide"
                                 width={image6.width}
                                 height={image6.height}
+                                blurDataURL={image6.blurDataURL}
+                                placeholder='blur'
                             />
                         {/*</a>*/}
                     </Box>
@@ -162,6 +175,8 @@ const Page: NextPage = () => {
                                 alt="Boujee Bowl socials"
                                 width={image7.width}
                                 height={image7.height}
+                                blurDataURL={image7.blurDataURL}
+                                placeholder='blur'
                             />
                         {/*</a>*/}
                     </Box>
@@ -174,6 +189,8 @@ const Page: NextPage = () => {
                                 alt="Step 2"
                                 width={step2.width}
                                 height={step2.height}
+                                blurDataURL={step2.blurDataURL}
+                                placeholder='blur'
                             />
                         {/*</a>*/}
                     </Box>
@@ -191,6 +208,8 @@ const Page: NextPage = () => {
                             alt="Boujee Bowl laptop mockup"
                             width={image8.width}
                             height={image8.height}
+                            blurDataURL={image8.blurDataURL}
+                            placeholder='blur'
                         />
                     {/*</a>*/}
                 </Box>
@@ -201,6 +220,8 @@ const Page: NextPage = () => {
                                 alt="Boujee Bowl web design"
                                 width={image9.width}
                                 height={image9.height}
+                                blurDataURL={image9.blurDataURL}
+                                placeholder='blur'
                             />
                         {/*</a>*/}
                 </Box>
@@ -220,6 +241,8 @@ const Page: NextPage = () => {
                                 alt={`branding image ${index}`}
                                 width={imgRef.width}
                                 height={imgRef.height}
+                                blurDataURL={imgRef.blurDataURL}
+                                placeholder='blur'
                             />
                         </Box>
                     ))}

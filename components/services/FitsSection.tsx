@@ -8,6 +8,7 @@ import Link from "next/link";
 import * as React from "react";
 import {SxProps} from "@mui/system";
 import {Theme} from "@mui/material/styles";
+import step1 from "../../public/step1.png";
 
 const BoxStyle: SxProps<Theme> = {
     border: 'solid 4px',
@@ -67,6 +68,8 @@ export const FitsSection = ({fits, nots, bgColor = 'primary.light', cardColor = 
                                 alt="Step 2"
                                 width={step2.width}
                                 height={step2.height}
+                                blurDataURL={step2.blurDataURL}
+                                placeholder='blur'
                             /> : <Drinks />}
                         </Box>
                         <Typography variant='h6' pb={6} textAlign='center'>

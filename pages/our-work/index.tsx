@@ -80,6 +80,9 @@ export const OurWorkGrid = () => {
                                 alt={alt}
                                 width={image.width}
                                 height={image.height}
+                                blurDataURL={image.blurDataURL}
+                                placeholder='blur'
+
                             />
                             <Box
                                 className='overlay'

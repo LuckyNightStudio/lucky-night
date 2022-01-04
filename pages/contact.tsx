@@ -18,6 +18,7 @@ import {DownloadSection} from "../components/homepage/DownloadSection";
 import img from '../public/louise-and-naomi-img.png'
 import {useContext, useEffect} from "react";
 import {ConfettiContext} from "../components/context/ConfettiContext";
+import step1 from "../public/step1.png";
 
 const Input = styled(TextField)({
     margin: '10px 4px',
@@ -108,6 +109,8 @@ const Contact: NextPage = () => {
                                 alt='Louise And Naomi Picture'
                                 width={img.width}
                                 height={img.height}
+                                blurDataURL={img.blurDataURL}
+                                placeholder='blur'
                             />
                         </Box>
                     </Box>}
@@ -151,6 +154,8 @@ const Contact: NextPage = () => {
                                     alt="Picture of Louise and Naomi"
                                     width={img.width}
                                     height={img.height}
+                                    blurDataURL={img.blurDataURL}
+                                    placeholder='blur'
                                 />
                             </a>
                         </Box>

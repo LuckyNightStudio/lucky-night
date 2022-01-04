@@ -5,6 +5,7 @@ import {underlineStyle} from "./Section2";
 import {Eyes} from "../icons";
 import Image from "next/image";
 import img from '../../public/seo-guide-image.webp'
+import louiseAndNaomiLaughing from "../../public/louiseAndNaomiLaughing.webp";
 
 export const DownloadSection = ({color ='purple.main'}: {color?: string}) => {
     const theme = useTheme();
@@ -19,6 +20,8 @@ export const DownloadSection = ({color ='purple.main'}: {color?: string}) => {
                             alt='Seo guide image'
                             width={img.width}
                             height={img.height}
+                            blurDataURL={img.blurDataURL}
+                            placeholder='blur'
                         />
                     </Box>
                     <Box flex={2}>
