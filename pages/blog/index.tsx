@@ -18,8 +18,8 @@ export const getColor = (key: string): string => {
     return colors[key]
 }
 
-export const getTitle = (entry: any) => {
-    return entry.title.map(({plain_text}: {plain_text: string}) => plain_text).join('')
+export const getTitle = (entry?: any) => {
+    return entry?.title?.map(({plain_text}: {plain_text: string}) => plain_text).join('')
 }
 
 const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>) => {
