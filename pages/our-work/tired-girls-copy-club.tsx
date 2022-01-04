@@ -20,6 +20,7 @@ import brandImg3 from "../../public/tired-girl-copy-girl/branding-pack-3.jpg";
 import brandImg4 from "../../public/tired-girl-copy-girl/branding-pack-4.jpg";
 import brandImg5 from "../../public/tired-girl-copy-girl/branding-pack-5.jpg";
 import brandImg6 from "../../public/tired-girl-copy-girl/branding-pack-6.jpg";
+import {FadeInWhenVisible} from "../../components/FadeIn";
 
 
 const brandImg = [brandImg1, brandImg2, brandImg3, brandImg4, brandImg5, brandImg6]
@@ -30,6 +31,7 @@ const Page: NextPage = () => {
     return (
         <>
             <Container>
+                <FadeInWhenVisible>
                 <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column' }} pt={8}>
                     <Box sx={{flex: 1, px: 2, mb: 4, alignSelf: 'center'}}>
                             <Image
@@ -63,6 +65,8 @@ const Page: NextPage = () => {
                         </Box>
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
                     <Box sx={{flex: 1, m: 2}}>
                             <Image
@@ -85,6 +89,8 @@ const Page: NextPage = () => {
                             />
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column', alignItems: 'center' }} py={4}>
                     <Box sx={{flex: 1, px: 2}} >
                         <Typography fontWeight={600} my={2}>
@@ -116,6 +122,8 @@ const Page: NextPage = () => {
                             />
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{display: 'flex', alignItems: 'center', flexDirection: largerThanSM ? 'row': 'column'}}>
                     <Box sx={{flex: 1, m: 2}}>
                             <Image
@@ -139,6 +147,8 @@ const Page: NextPage = () => {
                         </Typography>
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
                     <Box sx={{flex: 1, m: 2}}>
                             <Image
@@ -161,6 +171,8 @@ const Page: NextPage = () => {
                             />
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{ maxWidth: 'sm', margin: 'auto', my: 6 }}>
                     <Box width={50} margin='auto' pb={2}>
                             <Image
@@ -179,6 +191,8 @@ const Page: NextPage = () => {
                         <BookButton color='purple' />
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{display: 'flex', flexWrap: 'wrap', my: 8}}>
                     {brandImg.map((imgRef, index) => (
                         <Box key={index} sx={{ width: largerThanSM ? '50%' : '90%', m: 'auto'}}>
@@ -193,6 +207,8 @@ const Page: NextPage = () => {
                         </Box>
                     ))}
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{ mx: 'auto', my: 12, maxWidth: 'sm'}}>
                     <Typography textAlign='center'>
                         Want to work with us on a custom brand &/or website design that will captivate & convert your dream audience?                    </Typography>
@@ -200,6 +216,7 @@ const Page: NextPage = () => {
                         <BookButton color='yellow'/>
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
             </Container>
             <DownloadSection color='green.light' />
         </>

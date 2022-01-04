@@ -9,6 +9,7 @@ import Image from "next/image";
 import * as React from "react";
 import {SxProps} from "@mui/system";
 import {Theme} from "@mui/material/styles";
+import {FadeInWhenVisible} from "../../components/FadeIn";
 
 const work = [
     {
@@ -70,31 +71,33 @@ export const OurWorkGrid = () => {
     const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
 
     return (
-        <Masonry columns={largerThanSM ? 2 : 1} spacing={3}>
-            {work.map(({image, alt, link, title, sub, color}, index) => (
-                <Box key={index} sx={style}>
-                    <Link href={link} passHref>
-                        <Box bgcolor={color} p={0} height={'calc(100% - 6px)'}>
-                            <Image
-                                src={image.src}
-                                alt={alt}
-                                width={image.width}
-                                height={image.height}
-                                blurDataURL={image.blurDataURL}
-                                placeholder='blur'
+        <FadeInWhenVisible>
+            <Masonry columns={largerThanSM ? 2 : 1} spacing={3}>
+                {work.map(({image, alt, link, title, sub, color}, index) => (
+                    <Box key={index} sx={style}>
+                        <Link href={link} passHref>
+                            <Box bgcolor={color} p={0} height={'calc(100% - 6px)'}>
+                                <Image
+                                    src={image.src}
+                                    alt={alt}
+                                    width={image.width}
+                                    height={image.height}
+                                    blurDataURL={image.blurDataURL}
+                                    placeholder='blur'
 
-                            />
-                            <Box
-                                className='overlay'
-                                sx={overlayStyle}>
-                                <Typography variant='h4'>{title}</Typography>
-                                <Typography>{sub}</Typography>
+                                />
+                                <Box
+                                    className='overlay'
+                                    sx={overlayStyle}>
+                                    <Typography variant='h4'>{title}</Typography>
+                                    <Typography>{sub}</Typography>
+                                </Box>
                             </Box>
-                        </Box>
-                    </Link>
-                </Box>
-            ))}
-        </Masonry>
+                        </Link>
+                    </Box>
+                ))}
+            </Masonry>
+        </FadeInWhenVisible>
     )
 }
 

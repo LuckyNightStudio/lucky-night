@@ -35,6 +35,7 @@ import {theme} from "../../utils/theme";
 import {BookButton} from "../../components/BookButton";
 import step2 from "../../public/step2.png";
 import {DownloadSection} from "../../components/homepage/DownloadSection";
+import {FadeInWhenVisible} from "../../components/FadeIn";
 
 const siteLink = 'https://puppa-fresh.netlify.app/'
 
@@ -46,6 +47,7 @@ const PuppaFresh: NextPage = () => {
     return (
         <>
         <Container>
+            <FadeInWhenVisible>
             <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column' }} pt={8}>
                 <Box sx={{flex: 1, px: 2, mb: 4, alignSelf: 'center'}}>
                     <a href={siteLink} target='_blank' rel="noreferrer">
@@ -83,6 +85,8 @@ const PuppaFresh: NextPage = () => {
                     </Box>
                 </Box>
             </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <Box sx={{display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
                 <Box sx={{flex: 1, m: 2}}>
                     <a href={siteLink} target='_blank' rel="noreferrer">
@@ -109,6 +113,8 @@ const PuppaFresh: NextPage = () => {
                     </a>
                 </Box>
             </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column', alignItems: 'center' }} py={4}>
                     <Box sx={{flex: 1, px: 2}} >
                         <Typography fontWeight={600} my={2}>
@@ -141,6 +147,8 @@ const PuppaFresh: NextPage = () => {
                         </a>
                     </Box>
                 </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <Box sx={{display: 'flex', alignItems: 'center', flexDirection: largerThanSM ? 'row': 'column'}}>
                 <Box sx={{flex: 1, m: 2}}>
                     <a href={siteLink} target='_blank' rel="noreferrer">
@@ -166,6 +174,8 @@ const PuppaFresh: NextPage = () => {
                     </Typography>
                 </Box>
             </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <Box sx={{display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
                 <Box sx={{flex: 1, m: 2}}>
                     <a href={siteLink} target='_blank' rel="noreferrer">
@@ -192,6 +202,8 @@ const PuppaFresh: NextPage = () => {
                     </a>
                 </Box>
             </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <Box sx={{ maxWidth: 'sm', margin: 'auto', my: 6 }}>
                 <Box width={50} margin='auto' pb={2}>
                     <a href={siteLink} target='_blank' rel="noreferrer">
@@ -212,6 +224,8 @@ const PuppaFresh: NextPage = () => {
                     <BookButton color='secondary' />
                 </Box>
             </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <Box m={4}>
                 <a href={siteLink} target='_blank' rel="noreferrer">
                     <Image
@@ -224,6 +238,8 @@ const PuppaFresh: NextPage = () => {
                     />
                 </a>
             </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <Box m={2}>
                 <Masonry columns={largerThanSM ? 2 : 1} spacing={2}>
                     <Box sx={{ width: '50%'}}>
@@ -262,6 +278,8 @@ const PuppaFresh: NextPage = () => {
                     </Box>
                 </Masonry>
             </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <Box sx={{ maxWidth: 'sm', margin: 'auto', my: 8 }}>
                 <Typography textAlign='center'>
                     Want to work with us on a custom brand &/or website design that will captivate & convert your dream audience?
@@ -270,6 +288,8 @@ const PuppaFresh: NextPage = () => {
                     <BookButton color='secondary' />
                 </Box>
             </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <Box sx={{display: 'flex', flexWrap: 'wrap', my: 8}}>
                 {brandImg.map((imgRef, index) => (
                     <Box key={index} sx={{ width: largerThanSM ? '50%' : '90%', m: 'auto'}}>
@@ -284,6 +304,8 @@ const PuppaFresh: NextPage = () => {
                     </Box>
                 ))}
             </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <Box sx={{ mx: 'auto', my: 12, maxWidth: 'md'}}>
                 <Typography textAlign='center'>
                     Ready to leave ineffective marketing behind? Work with us to create a delightful brand & website to captivate and convert your dream audience. Get back to the work you’re most passionate about!
@@ -292,8 +314,9 @@ const PuppaFresh: NextPage = () => {
                     <BookButton color='yellow'/>
                 </Box>
             </Box>
+            </FadeInWhenVisible>
         </Container>
-    <DownloadSection color='green.light' />
+        <DownloadSection color='green.light' />
     </>
 )
 }

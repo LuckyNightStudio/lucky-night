@@ -19,6 +19,7 @@ import img from '../public/louise-and-naomi-img.png'
 import {useContext, useEffect} from "react";
 import {ConfettiContext} from "../components/context/ConfettiContext";
 import step1 from "../public/step1.png";
+import {FadeInWhenVisible} from "../components/FadeIn";
 
 const Input = styled(TextField)({
     margin: '10px 4px',
@@ -95,6 +96,7 @@ const Contact: NextPage = () => {
     return (
         <>
             <Container component='section'>
+                <FadeInWhenVisible>
                 <Box sx={{ display: 'flex', p: 4, my: 6, flexDirection: largerThanMD ? 'row' : 'row-reverse'}}>
                     {largerThanMD && <Box sx={{ flex: 2, position: 'relative', m: 2}}>
                         <Box sx={{
@@ -138,7 +140,9 @@ const Contact: NextPage = () => {
                         </Box>
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
             </Container>
+            <FadeInWhenVisible>
             <Box component='section'>
                 <Typography textAlign='center' variant='h4' mt={10} mb={3}>
                     <a href="https://www.instagram.com/luckynightstudio/" target="_blank" rel="noreferrer">
@@ -162,7 +166,10 @@ const Contact: NextPage = () => {
                     ))}
                 </Box>
             </Box>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <SignUp />
+            </FadeInWhenVisible>
             <PreviousProjects />
             <DownloadSection color='green.light' />
         </>
@@ -172,7 +179,7 @@ const Contact: NextPage = () => {
 const SignUp = () => {
     const theme = useTheme();
     return (
-        <Box component='section' bgcolor='secondary.main' sx={{ backgroundImage: `url('${Pattern.src}')`, backgroundSize: '300px 300px'}} px={4} py={8}>
+        <Box component='section' bgcolor='secondary.main' sx={{ backgroundImage: `url('${Pattern.src}')`, backgroundSize: '300px 300px', backgroundAttachment: 'fixed'}} px={4} py={8}>
             <Container maxWidth='md'>
                 <Box p={5} sx={{ backgroundColor: 'rgba(255,255,255,0.95)', borderRadius: 8}}>
                     <Typography variant='h4' textAlign='center' mb={2}>

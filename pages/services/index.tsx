@@ -4,14 +4,23 @@ import {QuizSection} from "../../components/homepage/QuizSection";
 import {PreviousProjects} from "../../components/homepage/PreviousProjects";
 import {FinalCTA} from "../../components/homepage/FinalCTA";
 import {DownloadSection} from "../../components/homepage/DownloadSection";
+import {FadeInWhenVisible} from "../../components/FadeIn";
 
-const Home: NextPage = () => {
+const Services: NextPage = () => {
     return (
         <>
-            <WorkWithUs />
+            <FadeInWhenVisible>
+                <WorkWithUs />
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <QuizSection />
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <PreviousProjects />
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
             <DownloadSection />
+            </FadeInWhenVisible>
             <FinalCTA />
         </>
     )
@@ -19,4 +28,4 @@ const Home: NextPage = () => {
 
 
 
-export default Home
+export default Services

@@ -22,7 +22,7 @@ import brandImg3 from "../../public/boujee-bowl/Boujee-bowl-branding-3.jpg";
 import brandImg4 from "../../public/boujee-bowl/Boujee-bowl-branding-4.jpg";
 import brandImg5 from "../../public/boujee-bowl/Boujee-bowl-branding-5.jpg";
 import brandImg6 from "../../public/boujee-bowl/Boujee-bowl-branding-6.jpg";
-import step1 from "../../public/step1.png";
+import {FadeInWhenVisible} from "../../components/FadeIn";
 
 
 const brandImg = [brandImg1, brandImg2, brandImg3, brandImg4, brandImg5, brandImg6]
@@ -35,6 +35,7 @@ const Page: NextPage = () => {
     return (
         <>
             <Container>
+                <FadeInWhenVisible>
                 <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column' }} pt={8}>
                     <Box sx={{flex: 1, px: 2, mb: 4, alignSelf: 'center'}}>
                         {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
@@ -72,6 +73,8 @@ const Page: NextPage = () => {
                         </Box>
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
                     <Box sx={{flex: 1, m: 2}}>
                         {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
@@ -98,6 +101,8 @@ const Page: NextPage = () => {
                         {/*</a>*/}
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column', alignItems: 'center' }} py={4}>
                     <Box sx={{flex: 1, px: 2}} >
                         <Typography fontWeight={600} my={2}>
@@ -131,6 +136,8 @@ const Page: NextPage = () => {
                         {/*</a>*/}
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{display: 'flex', alignItems: 'center', flexDirection: largerThanSM ? 'row': 'column'}}>
                     <Box sx={{flex: 1, m: 2}}>
                         {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
@@ -155,6 +162,8 @@ const Page: NextPage = () => {
                             SEO was set up strong using keywords, image optimisation and solid page mark-up (particularly important for single page sites). The team had training on content creation and were keen to write frequent blogs and new event listings which will set them up for high page authority in no time!                        </Typography>
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
                     <Box sx={{flex: 1, m: 2}}>
                         {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
@@ -181,6 +190,8 @@ const Page: NextPage = () => {
                         {/*</a>*/}
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{ maxWidth: 'sm', margin: 'auto', my: 6 }}>
                     <Box width={50} margin='auto' pb={2}>
                         {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
@@ -201,6 +212,8 @@ const Page: NextPage = () => {
                         <BookButton />
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box m={4}>
                     {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                         <Image
@@ -213,6 +226,8 @@ const Page: NextPage = () => {
                         />
                     {/*</a>*/}
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{my: 4, maxWidth: 800, mx: 'auto' }}>
                         {/*<a href={siteLink} target='_blank' rel="noreferrer">*/}
                             <Image
@@ -225,6 +240,8 @@ const Page: NextPage = () => {
                             />
                         {/*</a>*/}
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{ maxWidth: 'sm', margin: 'auto', my: 8 }}>
                     <Typography textAlign='center'>
                         Want to work with us on a custom brand &/or website design that will captivate & convert your dream audience?
@@ -233,6 +250,8 @@ const Page: NextPage = () => {
                         <BookButton />
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{display: 'flex', flexWrap: 'wrap', my: 8}}>
                     {brandImg.map((imgRef, index) => (
                         <Box key={index} sx={{ width: largerThanSM ? '50%' : '90%', m: 'auto'}}>
@@ -247,6 +266,8 @@ const Page: NextPage = () => {
                         </Box>
                     ))}
                 </Box>
+                </FadeInWhenVisible>
+                <FadeInWhenVisible>
                 <Box sx={{ mx: 'auto', my: 12, maxWidth: 'md'}}>
                     <Typography textAlign='center'>
                         Ready to leave ineffective marketing behind? Work with us to create a delightful brand & website to captivate and convert your dream audience. Get back to the work you’re most passionate about!
@@ -255,6 +276,7 @@ const Page: NextPage = () => {
                         <BookButton color='yellow'/>
                     </Box>
                 </Box>
+                </FadeInWhenVisible>
             </Container>
             <DownloadSection color='green.light' />
         </>
