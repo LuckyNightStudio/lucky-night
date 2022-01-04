@@ -2,9 +2,9 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 import {Container, Typography, Box, useTheme, useMediaQuery} from "@mui/material";
 import Masonry from '@mui/lab/Masonry';
-import puppaFresh from  "../../public/puppa-fresh/home.jpg";
-import boujeeBowl from "../../public/boujee-bowl/bb-laptop-man.jpg";
-import tiredGirlsCopyClub from "../../public/tired-girl-copy-girl/Tired-Girls-Copy-Club-logo-Gold.jpg";
+import puppaFresh from  "../../public/puppa-fresh/home.webp";
+import boujeeBowl from "../../public/boujee-bowl/bb-laptop-man.webp";
+import tiredGirlsCopyClub from "../../public/tired-girl-copy-girl/Tired-Girls-Copy-Club-logo-Gold.webp";
 import Image from "next/image";
 import * as React from "react";
 import {SxProps} from "@mui/system";

@@ -8,7 +8,7 @@ import image5 from "../../public/puppa-fresh/desktop-site-mockup.jpg";
 import image6 from "../../public/puppa-fresh/web-pages-mockup.jpg";
 import image7 from "../../public/puppa-fresh/quote.jpg";
 import image8 from "../../public/puppa-fresh/logo.jpg";
-import image9 from "../../public/puppa-fresh/home.jpg";
+import image9 from "../../public/puppa-fresh/home.webp";
 import image10 from "../../public/puppa-fresh/services.jpg";
 import image11 from "../../public/puppa-fresh/book-an-appointment.jpg";
 import brandImg1 from "../../public/puppa-fresh/puppa-fresh-brand-1.jpg";

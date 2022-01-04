@@ -15,6 +15,7 @@ export const Layout = ({ children }: {children: JSX.Element}) => {
         <ThemeProvider theme={theme}>
             <Head>
                 <title>Lucky Night Studio</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta name="description" content="Strategy-led branding & web design for playful young businesses with immense ambitions" />
                 <meta name="p:domain_verify" content="701955f314f687328349d8e2b6719dcf"/>
                 <link rel="icon" href="/favicon.ico" />

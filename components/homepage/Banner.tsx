@@ -3,7 +3,7 @@ import {BookButton} from "../BookButton";
 import {CSSProperties} from "react";
 import * as React from "react";
 import Image from 'next/image'
-import louiseAndNaomi from '../../public/louiseAndNaomi.png'
+import louiseAndNaomi from '../../public/louiseAndNaomi.webp'
 import {Sun, Hearts, Eyes} from "../icons";
 
 const highLightWordStyle: CSSProperties = {

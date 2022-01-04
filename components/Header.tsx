@@ -145,22 +145,20 @@ export const Header = () => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     return (
-        <Box bgcolor='secondary.main' p={0} m={0}>
-            <header>
-                <Container>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 4}}>
-                        {!largerThanMD && <Box sx={{ flex: 1}}/>}
-                        <Box sx={{flex: 2}}>
-                            <Link href='/' passHref>
-                                <Box  sx={{ cursor: 'pointer', minWidth: 190, width: largerThanMD ? 190 : '100%' }} mt={1}>
-                                    <Logo />
-                                </Box>
-                            </Link>
-                        </Box>
-                        {largerThanMD ? <LargeNav /> : <SmallNav />}
+        <Box bgcolor='secondary.main' p={0} m={0} component='header'>
+            <Container>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 4}}>
+                    {!largerThanMD && <Box sx={{ flex: 1}}/>}
+                    <Box sx={{flex: 2}}>
+                        <Link href='/' passHref>
+                            <Box  sx={{ cursor: 'pointer', minWidth: 190, width: largerThanMD ? 190 : '100%' }} mt={1}>
+                                <Logo />
+                            </Box>
+                        </Link>
                     </Box>
-                </Container>
-            </header>
+                    {largerThanMD ? <LargeNav /> : <SmallNav />}
+                </Box>
+            </Container>
         </Box>
     )
 }

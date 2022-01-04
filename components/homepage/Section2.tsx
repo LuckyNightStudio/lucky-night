@@ -1,6 +1,6 @@
 import {Box, Button, Container, Typography, useMediaQuery, useTheme} from "@mui/material";
 import {BookButton, ButtonStyle} from "../BookButton";
-import louiseAndNaomiLaughing from '../../public/louiseAndNaomiLaughing.png'
+import louiseAndNaomiLaughing from '../../public/louiseAndNaomiLaughing.webp'
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";

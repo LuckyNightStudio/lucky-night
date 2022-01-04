@@ -7,7 +7,7 @@ import image4 from "../../public/boujee-bowl/pink-bb-logo-mockup.jpg";
 import image5 from "../../public/boujee-bowl/Boujee-Bowl-web-mockup.jpg";
 import image6 from "../../public/boujee-bowl/Boujee-bowl-brand-guide.jpg";
 import image7 from "../../public/boujee-bowl/socials-group.jpg";
-import image8 from "../../public/boujee-bowl/bb-laptop-man.jpg";
+import image8 from "../../public/boujee-bowl/bb-laptop-man.webp";
 import image9 from "../../public/boujee-bowl/Boujee-Bowl-web-design.jpg";
 import Image from "next/image";
 import * as React from "react";

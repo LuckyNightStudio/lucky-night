@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import {Container, Box, Typography, useMediaQuery} from "@mui/material";
 import Image from "next/image";
-import image1 from "../../public/tired-girl-copy-girl/Tired-Girls-Copy-Club-logo-Gold.jpg";
+import image1 from "../../public/tired-girl-copy-girl/Tired-Girls-Copy-Club-logo-Gold.webp";
 import image2 from "../../public/tired-girl-copy-girl/Instagram-Post-Mockup.jpg";
 import image3 from "../../public/tired-girl-copy-girl/TGCC-brand-guide.jpg";
 import image4 from "../../public/tired-girl-copy-girl/TGCC-poster.jpg";
