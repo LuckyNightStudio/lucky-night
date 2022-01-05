@@ -33,9 +33,9 @@ import * as React from "react";
 import {underlineStyle} from "../../components/homepage/Section2";
 import {theme} from "../../utils/theme";
 import {BookButton} from "../../components/BookButton";
-import step2 from "../../public/step2.png";
 import {DownloadSection} from "../../components/homepage/DownloadSection";
 import {FadeInWhenVisible} from "../../components/FadeIn";
+import {Hands2} from "../../components/icons";
 
 const siteLink = 'https://puppa-fresh.netlify.app/'
 
@@ -206,16 +206,7 @@ const PuppaFresh: NextPage = () => {
             <FadeInWhenVisible>
             <Box sx={{ maxWidth: 'sm', margin: 'auto', my: 6 }}>
                 <Box width={50} margin='auto' pb={2}>
-                    <a href={siteLink} target='_blank' rel="noreferrer">
-                        <Image
-                            src={step2.src}
-                            alt="Step 2"
-                            width={step2.width}
-                            height={step2.height}
-                            blurDataURL={step2.blurDataURL}
-                            placeholder='blur'
-                        />
-                    </a>
+                    <Hands2 />
                 </Box>
                 <Typography textAlign='center'>
                     Want to work with us on a custom brand &/or website design that will captivate & convert your dream audience?

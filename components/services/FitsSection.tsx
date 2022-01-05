@@ -1,14 +1,11 @@
 import {Box, Button, Container, Typography, useMediaQuery, useTheme} from "@mui/material";
 import Pattern from "../../public/luckypatternwhite.png";
-import {Drinks, Eyes} from "../icons";
+import {Drinks, Eyes, Hands2} from "../icons";
 import {BookButton, ButtonStyle} from "../BookButton";
-import Image from "next/image";
-import step2 from "../../public/step2.png";
 import Link from "next/link";
 import * as React from "react";
 import {SxProps} from "@mui/system";
 import {Theme} from "@mui/material/styles";
-import step1 from "../../public/step1.png";
 
 const BoxStyle: SxProps<Theme> = {
     border: 'solid 4px',
@@ -63,14 +60,7 @@ export const FitsSection = ({fits, nots, bgColor = 'primary.light', cardColor = 
                     </Box>
                     <Box sx={{...BoxStyle, m: largerThanMD ? 4 : '30px auto', width: largerThanMD ? '50%' : '100%', background}}>
                         <Box sx={{width: handsIcon ? 140 : 200, position: 'absolute', bottom: handsIcon ? -20 : -60, right: handsIcon ? -110 : -150 }}>
-                            {handsIcon ? <Image
-                                src={step2.src}
-                                alt="Step 2"
-                                width={step2.width}
-                                height={step2.height}
-                                blurDataURL={step2.blurDataURL}
-                                placeholder='blur'
-                            /> : <Drinks />}
+                            {handsIcon ? <Hands2 /> : <Drinks />}
                         </Box>
                         <Typography variant='h6' pb={6} textAlign='center'>
                             This package may not be for you if:

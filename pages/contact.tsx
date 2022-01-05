@@ -18,7 +18,6 @@ import {DownloadSection} from "../components/homepage/DownloadSection";
 import img from '../public/louise-and-naomi-img.png'
 import {useContext, useEffect} from "react";
 import {ConfettiContext} from "../components/context/ConfettiContext";
-import step1 from "../public/step1.png";
 import {FadeInWhenVisible} from "../components/FadeIn";
 
 const Input = styled(TextField)({

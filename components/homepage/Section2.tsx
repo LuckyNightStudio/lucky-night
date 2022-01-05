@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import {Sun, GreenSun} from "../icons";
-import louiseAndNaomi from "../../public/louiseAndNaomi.webp";
 
 export const underlineStyle = { width: '100%', height: 10, marginTop: '-10px', display: 'block', background: 'white '}
 
@@ -29,8 +28,6 @@ export const Section2 = () => {
                                 alt="Picture of Louise and Naomi"
                                 width={louiseAndNaomiLaughing.width}
                                 height={louiseAndNaomiLaughing.height}
-                                blurDataURL={louiseAndNaomiLaughing.blurDataURL}
-                                placeholder='blur'
                             />
                         </Box>
                         <Typography variant="h6" component="p" width='max-content' mb={3} mt={2}>

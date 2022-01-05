@@ -12,7 +12,6 @@ import * as React from "react";
 import {underlineStyle} from "../../components/homepage/Section2";
 import {theme} from "../../utils/theme";
 import {BookButton} from "../../components/BookButton";
-import step2 from "../../public/step2.png";
 import {DownloadSection} from "../../components/homepage/DownloadSection";
 import brandImg1 from "../../public/tired-girl-copy-girl/branding-pack-1.jpg";
 import brandImg2 from "../../public/tired-girl-copy-girl/branding-pack-2.jpg";
@@ -21,6 +20,7 @@ import brandImg4 from "../../public/tired-girl-copy-girl/branding-pack-4.jpg";
 import brandImg5 from "../../public/tired-girl-copy-girl/branding-pack-5.jpg";
 import brandImg6 from "../../public/tired-girl-copy-girl/branding-pack-6.jpg";
 import {FadeInWhenVisible} from "../../components/FadeIn";
+import {Hands2} from "../../components/icons";
 
 
 const brandImg = [brandImg1, brandImg2, brandImg3, brandImg4, brandImg5, brandImg6]
@@ -175,14 +175,7 @@ const Page: NextPage = () => {
                 <FadeInWhenVisible>
                 <Box sx={{ maxWidth: 'sm', margin: 'auto', my: 6 }}>
                     <Box width={50} margin='auto' pb={2}>
-                            <Image
-                                src={step2.src}
-                                alt="Step 2"
-                                width={step2.width}
-                                height={step2.height}
-                                blurDataURL={step2.blurDataURL}
-                                placeholder='blur'
-                            />
+                        <Hands2 />
                     </Box>
                     <Typography textAlign='center'>
                         Want to work with us on a custom brand &/or website design that will captivate & convert your dream audience?

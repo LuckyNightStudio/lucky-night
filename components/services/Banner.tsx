@@ -3,7 +3,6 @@ import {underlineStyle} from "../homepage/Section2";
 import {BookButton} from "../BookButton";
 import * as React from "react";
 import Image from "next/image";
-import step1 from "../../public/step1.png";
 import {FadeInWhenVisible} from "../FadeIn";
 
 interface Props {

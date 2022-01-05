@@ -1,14 +1,10 @@
 import {Container, Typography, Box, Button, useTheme, useMediaQuery} from "@mui/material";
-import step1 from "../../public/step1.png";
-import step3 from "../../public/step3.png";
-import step2 from "../../public/step2.png";
-import Image from "next/image";
 import * as React from "react";
 import {ButtonStyle} from "../BookButton";
 import Link from "next/link";
 import {useState} from "react";
 import {BookingModal} from "../BookModal";
-import img from "../../public/seo-guide-image.webp";
+import {Hands3, Hands1, Hands2} from "../icons";
 
 export const WorkWithUs = () => {
     const theme = useTheme();
@@ -23,42 +19,21 @@ export const WorkWithUs = () => {
                 <Box display='flex' justifyContent='space-between' alignItems='center' flexWrap='wrap'>
                     <Box textAlign='center' p={4} flex={1} sx={{minWidth: '300px'}}>
                         <Box width={60} margin='auto' pb={2}>
-                            <Image
-                                src={step1.src}
-                                alt="Step 1"
-                                width={step1.width}
-                                height={step1.height}
-                                blurDataURL={step1.blurDataURL}
-                                placeholder='blur'
-                            />
+                            <Hands1 />
                         </Box>
                         <Typography variant='body1' fontWeight='500'>Step 1: Book A Discovery Call</Typography>
                         <Typography variant='body1'>Get to grips with which service is right for you and we’ll make sure we’re a perfect fit so your project runs smoothly throughout</Typography>
                     </Box>
                     <Box textAlign='center' p={4} flex={1} sx={{minWidth: '300px'}}>
                         <Box width={60} margin='auto' pb={2}>
-                            <Image
-                                src={step2.src}
-                                alt="Step 2"
-                                width={step2.width}
-                                height={step2.height}
-                                blurDataURL={step2.blurDataURL}
-                                placeholder='blur'
-                            />
+                            <Hands2 />
                         </Box>
                         <Typography variant='body1' fontWeight='500'>Step 2: Get Booked In</Typography>
                         <Typography variant='body1'>We’ll discuss the right time to get started and from there you’ll have a  target completion date & payment schedule for effortless planning</Typography>
                     </Box>
                     <Box textAlign='center' p={4} flex={1} sx={{minWidth: '300px'}}>
                         <Box width={60} margin='auto' pb={2}>
-                            <Image
-                                src={step3.src}
-                                alt="Step 3"
-                                width={step3.width}
-                                height={step3.height}
-                                blurDataURL={step3.blurDataURL}
-                                placeholder='blur'
-                            />
+                            <Hands3 />
                         </Box>
                         <Typography variant='body1' fontWeight='500'>Step 3: Get Started</Typography>
                         <Typography variant='body1'>We’ll learn everything about your business and then create exciting branding & web design that will captivate & convert your audience</Typography>

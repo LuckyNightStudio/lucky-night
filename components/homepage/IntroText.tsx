@@ -1,8 +1,6 @@
 import {Container, Box, Typography, useTheme, useMediaQuery} from "@mui/material";
-import {theme} from "../../utils/theme";
 import {BookButton} from "../BookButton";
 import {Drinks, Laptop} from "../icons";
-
 
 export const IntroText = () => {
     const theme = useTheme();
