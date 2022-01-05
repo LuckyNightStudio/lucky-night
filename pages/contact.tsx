@@ -12,7 +12,7 @@ import image4 from "../public/insta/257842264_1017110856544216_18311526852125892
 import image3 from "../public/insta/261265494_950049152261409_227492296801417435_n.jpg";
 import image5 from "../public/insta/262400205_9276323459627072_2187892821914597133_n.jpg";
 import image6 from "../public/insta/259147053_1244781899349668_5266051204009672799_n.jpg";
-import Pattern from "../public/pattern-green.jpg";
+import Pattern from "../public/pattern-green.webp";
 import {PreviousProjects} from "../components/homepage/PreviousProjects";
 import {DownloadSection} from "../components/homepage/DownloadSection";
 import img from '../public/louise-and-naomi-img.png'

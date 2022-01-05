@@ -1,5 +1,5 @@
 import {Box, Button, Container, Typography, useMediaQuery, useTheme} from "@mui/material";
-import Pattern from "../../public/luckypatternwhite.png";
+import Pattern from "../../public/luckypatternwhite.webp";
 import {Drinks, Eyes, Hands2} from "../icons";
 import {BookButton, ButtonStyle} from "../BookButton";
 import Link from "next/link";

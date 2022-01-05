@@ -1,6 +1,6 @@
 import {Box, Button, Container, Typography, useMediaQuery, useTheme, Modal, Card, CardContent, CardActions } from "@mui/material";
 import {BookButton, ButtonStyle} from "../BookButton";
-import Pattern from '../../public/pattern-green.jpg'
+import Pattern from '../../public/pattern-green.webp'
 import {useContext, useEffect, useState} from "react";
 import Link from "next/link";
 import {ConfettiContext} from "../context/ConfettiContext";
