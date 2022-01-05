@@ -3,12 +3,16 @@ import Link from 'next/link'
 import {getBlocks, getDatabase, getId, getPage} from "../../lib/notion";
 import {Container, Typography, Box} from "@mui/material";
 import { Text } from "../../components/notionComponents/text";
-import {getColor, getTitle} from "./index";
+import { getColor, getTitle} from "./index";
+
+export const generateGoogleImg = (url: string) => {
+    const id = url.replace('https://drive.google.com/file/d/', '').split('/')[0]
+    return `https://drive.google.com/uc?export=view&id=${id}`
+}
 
 const renderBlock = (block: any) => {
     const { type, id } = block;
     const value = block[type];
-
     switch (type) {
         case "paragraph":
             return (
@@ -55,14 +59,13 @@ const renderBlock = (block: any) => {
             );
         case "child_page":
             return <Text text={value.title} variant='h1'/>
-        case "image":
-            const src =
-                value.type === "external" ? value.external.url : value.file.url;
+        case "file":
+            const src =  value.external.url
             const caption = value.caption?.[0]?.plain_text ?? "";
             return (
                 <Box sx={{maxWidth: '80%', margin: '40px auto'}}>
                     <figure>
-                        <img src={src} alt={caption} style={{ maxWidth: '100%' }}/>
+                        <img src={generateGoogleImg(src)} alt={caption} style={{ maxWidth: '100%' }}/>
                         {caption && <figcaption>{caption}</figcaption>}
                     </figure>
                 </Box>
@@ -87,6 +90,7 @@ const renderBlock = (block: any) => {
                 </Box>
             )
         default:
+            console.log(value)
             return `❌ Unsupported block (${
                 type === "unsupported" ? "unsupported by Notion API" : type
             })`;

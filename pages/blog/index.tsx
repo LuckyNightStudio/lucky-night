@@ -36,8 +36,6 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
         setSelectedTags(xor(selectedTags, [name]))
     }
 
-    console.log(posts)
-
     useEffect(() => {
         router.replace({
             pathname: '/blog',
@@ -86,7 +84,7 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
                             <CardMedia
                                 component="img"
                                 height="200"
-                                image={post.properties.image.files[0]?.file.url}
+                                image={post.image}
                                 alt={post.properties.entry.title[0]?.plain_text}
                             />
                             <CardContent>
@@ -145,13 +143,13 @@ interface Post {
                 plain_text: string
             }[]
         },
-        image: {
-            files: {
-                file: {
-                    url: string
-                }
-            }[]
-        }
+        // image: {
+        //     files: {
+        //         file: {
+        //             url: string
+        //         }
+        //     }[]
+        // }
         summary: {
             rich_text: {
                 plain_text: string
@@ -168,17 +166,30 @@ interface Post {
             }[]
         }
     },
+    image: string,
     last_edited_time: Date,
     id: string
+}
+
+export const generateGoogleImg = (url: string) => {
+    const id = url.replace('https://drive.google.com/file/d/', '').split('/')[0]
+    return `https://drive.google.com/uc?export=view&id=${id}`
 }
 
 export const databaseId = process.env.NOTION_DATABASE_ID
 export const getStaticProps: GetStaticProps = async () => {
     const database = await getDatabase(databaseId);
 
+    const posts = database.map((post: any) => (
+        {
+            ...post,
+            image: generateGoogleImg(post?.properties?.image.files[0].name)
+        }
+    )).filter((post: any) => post?.properties.status.select.name === 'published')
+
     return {
         props: {
-            posts: database?.filter((post: any) => post?.properties.status.select.name === 'published'),
+            posts,
         }
     };
 };
