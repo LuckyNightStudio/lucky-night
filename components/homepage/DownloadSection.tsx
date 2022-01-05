@@ -32,7 +32,7 @@ export const DownloadSection = ({color ='purple.main'}: {color?: string}) => {
                             Discover how to get more eyes on your content and more potential customers visiting your website with an improved search engine ranking. Learn what Google are really looking for in order to rank your web content, as well as simple actionable steps on how to put the tips into place. This guide is guaranteed to give you some clarity and purpose when it comes to your website and digital marketing efforts.                        </Typography>
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
                             <Box>
-                                <a href='https://mailchi.mp/f2ca6a15298b/freeseochecklist-luckynightstudio' target='_blank'>
+                                <a href='https://mailchi.mp/f2ca6a15298b/freeseochecklist-luckynightstudio' target='_blank' rel="noreferrer">
                                     <Button variant='contained' sx={{...ButtonStyle, backgroundColor: 'white', color: 'black', mb: 4 }}>
                                         Download Now
                                     </Button>
