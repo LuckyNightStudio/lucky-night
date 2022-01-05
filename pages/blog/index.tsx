@@ -76,7 +76,6 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
                         <Card sx={{
                             margin: 2,
                             flex: 1,
-                            maxWidth: '50%',
                             minWidth: 300,
                             display: selectedTags.length === 0 || intersection(selectedTags, post.properties.Tags.multi_select.map(({name}) => name)).length > 0 ? 'flex' : 'none',
                             flexDirection: 'column',
