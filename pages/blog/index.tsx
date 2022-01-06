@@ -6,6 +6,7 @@ import Link from "next/link";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import {theme} from "../../utils/theme";
+import { isSafari } from 'react-device-detect';
 
 const colors = {
     green: theme.palette.green.light,
@@ -76,18 +77,20 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
                         <Card sx={{
                             margin: 2,
                             flex: 1,
+                            maxWidth: '50%',
                             minWidth: 300,
                             display: selectedTags.length === 0 || intersection(selectedTags, post.properties.Tags.multi_select.map(({name}) => name)).length > 0 ? 'flex' : 'none',
                             flexDirection: 'column',
                         }} key={post.id}>
-                            <CardMedia
+                            {!isSafari && <CardMedia
+                                src='image'
                                 component="img"
                                 height="200"
                                 image={post.image}
                                 alt={post.properties.entry.title[0]?.plain_text}
-                            />
+                            />}
                             <CardContent>
-                                <Box sx={{ marginBottom: 2, display: 'flex', flexWrap: 'wrap' }}>
+                                    <Box sx={{ marginBottom: 2, display: 'flex', flexWrap: 'wrap' }}>
                                     {post?.properties?.Tags?.multi_select.map(({name, color}) => (
                                         <Box sx={{ background: getColor(color) , borderRadius: 8, display:'inline', py: '3px', px: 1, mr: 1, whiteSpace: 'nowrap', mt: 1}} key={name}>
                                             <Typography variant='caption'>{name}</Typography>
