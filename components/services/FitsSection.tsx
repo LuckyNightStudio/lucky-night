@@ -36,7 +36,8 @@ interface Props {
 export const FitsSection = ({fits, nots, bgColor = 'primary.light', cardColor = 'rgba(246,159,185,1)', buttonColor ='yellow', handsIcon = true }: Props) => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
-    const background = largerThanMD ? `linear-gradient(to bottom, ${cardColor} 130px, rgba(255,255,255,1) 130px, rgba(255,255,255,1) 100%)` : `linear-gradient(to bottom, ${cardColor} 100px, rgba(255,255,255,1) 100px, rgba(255,255,255,1) 100%)`
+    const backgroundSize = '22%'
+    const background =`linear-gradient(to bottom, ${cardColor} ${backgroundSize}, rgba(255,255,255,1) ${backgroundSize}, rgba(255,255,255,1) 100%)`
     return (
         <Box bgcolor={bgColor} px={4} py={8} sx={{ position: 'relative', overflow: 'hidden'}}>
             <Box sx={{ backgroundImage: `url('${Pattern.src}')`, position: 'absolute', top: 0, left: 0, height: '100%', width: '100%', opacity: 0.3, zIndex: 0, backgroundAttachment: 'fixed'}} />
