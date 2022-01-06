@@ -108,7 +108,7 @@ const eyeStyles: any = {
 
 export const Eyes = () => {
     return (
-        <Box sx={eyeStyles}>
+        <Box>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.049 112.784">
             <g>
                 <path d="M13.768,51.419a32.721,32.721,0,1,0,37.865-26.6,32.721,32.721,0,0,0-37.865,26.6" fill="#fff"/>
