@@ -10,6 +10,7 @@ import * as React from "react";
 import {SxProps} from "@mui/system";
 import {Theme} from "@mui/material/styles";
 import {FadeInWhenVisible} from "../../components/FadeIn";
+import {NextSeo} from "next-seo";
 
 const work = [
     {
@@ -104,6 +105,10 @@ export const OurWorkGrid = () => {
 const OurWork: NextPage = () => {
     return (
         <Container>
+            <NextSeo
+                title="Previous work - Lucky Night Studio"
+                description="Some example of our previous work, providing full brand strategy and visual design experience to give you all the tools to grow your business in your ideal market."
+            />
             <Box p={4} my={6}>
                 <Typography variant='h3' textAlign='center'>Some of our previous projects</Typography>
             </Box>

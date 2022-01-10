@@ -11,9 +11,9 @@ import {useRouter} from "next/router";
 import {BookingModal} from "./BookModal";
 
 const subCat = [
-    {title: 'Personal Business', link: '/services/personal-business'},
-    {title: 'Service Business', link: '/services/service-business'},
-    {title: 'E-Commerce Business', link: '/services/ecommerce-business'}
+    {title: 'Visuals', link: '/services/visuals'},
+    {title: 'Visuals & Web', link: '/services/visuals-and-web'},
+    {title: 'Visuals & Commerce', link: '/services/visuals-and-commerce'}
 ]
 
 const pages = [
@@ -106,15 +106,15 @@ export const LargeNav = ({isFooter = false}: {isFooter?: boolean}) => {
                         {!isFooter && largerThanLG && showDropdown && (subCat?.map(({title, link}) => (
                             <Link href={link} passHref key={title}>
                                 <div style={{
-                                    cursor: pathname.includes(link.replace('#', '')) ? 'default' : 'pointer',
-                                    pointerEvents: pathname.includes(link.replace('#', '')) ? 'none' : 'auto',
+                                    cursor: pathname ===link ? 'default' : 'pointer',
+                                    pointerEvents: pathname == link ? 'none' : 'auto',
                                     background: theme.palette.purple.main,
                                     height: 36,
                                     paddingTop: 5,
                                     whiteSpace: 'nowrap'
                                 }}>
                                     <Typography component='a' variant='subtitle1' sx={{
-                                        color: pathname.includes(link) ? theme.palette.red.main : 'inherit',
+                                        color: pathname === link ? theme.palette.red.main : 'inherit',
                                         p: 2
                                     }}>
                                         {title}
@@ -176,6 +176,7 @@ const SmallNav = () => {
 export const Header = () => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
+    const smallerThanMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <Box bgcolor='secondary.main' p={0} m={0} component='header'>
             <Container>
@@ -188,7 +189,8 @@ export const Header = () => {
                             </Box>
                         </Link>
                     </Box>
-                    {largerThanMD ? <LargeNav /> : <SmallNav />}
+                    {largerThanMD && <LargeNav />}
+                    {smallerThanMD && <SmallNav />}
                 </Box>
             </Container>
         </Box>

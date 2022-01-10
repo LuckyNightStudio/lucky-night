@@ -23,6 +23,7 @@ import brandImg5 from "../../public/boujee-bowl/Boujee-bowl-branding-5.jpg";
 import brandImg6 from "../../public/boujee-bowl/Boujee-bowl-branding-6.jpg";
 import {FadeInWhenVisible} from "../../components/FadeIn";
 import {Hands2} from "../../components/icons";
+import {NextSeo} from "next-seo";
 
 
 const brandImg = [brandImg1, brandImg2, brandImg3, brandImg4, brandImg5, brandImg6]
@@ -34,6 +35,10 @@ const Page: NextPage = () => {
 
     return (
         <>
+            <NextSeo
+                title="Previous work - Boujee bowl"
+                description="An example of previous work with Boujee bowl for Strategy, Branding and Web Design"
+            />
             <Container>
                 <FadeInWhenVisible>
                 <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column' }} pt={8}>

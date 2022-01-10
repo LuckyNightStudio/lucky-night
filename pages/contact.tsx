@@ -19,6 +19,7 @@ import img from '../public/louise-and-naomi-img.png'
 import {useContext, useEffect} from "react";
 import {ConfettiContext} from "../components/context/ConfettiContext";
 import {FadeInWhenVisible} from "../components/FadeIn";
+import {NextSeo} from "next-seo";
 
 const Input = styled(TextField)({
     margin: '10px 4px',
@@ -95,6 +96,10 @@ const Contact: NextPage = () => {
     return (
         <>
             <Container component='section'>
+                <NextSeo
+                    title="Contact us at Lucky Night Studio"
+                    description="Get in touch to book a free consultation to improve your Brand or Website"
+                />
                 <FadeInWhenVisible>
                 <Box sx={{ display: 'flex', p: 4, my: 6, flexDirection: largerThanMD ? 'row' : 'row-reverse'}}>
                     {largerThanMD && <Box sx={{ flex: 2, position: 'relative', m: 2}}>

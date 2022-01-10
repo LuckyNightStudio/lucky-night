@@ -7,6 +7,8 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import {theme} from "../../utils/theme";
 import { isSafari } from 'react-device-detect';
+import {NextSeo} from "next-seo";
+import * as React from "react";
 
 const colors = {
     green: theme.palette.green.light,
@@ -46,6 +48,9 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
 
     return (
         <Container>
+            <NextSeo
+                title="Blog - Lucky Night Studio"
+            />
             <Box p={4}>
                 <Box mt={4} mx={2} sx={{display: 'flex', flexWrap: 'wrap'}}>
                     <Typography sx={{display: 'inline'}} mr={2} mt={1}>Tags:</Typography>

@@ -21,6 +21,7 @@ import brandImg5 from "../../public/tired-girl-copy-girl/branding-pack-5.jpg";
 import brandImg6 from "../../public/tired-girl-copy-girl/branding-pack-6.jpg";
 import {FadeInWhenVisible} from "../../components/FadeIn";
 import {Hands2} from "../../components/icons";
+import {NextSeo} from "next-seo";
 
 
 const brandImg = [brandImg1, brandImg2, brandImg3, brandImg4, brandImg5, brandImg6]
@@ -30,13 +31,17 @@ const Page: NextPage = () => {
 
     return (
         <>
+            <NextSeo
+                title="Previous work - Tired girls copy club"
+                description="An example of previous work with Tired girls copy club for Strategy and Branding"
+            />
             <Container>
                 <FadeInWhenVisible>
                 <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column' }} pt={8}>
                     <Box sx={{flex: 1, px: 2, mb: 4, alignSelf: 'center'}}>
                             <Image
                                 src={image1.src}
-                                alt="Boujee Bowl logo"
+                                alt="Tired girls copy club"
                                 width={image1.width}
                                 height={image1.height}
                                 blurDataURL={image1.blurDataURL}

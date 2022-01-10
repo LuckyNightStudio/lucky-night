@@ -3,10 +3,15 @@ import {Box, ThemeProvider} from '@mui/material'
 import Head from "next/head";
 import {Header} from "./Header";
 import {Footer} from "./Footer";
-import Confetti from "react-confetti";
 import {useWindowSize} from '@react-hook/window-size'
 import {useContext} from "react";
 import {ConfettiContext} from "./context/ConfettiContext";
+import dynamic from "next/dynamic";
+
+const DynamicConfetti = dynamic(() => import('react-confetti'), {
+    ssr: false
+})
+
 
 export const Layout = ({ children }: {children: JSX.Element}) => {
     const [width, height] = useWindowSize()
@@ -26,7 +31,7 @@ export const Layout = ({ children }: {children: JSX.Element}) => {
             {
                 (width > 0 && height > 0) && (
                     <Box sx={{position: 'sticky', top: 0, left: 0, zIndex: 1500 }} className='confetti'>
-                        <Confetti width={width} height={height} numberOfPieces={showConfetti ? 600 : 0} />
+                        <DynamicConfetti width={width} height={height} numberOfPieces={showConfetti ? 600 : 0} />
                     </Box>
                 )
             }

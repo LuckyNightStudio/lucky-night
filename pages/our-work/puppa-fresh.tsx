@@ -36,6 +36,7 @@ import {BookButton} from "../../components/BookButton";
 import {DownloadSection} from "../../components/homepage/DownloadSection";
 import {FadeInWhenVisible} from "../../components/FadeIn";
 import {Hands2} from "../../components/icons";
+import {NextSeo} from "next-seo";
 
 const siteLink = 'https://puppa-fresh.netlify.app/'
 
@@ -46,6 +47,10 @@ const PuppaFresh: NextPage = () => {
 
     return (
         <>
+            <NextSeo
+                title="Previous work - Puppa Fresh"
+                description="An example of previous work with Puppa fresh for Strategy, Branding and Web Design"
+            />
         <Container>
             <FadeInWhenVisible>
             <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row': 'column' }} pt={8}>
