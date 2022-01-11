@@ -4,7 +4,7 @@ import Head from "next/head";
 import {Header} from "./Header";
 import {Footer} from "./Footer";
 import {useWindowSize} from '@react-hook/window-size'
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import {ConfettiContext} from "./context/ConfettiContext";
 import dynamic from "next/dynamic";
 
@@ -16,6 +16,21 @@ const DynamicConfetti = dynamic(() => import('react-confetti'), {
 export const Layout = ({ children }: {children: JSX.Element}) => {
     const [width, height] = useWindowSize()
     const {showConfetti} = useContext(ConfettiContext)
+    // @ts-ignore
+    useEffect(() => {
+        // @ts-ignore
+        if (window.netlifyIdentity) {
+            // @ts-ignore
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    // @ts-ignore
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    }, [])
     return (
         <ThemeProvider theme={theme}>
             <Head>
@@ -26,6 +41,7 @@ export const Layout = ({ children }: {children: JSX.Element}) => {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="stylesheet" href="https://use.typekit.net/kbe1tld.css" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
             </Head>
             {
