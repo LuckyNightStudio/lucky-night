@@ -8,9 +8,9 @@ import {ConfettiContext} from "../context/ConfettiContext";
 const quizStates = [
     {title: 'Are you wanting a website?', no: 2, yes: 1},
     {title: 'Do you want to sell products online?', no: 3, yes: 4},
-    {title: 'Personal Business', link: '/services/personal-business', description: 'Full brand strategy and visual design experience to give you all the tools to grow your business in your ideal market.'},
-    {title: 'Service Business', link: '/services/service-business', description: 'Full brand strategy, visual design and custom, conversion-focussed website creation to cement you as a trustworthy, exciting key player among your dream audience'},
-    {title: 'E-Commerce Business', link: '/services/ecommerce-business', description: 'Full brand strategy, visual design and custom, conversion-focussed e-commerce site creation using Shopify.'}
+    {title: 'Visuals', link: '/services/visuals', description: 'Full brand strategy and visual design experience to give you all the tools to grow your business in your ideal market.'},
+    {title: 'Visuals & Web', link: '/services/visuals-and-web', description: 'Full brand strategy, visual design and custom, conversion-focussed website creation to cement you as a trustworthy, exciting key player among your dream audience'},
+    {title: 'Visuals & Commerce', link: '/services/visuals-and-commerce', description: 'Full brand strategy, visual design and custom, conversion-focussed e-commerce site creation using Shopify.'}
 ]
 
 export const QuizSection = () => {

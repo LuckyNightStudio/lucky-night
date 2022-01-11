@@ -7,10 +7,9 @@ import {AdditionalExtras} from "../../components/services/AdditionalExtra";
 import {Plan} from "../../components/services/Plan";
 import {FinalCTA} from "../../components/homepage/FinalCTA";
 import {theme} from "../../utils/theme";
-import {Accordion, AccordionDetails, AccordionSummary, Typography} from "@mui/material";
-import img from '../../public/e-commerce-product-image.webp'
+import {Typography} from "@mui/material";
+import img from '../../public/personal-product-image.webp'
 import {NextSeo} from "next-seo";
-
 
 const includes = [
     'Approx 3 hours of brand strategy sessions',
@@ -18,33 +17,23 @@ const includes = [
     'Brand patterns & imagery examples',
     '50 page brand guidelines and strategy document',
     'Social media templates in Adobe or Canva',
-    'Business card designs ready for print',
-    'Considered, well-designed user experience and journey',
-    'Integrated contact forms and email signups',
-    'Full hosting set up',
-]
-
-const includes2 = [
-    'Unique, custom theme for your Shopify site',
-    'Beautifully designed and easily manageable online shop features ',
-    'Fully responsive, mobile-first design',
-    'Reliability and security of financial info via Shopify platform',
-    'Complete SEO optimisation to guarantee speed and ranking success'
+    'Business card designs ready for print'
 ]
 
 const fits = [
-    'You want to sell and manage physical inventory and payments (POS) through your website',
-    'You want to showcase your unique values and story to stand out from the competition',
-    'You want a fully custom web and shop experience alongside your stunning visual assets',
-    'You’re ready to increase brand trust and loyalty, share your unique story and see real growth'
+    'You want to build your following of dream customers for your IRL store or workplace',
+    'You want to get crystal  clear on your brand values & messaging so you can share content that makes an impact',
+    'You want beautiful, colourful visuals that encompass the goals of your customer and your own vision',
+    'You’re not interested in a conversion-focussed online presence'
 ]
 
 const nots = [
-    'You’re not interested in selling products or building a loyal customer base through your website',
-    'You can’t commit to our 8 week project turnaround time',
-    'You’re not ready to collaborate and share your amazing vision & story',
-    'You’re not ready to invest in building your dream business (check out our brand & web audit)\n'
+    'You want a website (check out our branding & web design service)',
+    'You’re not ready to collaborate and share your unique vision & story',
+    'You’re not ready to invest in building your dream business, (check out our brand & web audit)',
+    'You can’t commit to the 4-week project turnaround time'
 ]
+
 
 const steps = [
     {
@@ -60,22 +49,12 @@ const steps = [
     {
         title: 'Visuals',
         subtitle: 'Weeks 2 - 4',
-        description: 'From the strategy sessions, you’ll sign off keywords and moodboards that Naomi will turn into gorgeous full-scale visual branding. Work begins on designing your website using brand guidelines.'
-    },
-    {
-        title: 'E-commerce Site Build',
-        subtitle: 'Weeks 4 - 5',
-        description: 'While your brand and strategy guides are finished off, your new website and shop functionality will be being built - ready for populating with all your amazing content and products.'
-    },
-    {
-        title: 'E-commerce Site',
-        subtitle: 'Weeks 5 - 6',
-        description: 'Your new e-commerce site will be signed off by you after any amends. We will then go through testing and organising the SEO.',
+        description: 'From the strategy sessions, you’ll sign off keywords and moodboards that Naomi will turn into gorgeous full-scale visual branding.'
     },
     {
         title: 'Sign Off',
         subtitle: 'End of Project',
-        description: 'Your branding is signed off, and we’ve made sure you’re happy with your new site, online shop and any documents. It’s time for project sign off and any final balance payments..'
+        description: 'Your branding is signed off, and we’ve made sure you’re happy with your documents. It’s time for project sign off and any final balance payments.'
     }
 ]
 
@@ -83,51 +62,27 @@ const Service: NextPage = () => {
     return (
         <>
             <NextSeo
-                title="Lucky Night Studio"
-                description="Strategy-led branding & web design for playful young businesses with immense ambitions"
+                title="Visuals - Lucky Night Studio"
+                description="Full brand strategy and visual design experience to give you all the tools to grow your business in your ideal market."
             />
             <Banner
                 title='Visuals'
-                subtitle='Branding, Strategy and Website Design & Build with Shop'
-                description='Branding, Strategy and Website Design & Build with Shop'
-                price='6,195'
-                color={theme.palette.purple.main}
-                buttonColor='secondary'
+                subtitle='Branding & Strategy'
+                description='Full brand strategy and visual design experience to give you all the tools to grow your business in your ideal market.'
+                price='2,295'
+                color={theme.palette.yellow.main}
                 img={img}
             >
                 <ul>
-                    <li>
-                        <Accordion sx={{ boxShadow: 'none' }}>
-                            <AccordionSummary sx={{ padding: 0, minHeight: '50px !important'}}>
-                                <Typography variant='body1'>
-                                    Everything Brand & Strategy from the <span style={{color: theme.palette.primary.main}}> Service Business Package</span><span style={{ marginLeft: 10, fontWeight: 600 }}>v</span>
-                                </Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <ul>
-                                    {includes.map((text) => (
-                                        <Typography variant='body1' component='li' key={text}>
-                                            {text}
-                                        </Typography>
-                                    ))}
-                                </ul>
-                            </AccordionDetails>
-                        </Accordion>
-                    </li>
-                    <Typography variant='body1' component='li'>
-                        Custom website design & build including:
-                    </Typography>
-                    <ul>
-                        {includes2.map((text) => (
-                            <Typography variant='body1' component='li' key={text}>
-                                {text}
-                            </Typography>
-                        ))}
-                    </ul>
+                    {includes.map((text) => (
+                        <Typography variant='body1' component='li' key={text}>
+                            {text}
+                        </Typography>
+                    ))}
                 </ul>
             </Banner>
-            <FitsSection fits={fits} nots={nots} bgColor='yellow.main' cardColor='rgba(212,192,242,1)' buttonColor='blue' handsIcon={false}/>
-            <PackageIncludes ecommerce={true} color={theme.palette.secondary.main} price='6,195'/>
+            <FitsSection fits={fits} nots={nots}/>
+            <PackageIncludes color={theme.palette.secondary.main}/>
             <AdditionalExtras />
             <Plan steps={steps}/>
             <FinalCTA />
