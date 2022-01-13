@@ -10,6 +10,34 @@ export default {
     public_folder: 'img',
     collections: [
         {
+            name: 'tags',
+            label: 'Tags',
+            file: 'meta/tags.yml',
+            folder: 'meta',
+            create: true,
+            description: 'List of tags',
+            fields: [
+                {
+                    name: 'tags',
+                    labels: 'Tags',
+                    label_singular: 'Tag',
+                    widget: 'list',
+                    fields: [
+                        {
+                            name: 'name',
+                            label: 'Display Name',
+                            widget: 'string'
+                        },
+                        {
+                            name: 'colour',
+                            label: 'Colour',
+                            widget: 'color'
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             name: 'posts',
             label: 'Posts',
             create: true,
