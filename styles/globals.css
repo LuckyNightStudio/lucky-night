@@ -25,3 +25,11 @@ nav a:hover {
   background: #9ED8BF;
   opacity: 0.8 !important;
 }
+
+#nc-root {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+}
