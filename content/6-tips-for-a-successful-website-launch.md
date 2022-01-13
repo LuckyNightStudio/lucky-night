@@ -3,6 +3,7 @@ title: 6 tips for a successful website launch
 summary: In this post, we’re gonna share some tips and guidance on how to get
   the most out of your website launch and make it as successful and stress-free
   as possible!
+summaryImage: img/woman_designing_website_user_goals-1-.jpg
 tags:
   - Marketing
 date: 13-01-2022
