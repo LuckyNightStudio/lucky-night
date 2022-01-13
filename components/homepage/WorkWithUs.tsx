@@ -49,13 +49,13 @@ export const WorkWithUs = () => {
     )
 }
 
-const links = ['/services/personal-business', '/services/service-business', '/services/ecommerce-business']
+const links = ['/services/visuals', '/services/visuals-and-web', '/services/visuals-and-commerce']
 
 const services = [
     {
         flex: 5,
         main: true,
-        title: 'Personal Business',
+        title: 'Visuals',
         title1: 'Branding & Strategy',
         description: 'Full brand strategy and visual design experience to give you all the tools to grow your business in your ideal market.',
         wants: [
@@ -65,7 +65,7 @@ const services = [
             'To skip the online presence'
         ],
         nots: [
-            'Need a  website (check out Service Business instead)',
+            'Need a  website (check out Visuals & Web instead)',
             'Don’t want to collaborate & share your unique story with us',
             'Aren’t ready to invest in building the business of your dreams'
         ]
@@ -73,7 +73,7 @@ const services = [
     {
         flex: 6,
         main: false,
-        title: 'Service Business',
+        title: 'Visuals & Web',
         title1: 'Branding & Web Design',
         description: 'Full brand strategy, visual design and custom, conversion-focussed  website creation to cement you as a trustworthy, exciting key player among your dream audience',
         wants: [
@@ -91,7 +91,7 @@ const services = [
     {
         main: true,
         flex: 5,
-        title: 'E-commerce Business',
+        title: 'Visuals & Commerce',
         title1: 'Branding & Web Design',
         description: 'Full brand strategy, visual design and custom, conversion-focussed  e-commerce site creation using Shopify.',
         wants: [
