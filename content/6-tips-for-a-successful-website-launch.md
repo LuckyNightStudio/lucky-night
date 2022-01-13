@@ -10,6 +10,8 @@ date: 13-01-2022
 ---
 When building a new business, getting your website up & running can feel like the ultimate task. It’s the to-do list item guaranteed (if approached correctly) to bring you traffic, leads and enquiries. In this post, we’re gonna share some tips and guidance on how to get the most out of your website launch and make it as successful and stress-free as possible!
 
+
+
 ![Women Working](img/two_women_designing_website-1-.jpg)
 
 ### **Set a realistic deadline**
@@ -40,8 +42,6 @@ So what’s happened here? You haven’t properly primed your audience! The week
 
 You could even run a competition or countdown to coincide with your launch to up the energy - just make sure your customers actually know that you’re launching!
 
-
-
 ### **Lay your SEO foundations**
 
 It’s no secret that a good website ranking takes a bit of time. You’ll need to create regular new content like blogs and testimonials, set up backlinks and generate traffic in order to boost your ranking. But it’s crucial to ensure solid SEO foundations are laid at website creation stage.
@@ -49,8 +49,6 @@ It’s no secret that a good website ranking takes a bit of time. You’ll need 
 > You can lay the right foundations for Google and other search engines by ensuring your content is well-written and focussed around your area of expertise.
 
 Try not to duplicate content as this can damage your score. Also ensure all images are appropriately sized and use descriptive file names and alt text. For more info on the best way to set your site up for success with SEO, [download our free SEO Checklist](https://mailchi.mp/f2ca6a15298b/freeseochecklist-luckynightstudio).
-
-
 
 ### **Test your site like crazy**
 
