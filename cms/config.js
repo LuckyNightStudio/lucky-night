@@ -8,32 +8,38 @@ export default {
     publish_mode: 'editorial_workflow',
     media_folder: 'public/img',
     public_folder: 'img',
+    site_url: 'https://www.luckynightstudio.co.uk/',
     collections: [
         {
             name: 'tags',
             label: 'Tags',
-            file: 'meta/tags.yml',
-            folder: 'meta',
-            description: 'List of tags',
-            identifier_field: 'tags',
-            summary: 'All tags',
-            fields: [
+            files: [
                 {
-                    name: 'tags',
                     label: 'Tags',
-                    label_singular: 'Tag',
-                    widget: 'list',
-                    summary: '{{fields.name}}',
+                    file: 'meta/tags.yml',
+                    name: 'Tags',
+                    description: 'List of tags',
+                    identifier_field: 'tags',
+                    summary: 'All tags',
                     fields: [
                         {
-                            name: 'name',
-                            label: 'Display Name',
-                            widget: 'string'
-                        },
-                        {
-                            name: 'colour',
-                            label: 'Colour',
-                            widget: 'color'
+                            name: 'tags',
+                            label: 'Tags',
+                            label_singular: 'Tag',
+                            widget: 'list',
+                            summary: '{{fields.name}}',
+                            fields: [
+                                {
+                                    name: 'name',
+                                    label: 'Display Name',
+                                    widget: 'string'
+                                },
+                                {
+                                    name: 'colour',
+                                    label: 'Colour',
+                                    widget: 'color'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -64,12 +70,19 @@ export default {
                 },
                 {
                     label:  "Tags",
-                    name: "tags",
-                    widget: 'relation',
-                    collection: 'tags',
-                    search_fields:  ['tags.*.name'],
-                    display_fields:  ['tags.*.name'],
-                    value_field: "{{slug}}"
+                    name: "tagsList",
+                    widget: 'list',
+                    fields: [
+                        {
+                            label: 'Tags',
+                            name: 'tags',
+                            widget: 'relation',
+                            collection: 'tags',
+                            search_fields:  ['tags.*.name'],
+                            display_fields:  ['tags.*.name'],
+                            value_field: "tags.*.name"
+                        }
+                    ]
                 },
                 {
                     label: 'Blog post content',

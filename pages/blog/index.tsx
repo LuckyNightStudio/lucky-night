@@ -1,17 +1,16 @@
 import type {GetStaticProps, InferGetStaticPropsType, NextPage} from 'next'
 import {Box, Container, Typography, Card, CardMedia, CardContent, CardActions, Button} from "@mui/material";
-import { getDatabase } from "../../lib/notion";
-import {flatMap, uniqBy, xor, intersection } from 'lodash'
+import { xor, intersection } from 'lodash'
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import {theme} from "../../utils/theme";
-// TODO: remove
-import { isSafari } from 'react-device-detect';
 import {NextSeo} from "next-seo";
 import * as React from "react";
 import path from "path";
 import * as fs from "fs";
+import * as yaml from 'js-yaml'
+
 import matter from 'gray-matter'
 
 const colors = {
@@ -34,32 +33,29 @@ interface PostProps {
     id: string
     summary: string
     summaryImage: string
-    tags: string[]
+    tagsList: {tags: string}[]
     title: string
 }
 
-const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Index: NextPage = ({posts, tags: allTags}: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter()
     const { filter } = router.query
     const [selectedTags, setSelectedTags] = useState<string[]>((filter as string)?.split('&') ?? [])
 
-    console.log(posts)
+    const getOpacity = (name: string): number => {
+        return selectedTags.length > 0 ? selectedTags.includes(name) ? 1 : 0.4 : 1
+    }
 
-    // const allTags = uniqBy(flatMap(posts, (post: Post) => post.properties.Tags.multi_select), 'name')
-    // const getOpacity = (name: string): number => {
-    //     return selectedTags.length > 0 ? selectedTags.includes(name) ? 1 : 0.4 : 1
-    // }
-    //
-    // const handleClick = (name: string) => {
-    //     setSelectedTags(xor(selectedTags, [name]))
-    // }
+    const handleClick = (name: string) => {
+        setSelectedTags(xor(selectedTags, [name]))
+    }
 
-    // useEffect(() => {
-    //     router.replace({
-    //         pathname: '/blog',
-    //         query: selectedTags.length > 0 ? {filter: selectedTags.join('&')} : undefined
-    //     })
-    // }, [selectedTags])
+    useEffect(() => {
+        router.replace({
+            pathname: '/blog',
+            query: selectedTags.length > 0 ? {filter: selectedTags.join('&')} : undefined
+        })
+    }, [selectedTags])
 
     return (
         <Container>
@@ -69,28 +65,28 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
             <Box p={4}>
                 <Box mt={4} mx={2} sx={{display: 'flex', flexWrap: 'wrap'}}>
                     <Typography sx={{display: 'inline'}} mr={2} mt={1}>Tags:</Typography>
-                    {/*{allTags.map(({name, color}: {name: string, color: string}) => (*/}
-                    {/*    <Box sx={{*/}
-                    {/*        background: getColor(color),*/}
-                    {/*        borderRadius: 8,*/}
-                    {/*        display:'inline',*/}
-                    {/*        py: 1,*/}
-                    {/*        px: 1,*/}
-                    {/*        mr: 1,*/}
-                    {/*        mb: 1,*/}
-                    {/*        transition: 'opacity 0.4s',*/}
-                    {/*        cursor: 'pointer',*/}
-                    {/*        opacity: getOpacity(name),*/}
-                    {/*        whiteSpace: 'nowrap',*/}
-                    {/*        '&:hover': {*/}
-                    {/*            opacity: 0.6*/}
-                    {/*        }*/}
-                    {/*    }}*/}
-                    {/*         key={name}*/}
-                    {/*         onClick={() => handleClick(name)}>*/}
-                    {/*        <Typography sx={{display: 'inline'}} variant='caption'>{name}</Typography>*/}
-                    {/*    </Box>*/}
-                    {/*))}*/}
+                    {allTags.map(({name, colour}: {name: string, colour: string}) => (
+                        <Box sx={{
+                            backgroundColor: colour,
+                            borderRadius: 8,
+                            display:'inline',
+                            py: 1,
+                            px: 1,
+                            mr: 1,
+                            mb: 1,
+                            transition: 'opacity 0.4s',
+                            cursor: 'pointer',
+                            opacity: getOpacity(name),
+                            whiteSpace: 'nowrap',
+                            '&:hover': {
+                                opacity: 0.6
+                            }
+                        }}
+                             key={name}
+                             onClick={() => handleClick(name)}>
+                            <Typography sx={{display: 'inline'}} variant='caption'>{name}</Typography>
+                        </Box>
+                    ))}
                 </Box>
                 <Box sx={{display: 'flex', flexWrap: 'wrap'}}>
                     {posts.map((post: PostProps) => (
@@ -99,7 +95,7 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
                             flex: 1,
                             maxWidth: '50%',
                             minWidth: 300,
-                            display: selectedTags.length === 0 || intersection(selectedTags, post.tags).length > 0 ? 'flex' : 'none',
+                            display:  selectedTags.length === 0 || intersection(selectedTags, post.tagsList.map(({tags}) => tags)).length > 0 ? 'flex' : 'none',
                             flexDirection: 'column',
                         }} key={post.id}>
                             <CardMedia
@@ -110,13 +106,13 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
                                 alt={post.title}
                             />
                             <CardContent>
-                                {/*<Box sx={{ marginBottom: 2, display: 'flex', flexWrap: 'wrap' }}>*/}
-                                {/*    {post?.properties?.Tags?.multi_select.map(({name, color}) => (*/}
-                                {/*        <Box sx={{ background: getColor(color) , borderRadius: 8, display:'inline', py: '3px', px: 1, mr: 1, whiteSpace: 'nowrap', mt: 1}} key={name}>*/}
-                                {/*            <Typography variant='caption'>{name}</Typography>*/}
-                                {/*        </Box>*/}
-                                {/*    ))}*/}
-                                {/*</Box>*/}
+                                <Box sx={{ marginBottom: 2, display: 'flex', flexWrap: 'wrap' }}>
+                                    {post?.tagsList?.map(({tags}) => (
+                                        <Box sx={{ background: allTags.find(({name}: {name: string}) => name === tags)?.colour ?? '' , borderRadius: 8, display:'inline', py: '3px', px: 1, mr: 1, whiteSpace: 'nowrap', mt: 1}} key={tags}>
+                                            <Typography variant='caption'>{tags}</Typography>
+                                        </Box>
+                                    ))}
+                                </Box>
                                 <Typography gutterBottom variant="h5" mb={0}>
                                     {post.title}
                                 </Typography>
@@ -153,6 +149,7 @@ const Index: NextPage = ({posts}: InferGetStaticPropsType<typeof getStaticProps>
 }
 
 const postsDirectory = path.join(process.cwd(), 'content')
+const tagsFile = path.join(process.cwd(), 'meta/tags.yml')
 
 export const getStaticProps: GetStaticProps = async () => {
     const fileNames = fs.readdirSync(postsDirectory)
@@ -174,9 +171,13 @@ export const getStaticProps: GetStaticProps = async () => {
         }
     })
 
+    // @ts-ignore
+    const tags = yaml.load(fs.readFileSync(tagsFile, 'utf8'))?.tags
+
     return {
         props: {
             posts,
+            tags
         }
     };
 };
