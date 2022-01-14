@@ -14,14 +14,16 @@ export default {
             label: 'Tags',
             file: 'meta/tags.yml',
             folder: 'meta',
-            create: true,
             description: 'List of tags',
+            identifier_field: 'tags',
+            summary: 'All tags',
             fields: [
                 {
                     name: 'tags',
-                    labels: 'Tags',
+                    label: 'Tags',
                     label_singular: 'Tag',
                     widget: 'list',
+                    summary: '{{fields.name}}',
                     fields: [
                         {
                             name: 'name',
@@ -63,9 +65,11 @@ export default {
                 {
                     label:  "Tags",
                     name: "tags",
-                    widget: 'list',
-                    max: 4,
-                    allow_add: true
+                    widget: 'relation',
+                    collection: 'tags',
+                    search_fields:  ['tags.*.name'],
+                    display_fields:  ['tags.*.name'],
+                    value_field: "{{slug}}"
                 },
                 {
                     label: 'Blog post content',
