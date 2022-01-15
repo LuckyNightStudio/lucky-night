@@ -114,7 +114,7 @@ const options = {
 
 const Page: ({data, content}: Props) => JSX.Element = ({data, content, allTags = []}: Props) => {
     if(!data) {
-        return null
+        return <></>
     }
     const {title, date, tagsList} = data
     const tags: any[] = tagsList.map(({tags}) => (allTags.find(({name}) => name === tags)))
