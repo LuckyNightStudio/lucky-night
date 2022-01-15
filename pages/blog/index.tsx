@@ -4,7 +4,6 @@ import { xor, intersection } from 'lodash'
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
-import {theme} from "../../utils/theme";
 import {NextSeo} from "next-seo";
 import * as React from "react";
 import path from "path";
@@ -13,22 +12,11 @@ import * as yaml from 'js-yaml'
 
 import matter from 'gray-matter'
 
-const colors = {
-    green: theme.palette.green.light,
-    purple: theme.palette.purple.main,
-    yellow: theme.palette.yellow.main
-}
-
-export const getColor = (key: string): string => {
-    // @ts-ignore
-    return colors[key]
-}
-
 export const getTitle = (entry?: any) => {
     return entry?.title?.map(({plain_text}: {plain_text: string}) => plain_text).join('')
 }
 
-interface PostProps {
+export interface PostProps {
     date: string
     id: string
     summary: string
@@ -148,7 +136,7 @@ const Index: NextPage = ({posts, tags: allTags}: InferGetStaticPropsType<typeof 
     )
 }
 
-const postsDirectory = path.join(process.cwd(), 'content')
+export const postsDirectory = path.join(process.cwd(), 'content')
 const tagsFile = path.join(process.cwd(), 'meta/tags.yml')
 
 export const getStaticProps: GetStaticProps = async () => {

@@ -1,107 +1,119 @@
-import { NextPage} from "next";
-import Link from 'next/link'
-import {getBlocks, getDatabase, getId, getPage} from "../../lib/notion";
-import {Container, Typography, Box} from "@mui/material";
-import { Text } from "../../components/notionComponents/text";
-import { getColor, getTitle} from "./index";
+import {Container, Box, Typography} from "@mui/material";
+import path from "path";
+import fs from "fs";
+import {PostProps, postsDirectory} from "./index";
+import matter from "gray-matter";
+import ReactMarkdown from 'markdown-to-jsx';
+import Link from "next/link";
+import * as yaml from "js-yaml";
+import {theme} from "../../utils/theme";
 
-export const generateGoogleImg = (url: string) => {
-    const id = url.replace('https://drive.google.com/file/d/', '').split('/')[0]
-    return `https://drive.google.com/uc?export=view&id=${id}`
+interface Props {
+    data: PostProps,
+    content: string
+    allTags: {
+        name: string
+        color: string
+    }[]
 }
 
-const renderBlock = (block: any) => {
-    const { type, id } = block;
-    const value = block[type];
-    switch (type) {
-        case "paragraph":
-            return (
-                <Text text={value.text} />
-            );
-        case "heading_1":
-            return (
-                <Text text={value.text} variant='h2'/>
-            );
-        case "heading_2":
-            return (
-                <Text text={value.text} variant='h3'/>
-            );
-        case "heading_3":
-            return (
-                <Text text={value.text} variant='h4'/>
-            );
-        case "bulleted_list_item":
-        case "numbered_list_item":
-            return (
-                <li>
-                    <Text text={value.text} />
-                </li>
-            );
-        case "to_do":
-            return (
-                <div>
-                    <label htmlFor={id}>
-                        <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
-                        <Text text={value.text} />
-                    </label>
-                </div>
-            );
-        case "toggle":
-            return (
-                <details>
-                    <summary>
-                        <Text text={value.text} />
-                    </summary>
-                    {value.children?.map((block: any) => (
-                        <div key={block.id}>{renderBlock(block)}</div>
-                    ))}
-                </details>
-            );
-        case "child_page":
-            return <Text text={value.title} variant='h1'/>
-        case "file":
-            const src =  value.external.url
-            const caption = value.caption?.[0]?.plain_text ?? "";
-            return (
-                <Box sx={{maxWidth: '80%', margin: '40px auto'}}>
-                    <figure>
-                        <img src={generateGoogleImg(src)} alt={caption} style={{ maxWidth: '100%' }}/>
-                        {caption && <figcaption>{caption}</figcaption>}
-                    </figure>
-                </Box>
-            );
-        case 'quote':
-            return (
-                <Box sx={{px:4, py: 2, bgcolor: 'greenLight.light', borderLeft: 'solid 8px #9ED8BF', my: 4 }}>
-                    <Text text={value.text}/>
-                </Box>
-            )
-        case 'divider':
-            return (
-                <Box sx={{height: 5, bgcolor: 'primary.main', my: 8, borderRadius: 8 }} />
-            )
-        case 'callout':
-            return (
-                <Box sx={{display: 'flex', bgcolor: 'purple.main', p: 4, color: 'white', my: 4, justifyContent: 'center', alignItems: 'center'}}>
-                    <Box sx={{mr: 2, fontSize: 25 }}>
-                        {value.icon.emoji}
-                    </Box>
-                    <Text text={value.text} />
-                </Box>
-            )
-        default:
-            console.log(value)
-            return `❌ Unsupported block (${
-                type === "unsupported" ? "unsupported by Notion API" : type
-            })`;
-    }
+function MarkdownListItem(props: any) {
+    return <Box component="li" sx={{ mt: 1, typography: 'body1' }} {...props} />;
+}
+
+const ImageComponent = ({src, alt}: {src: string, alt: string})  => {
+    return (
+        <Box sx={{width: '80%', mx: 'auto', my: 4 }}>
+            <img src={`/${src}`} alt={alt} style={{maxWidth: '100%'}} />
+        </Box>
+    )
+}
+
+const QuoteComponent = ({children}: any) => {
+    return (
+        <Box sx={{ px: 4, py: 4, my: 5, background: theme.palette.greenLight.light, borderLeft: `solid 8px ${theme.palette.green.main}`}}>
+            {children[0]?.props?.children?.map((text: string, i: number) => (
+                <Typography key={i}>
+                    {text}
+                </Typography>
+            ))}
+        </Box>
+    )
+}
+
+const AsideComponent = ({children}: any) => {
+    return (
+        <Box sx={{p: 6, background: theme.palette.purple.main }}>
+            {children[0]?.props?.children?.map((text: string, i: number) => (
+                <Typography key={i} textAlign='center'>
+                    {text}
+                </Typography>
+            ))}
+        </Box>
+    )
+}
+
+const options = {
+    overrides: {
+        h1: {
+            component: Typography,
+            props: {
+                gutterBottom: true,
+                variant: 'h1',
+            },
+        },
+        h2: {
+            component: Typography,
+            props: { gutterBottom: true, variant: 'h2' },
+        },
+        h3: {
+            component: Typography,
+            props: { gutterBottom: true, variant: 'h3' },
+        },
+        h4: {
+            component: Typography,
+            props: {
+                gutterBottom: true,
+                variant: 'h4',
+            },
+        },
+        h5: {
+            component: Typography,
+            props: {
+                gutterBottom: true,
+                variant: 'h5',
+            },
+        },
+        h6: {
+            component: Typography,
+            props: {
+                gutterBottom: true,
+                variant: 'h6',
+            },
+        },
+        p: {
+            component: Typography,
+            props: { paragraph: true },
+        },
+        li: {
+            component: MarkdownListItem,
+        },
+        img: {
+            component: ImageComponent
+        },
+        blockquote: {
+            component: QuoteComponent
+        },
+        aside: {
+            component: AsideComponent
+        }
+    },
 };
 
+const Page: ({data, content}: Props) => JSX.Element = ({data, content, allTags = []}: Props) => {
+    const {title, date, tagsList} = data
+    const tags: any[] = tagsList.map(({tags}) => (allTags.find(({name}) => name === tags)))
 
-const Page: NextPage = ({page, blocks}: any) => {
-    const title = getTitle(page?.properties?.entry);
-    const tags = page?.properties?.Tags?.multi_select;
-    const date = page?.last_edited_time && new Date(page.last_edited_time).toDateString();
     return (
         <Container maxWidth='md'>
             <Box component='article' px={4} py={8}>
@@ -113,9 +125,9 @@ const Page: NextPage = ({page, blocks}: any) => {
                     {tags && (
                         <Box sx={{display: 'flex', mt: 2, flexWrap: 'wrap'}}>
                             {
-                                tags.map(({name, color}: {name: string, color: string}) => (
+                                tags.map(({name, colour}) => (
                                     <Link href={`/blog?filter=${name}`} passHref key={name}>
-                                        <Box sx={{ background: getColor(color), borderRadius: 8, display:'inline', py: '3px', px: 1, mr: 1, mt: 1, cursor: 'pointer'}}>
+                                        <Box sx={{ background: colour, borderRadius: 8, display:'inline', py: '3px', px: 1, mr: 1, mt: 1, cursor: 'pointer'}}>
                                             <Typography variant='caption'>{name}</Typography>
                                         </Box>
                                     </Link>
@@ -124,60 +136,36 @@ const Page: NextPage = ({page, blocks}: any) => {
                         </Box>
                     )}
                 </Box>
-                {blocks?.map((block: any) => (
-                    <div key={block.id}>{renderBlock(block)}</div>
-                ))}
+                {/* eslint-disable-next-line react/no-children-prop */}
+                <ReactMarkdown options={options} children={content}/>
             </Box>
         </Container>
     )
 }
 
-
-export const databaseId = process.env.NOTION_DATABASE_ID
-export const getStaticPaths = async () => {
-    const database = await getDatabase(databaseId);
+export const getStaticPaths = async () =>
+{
+    const fileNames = fs.readdirSync(postsDirectory)
+    const paths = fileNames.map((fileName) => `/blog/${fileName.replace('.md', '')}`)
     return {
-        // @ts-ignore
-        paths: database.map((page) => ({ params: { slug: page.properties.slug.rich_text[0].plain_text } })),
+        paths,
         fallback: true,
     };
 };
 
 export const getStaticProps = async (context: { params: { slug: string; }; }) => {
-    const { slug } = context.params;
-    const id = await getId(databaseId, slug);
-    const page = await getPage(id);
-    const blocks = await getBlocks(id);
-
-    // Retrieve block children for nested blocks (one level deep), for example toggle blocks
-    // https://developers.notion.com/docs/working-with-page-content#reading-nested-blocks
-    const childBlocks = await Promise.all(
-        blocks
-            // @ts-ignore
-            .filter((block) => block.has_children)
-            .map(async (block) => {
-                return {
-                    id: block.id,
-                    children: await getBlocks(block.id),
-                };
-            })
-    );
-    const blocksWithChildren = blocks.map((block) => {
-        // Add child blocks if the block should contain children but none exists
-        // @ts-ignore
-        if (block?.has_children && !block[block.type].children) {
-            // @ts-ignore
-            block[block.type]["children"] = childBlocks.find(
-                (x) => x.id === block.id
-            )?.children;
-        }
-        return block;
-    });
+    const fullPath = path.join(postsDirectory, `${context.params.slug}.md`)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const {data, content} = matter(fileContents)
+    const tagsFile = path.join(process.cwd(), 'meta/tags.yml')
+    // @ts-ignore
+    const allTags = yaml.load(fs.readFileSync(tagsFile, 'utf8'))?.tags
 
     return {
         props: {
-            page,
-            blocks: blocksWithChildren
+            data,
+            content,
+            allTags
         }
     };
 };

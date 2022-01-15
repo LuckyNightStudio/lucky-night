@@ -65,6 +65,6 @@ If you’ve followed all the advice above, it’s unlikely that you’ll encount
 
 If you’ve used a tech or development team, make sure they’re aware of when you’re launching and try to plan it around them so that they can be on hand to help if necessary. Don’t announce your site launch until you’re 100% sure that it’s up and running as expected, and make sure to always have a backup of your site and content just in case.
 
-<aside> 💡 Are you planning a website launch in 2022? Our strategic brand & web packages deeply understand your dream customer base and convert them into a paying reality while guaranteeing a successful launch without the drama! Book your free 30 minute consultation to find out more.
+<aside> Are you planning a website launch in 2022? Our strategic brand & web packages deeply understand your dream customer base and convert them into a paying reality while guaranteeing a successful launch without the drama! Book your free 30 minute consultation to find out more.
 
 </aside>
