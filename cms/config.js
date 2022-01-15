@@ -3,9 +3,10 @@ export default {
     backend: {
         name: 'github',
         repo: 'LuckyNightStudio/lucky-night',
-        branch: 'main'
+        branch: 'main',
+        base_url: 'https://www.luckynightstudio.co.uk/',
+        auth_endpoint: 'api/auth'
     },
-    publish_mode: 'editorial_workflow',
     media_folder: 'public/img',
     public_folder: 'img',
     site_url: 'https://www.luckynightstudio.co.uk/',
