@@ -1,9 +1,9 @@
 export default {
     cms_manual_init: true,
     backend: {
-        name: 'github',
+        name: 'git-gateway',
         repo: 'LuckyNightStudio/lucky-night',
-        branch: 'main',
+        branch: 'main'
     },
     publish_mode: 'editorial_workflow',
     media_folder: 'public/img',
