@@ -1,5 +1,11 @@
 tags:
   - name: Marketing
-    colour: "#54bf58"
+    colour: "#f69fb9"
   - name: Small Business
-    colour: "#f64040"
+    colour: "#F6EC6E"
+  - name: Web Design
+    colour: "#D4C0F2"
+  - name: SEO
+    colour: "#9ED8BF"
+  - name: Branding
+    colour: "#74A5D8"
