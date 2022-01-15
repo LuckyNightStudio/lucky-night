@@ -7,6 +7,8 @@ import ReactMarkdown from 'markdown-to-jsx';
 import Link from "next/link";
 import * as yaml from "js-yaml";
 import {theme} from "../../utils/theme";
+import {NextSeo} from "next-seo";
+import * as React from "react";
 
 interface Props {
     data: PostProps,
@@ -116,6 +118,9 @@ const Page: ({data, content}: Props) => JSX.Element = ({data, content, allTags =
 
     return (
         <Container maxWidth='md'>
+            <NextSeo
+                title={`${title} - Lucky Night Studio`}
+            />
             <Box component='article' px={4} py={8}>
                 <Box mb={4}>
                     <Typography variant='h2' component='h1'>
