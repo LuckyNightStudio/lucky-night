@@ -12,10 +12,6 @@ import * as yaml from 'js-yaml'
 
 import matter from 'gray-matter'
 
-export const getTitle = (entry?: any) => {
-    return entry?.title?.map(({plain_text}: {plain_text: string}) => plain_text).join('')
-}
-
 export interface PostProps {
     date: string
     id: string
@@ -123,7 +119,7 @@ const Index: NextPage = ({posts, tags: allTags}: InferGetStaticPropsType<typeof 
                                             textOverflow: 'ellipsis',
                                             textTransform: 'none'
                                         }}>
-                                            Read {getTitle(post.title)}
+                                            Read {post.title}
                                         </Typography>
                                     </Button>
                                 </Link>

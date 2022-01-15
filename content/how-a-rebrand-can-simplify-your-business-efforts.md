@@ -21,7 +21,7 @@ Here’s 6 specific ways a rebrand can simplify your business marketing efforts 
 
 
 
-1.
+**1. Discover your ideal customer**
 
 The most crucial element of the branding process by far is researching and understanding your ideal customer. We build out your ideal customer profile by:
 
@@ -35,7 +35,7 @@ It’s also worth revisiting this regularly (once a year or so) and making sure 
 
 
 
-2. **Understand the problems you solve**
+**2. Understand the problems you solve**
 
 This is the other side of the coin to your ideal customer. Once you know who they are, it should be easy enough to discover what they need and what issues/frustrations they are facing that you could solve.
 
@@ -47,13 +47,13 @@ Getting to grips with what your customer wants and needs, and how you can provid
 
 
 
-3. **Get clarity on your messaging**
+**3. Get clarity on your messaging**
 
 So, now you know your ideal customer inside out and you know the struggles they’re facing. You understand the ways in which your product/service alleviates their difficulties and makes your customers lives easier and happier. How much easier is it to create great messaging now?!
 
-Try and get as specific as possible (we know this seems counterintuitive but it really will make it easier for your ideal customers to discover you) and ensure your messaging always revolves around your customer and not you. They are the star of your story, and you are their guide to a happier life.
+Try and get as specific as possible (we know this seems counter intuitive but it really will make it easier for your ideal customers to discover you) and ensure your messaging always revolves around your customer and not you. They are the star of your story, and you are their guide to a happier life.
 
-4. **Get to know your touchpoints**
+ **4. Get to know your touchpoints**
 
 Have you been spending hours a week on your LinkedIn profile without ever seeing real results? Maybe you’ve been putting off setting up your email list because you can’t see it making a difference to your business?
 
@@ -67,13 +67,13 @@ You don’t have to waste your time on ineffective marketing, you just need to g
 
 
 
-5. **Create assets with confidence & ease**
+**5. Create assets with confidence & ease**
 
 Once you have a keen understanding of your ideal customer, their pain points and your brand values, creating content becomes a breeze. You’ll know exactly what your customers need from you and how you can create and deliver that solution in a way that feels authentic and you.
 
 You’ll also have all the visual assets and guidelines to create branded visuals without the guesswork. Having consistent colour palettes, typefaces, logo variations and sizing sets laid out for you in a brand guideline document will make it super simple to create on-brand visual content with ease.
 
-6. **Become more visible & desirable**
+**6. Become more visible & desirable**
 
 By now you understand your dream customer inside and out, you know the ways you make their life much easier with your products or services and you know how and where to find them. Your messaging is clear and effective, and you’re properly focussing your efforts on the places you’ll get the best engagement levels and ROI. It has become much easier for you to create content and assets with a clear strategy and goal in mind, and those assets are really hitting the mark.
 
