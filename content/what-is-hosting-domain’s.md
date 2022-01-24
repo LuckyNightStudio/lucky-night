@@ -11,17 +11,15 @@ date: 24-01-2022
 ---
 So I often get asked the question, about the difference between Web hosting and a domain and do you need both?
 
-## Hosting
+### Hosting
 
 Web Hosting is a bit like online storage, it stores images, files and code for your website. If you have ever used Dropbox, Google Drive or even a folder on your laptop then it's very similar. This storage is stored on a server (a big computer that never turns off).pricing for hosting depends on the type of server you use. For most small to medium-size businesses, a standard server should be fine, some hosting limits the amount of traffic (how many visitors to your website), and also how much storage you can use, 10GB of storage may sound a lot, but if your website runs WordPress or something similar then this code also needs to be on that server, this will also include any themes or plugins, so it's something to be aware of.
 
 At Lucky Night Studio we provide hosting for our websites so we can take out all the confusion and provide security
 
-
-
 ![](img/green-cable.jpg "Cables image")
 
-## Domain
+### Domain
 
 A domain is a URL that is used to direct the user to your website, eg: [www.yourdomain.com](http://www.yourdomain.com/). Domain names need to be unique, so only one person can buy a domain. You can purchase a domain with different domain \*\*\*\*extensions, the most common for us being .com or .co.uk. While you can get .app .io .game or .shop these often have different meanings, and will sometimes be limited by security or authority (eg .net being for non-for-profit organisations).
 
