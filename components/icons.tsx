@@ -46,6 +46,15 @@ const bob = keyframes`
   }
 `;
 
+const bobReverse = keyframes`
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+`;
+
 const heartStyles: any = {
     '.heartBob': {
         transformOrigin: 'center',
@@ -60,7 +69,8 @@ const heartStyles: any = {
     },
     '.heartBob:nth-child(3)': {
         animationDuration: '1s',
-        animationDelay: 0.5
+        animationDelay: 0.5,
+        animation: `0.8s ease-in-out infinite alternate both ${bobReverse}`,
     }
 }
 

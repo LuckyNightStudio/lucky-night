@@ -23,21 +23,22 @@ import {NextSeo} from "next-seo";
 
 const Input = styled(TextField)({
     margin: '10px 4px',
+    '.Mui-focused': {
+        color: 'black !important',
+    },
     '& .MuiOutlinedInput-root': {
+        background: 'white',
+        borderRadius: 38,
         '& fieldset': {
             border: 'solid 4px',
             borderRadius: 38
         },
         '& input': {
-            background: 'white',
             borderRadius: 38
         },
     },
     '& .MuiInputLabel-root, & .MuiOutlinedInput-notchedOutline': {
         paddingLeft: 20
-    },
-    '& .Mui-focused': {
-        color: 'black',
     },
     '& .MuiOutlinedInput-input' : {
         paddingLeft: 20,
