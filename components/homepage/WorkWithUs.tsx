@@ -1,19 +1,20 @@
-import {Container, Typography, Box, Button, useTheme, useMediaQuery} from "@mui/material";
+import {Container, Typography, Box, useTheme, useMediaQuery} from "@mui/material";
 import * as React from "react";
-import {ButtonStyle} from "../BookButton";
-import Link from "next/link";
-import {useState} from "react";
-import {BookingModal} from "../BookModal";
 import {Hands3, Hands1, Hands2} from "../icons";
 
-export const WorkWithUs = () => {
+interface Props {
+    bgColor?: string
+    color?: string
+}
+
+export const WorkWithUs = ({bgColor = 'purple.main', color = 'white'}: Props) => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     return (
-        <Box p={largerThanMD ? 4 : 1} mb={4} bgcolor='purple.main'>
+        <Box p={largerThanMD ? 4 : 1} mb={4} bgcolor={bgColor}>
             <Container>
                 <Typography variant='h4' component='h2' my={8} textAlign='center'>
-                    How you can <span style={{ color: theme.palette.white.main }}>work with us</span>
+                    How you can <span style={{ color }}>work with us</span>
                 </Typography>
                 <Box display='flex' justifyContent='space-between' alignItems='center' flexWrap='wrap'>
                     <Box textAlign='center' p={4} flex={1} sx={{minWidth: '300px'}}>

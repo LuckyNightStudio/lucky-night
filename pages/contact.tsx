@@ -28,9 +28,16 @@ const Input = styled(TextField)({
             border: 'solid 4px',
             borderRadius: 38
         },
+        '& input': {
+            background: 'white',
+            borderRadius: 38
+        },
     },
     '& .MuiInputLabel-root, & .MuiOutlinedInput-notchedOutline': {
         paddingLeft: 20
+    },
+    '& .Mui-focused': {
+        color: 'black',
     },
     '& .MuiOutlinedInput-input' : {
         paddingLeft: 20,
@@ -48,7 +55,7 @@ const Form = () => {
             <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action='/contact?success'>
                 <input type="hidden" name="form-name" value="contact" />
                 <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row' : 'column', flexWrap: 'wrap' }}>
-                    <Input label="NAME" variant="outlined" name='name' sx={{ flex: 1, flexBasis: '48%' }} required />
+                    <Input label="NAME" variant="outlined" name='name' sx={{ flex: 1, flexBasis: '48%', input: { background: 'white', overflow: 'hidden'} }} required  />
                     <Input label="EMAIL" variant="outlined" type='email' name='email' sx={{ flex: 1, flexBasis: '48%' }} required/>
                     <Input label="BUSINESS NAME" variant="outlined" name='businessName' sx={{ flex: 1, flexBasis: '48%' }} />
                     <Input label="INSTA HANDLE" variant="outlined" name='insta' sx={{ flex: 1, flexBasis: '48%' }} />
@@ -61,6 +68,36 @@ const Form = () => {
                 </Button>
             </form>
         )
+    )
+}
+
+export const WholeForm = () => {
+    const theme = useTheme();
+    const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
+    const {asPath} = useRouter()
+    const {setShowConfetti} = useContext(ConfettiContext)
+
+    useEffect(() => {
+        if(asPath.includes('success')) {
+            setShowConfetti(true)
+            setTimeout(() => setShowConfetti(false), 60 * 60)
+        }
+        return () => {
+            setShowConfetti(false)
+        }
+    }, [asPath, setShowConfetti])
+
+    return (
+        <>
+            <Typography variant='h4' component='h1' mx={2} style={{ display: 'inline-block', width: 'max-content', maxWidth: 'max-content' }}>
+                Enquire Now
+                {largerThanSM && <span style={{...underlineStyle, background: theme.palette.purple.main}}/>}
+            </Typography>
+            <Typography mx={2} mb={2}>
+                Tell us about your project & we’ll be in touch
+            </Typography>
+            {asPath.includes('success') ? <SuccessMessage /> : <Form/>}
+        </>
     )
 }
 
@@ -82,18 +119,6 @@ const Contact: NextPage = () => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
-    const {asPath} = useRouter()
-    const {setShowConfetti} = useContext(ConfettiContext)
-
-    useEffect(() => {
-        if(asPath.includes('success')) {
-            setShowConfetti(true)
-            setTimeout(() => setShowConfetti(false), 60 * 60)
-        }
-        return () => {
-            setShowConfetti(false)
-        }
-    }, [asPath, setShowConfetti])
 
     const instaImages = largerThanSM ? images.slice(0, 6) : images.slice(0, 3)
 
@@ -125,14 +150,7 @@ const Contact: NextPage = () => {
                         </Box>
                     </Box>}
                     <Box  sx={{ flex: 3, maxWidth: '100%'}}>
-                        <Typography variant='h4' component='h1' mx={2} style={{ display: 'inline-block', width: 'max-content', maxWidth: 'max-content' }}>
-                            Enquire Now
-                            {largerThanSM && <span style={{...underlineStyle, background: theme.palette.purple.main}}/>}
-                        </Typography>
-                        <Typography mx={2} mb={2}>
-                            Tell us about your project & we’ll be in touch
-                        </Typography>
-                        {asPath.includes('success') ? <SuccessMessage /> : <Form/>}
+                        <WholeForm />
                     </Box>
                 </Box>
                 </FadeInWhenVisible>

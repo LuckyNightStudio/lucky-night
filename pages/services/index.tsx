@@ -1,15 +1,20 @@
 import type { NextPage } from 'next'
 import {WorkWithUs} from "../../components/homepage/WorkWithUs";
-import {QuizSection} from "../../components/homepage/QuizSection";
-import {PreviousProjects} from "../../components/homepage/PreviousProjects";
-import {FinalCTA} from "../../components/homepage/FinalCTA";
 import {DownloadSection} from "../../components/homepage/DownloadSection";
 import {FadeInWhenVisible} from "../../components/FadeIn";
 import { NextSeo } from 'next-seo';
 import {Intro} from "../../components/services/Intro";
 import {Info} from "../../components/services/Info";
+import {theme} from "../../utils/theme";
+import {WholeForm} from "../contact";
+import {Container, Box, useMediaQuery, useTheme} from "@mui/material";
+import * as React from "react";
+import {Drinks, Eyes} from "../../components/icons";
+
 
 const Services: NextPage = () => {
+    const theme = useTheme();
+    const largerThanSM = useMediaQuery(theme.breakpoints.up('sm'));
     return (
         <>
             <NextSeo
@@ -24,18 +29,32 @@ const Services: NextPage = () => {
                 <Info />
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-                <WorkWithUs />
+                <WorkWithUs color={theme.palette.purple.main} bgColor='white' />
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-            <QuizSection />
+                <Box sx={{ p: 4, bgcolor: 'secondary.main'}}>
+                    <Container>
+                        <Box sx={{ display: 'flex'}}>
+                            {largerThanSM && <Box sx={{flex: 1}}>
+                                <Box sx={{width: '80%'}}>
+                                    <Eyes/>
+                                </Box>
+                            </Box>}
+                            <Box sx={{ flex: 4 }}>
+                                <WholeForm />
+                            </Box>
+                            {largerThanSM && <Box sx={{flex: 1, alignSelf: 'flex-end'}}>
+                                <Box sx={{width: '80%', ml: 'auto'}}>
+                                    <Drinks/>
+                                </Box>
+                            </Box>}
+                        </Box>
+                    </Container>
+                </Box>
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-            <PreviousProjects />
+                <DownloadSection />
             </FadeInWhenVisible>
-            <FadeInWhenVisible>
-            <DownloadSection />
-            </FadeInWhenVisible>
-            <FinalCTA />
         </>
     )
 }
