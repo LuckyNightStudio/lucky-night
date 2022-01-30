@@ -1,6 +1,6 @@
 import {Box, Modal, useMediaQuery, useTheme} from "@mui/material";
 import {Dispatch} from "react";
-
+// Remove?
 export const BookingModal = ({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: Dispatch<boolean>}) => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));

@@ -6,6 +6,8 @@ import {FinalCTA} from "../../components/homepage/FinalCTA";
 import {DownloadSection} from "../../components/homepage/DownloadSection";
 import {FadeInWhenVisible} from "../../components/FadeIn";
 import { NextSeo } from 'next-seo';
+import {Intro} from "../../components/services/Intro";
+import {Info} from "../../components/services/Info";
 
 const Services: NextPage = () => {
     return (
@@ -15,6 +17,12 @@ const Services: NextPage = () => {
                 description="We offer branding and website service, including E-commerce sites. See our packages to find out which is right for you"
                 canonical='https://www.luckynightstudio.co.uk/'
             />
+            <FadeInWhenVisible>
+                <Intro />
+            </FadeInWhenVisible>
+            <FadeInWhenVisible>
+                <Info />
+            </FadeInWhenVisible>
             <FadeInWhenVisible>
                 <WorkWithUs />
             </FadeInWhenVisible>

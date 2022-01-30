@@ -6,7 +6,7 @@ import Link from "next/link";
 import * as React from "react";
 import {Sun, GreenSun} from "../icons";
 
-export const underlineStyle = { width: '100%', height: 10, marginTop: '-10px', display: 'block', background: 'white '}
+export const underlineStyle = { width: '100%', height: 10, marginTop: '-13px', display: 'block', background: 'white '}
 
 export const Section2 = () => {
     const theme = useTheme();

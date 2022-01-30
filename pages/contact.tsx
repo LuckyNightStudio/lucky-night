@@ -47,11 +47,15 @@ const Form = () => {
         (
             <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action='/contact?success'>
                 <input type="hidden" name="form-name" value="contact" />
-                <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row' : 'column'}}>
-                    <Input label="Name" variant="outlined" name='name' sx={{ flex: 1 }}/>
-                    <Input label="Email" variant="outlined" type='email' name='email' sx={{ flex: 1 }} />
+                <Box sx={{ display: 'flex', flexDirection: largerThanSM ? 'row' : 'column', flexWrap: 'wrap' }}>
+                    <Input label="NAME" variant="outlined" name='name' sx={{ flex: 1, flexBasis: '48%' }} required />
+                    <Input label="EMAIL" variant="outlined" type='email' name='email' sx={{ flex: 1, flexBasis: '48%' }} required/>
+                    <Input label="BUSINESS NAME" variant="outlined" name='businessName' sx={{ flex: 1, flexBasis: '48%' }} />
+                    <Input label="INSTA HANDLE" variant="outlined" name='insta' sx={{ flex: 1, flexBasis: '48%' }} />
+                    <Input label="APPROX BUDGET" variant="outlined" name='budget' sx={{ flex: 1, flexBasis: '48%' }} />
+                    <Input label="APPROX TIMESCALE" variant="outlined" name='timescale' sx={{ flex: 1, flexBasis: '48%' }} required />
                 </Box>
-                <Input label="Message" variant="outlined" multiline  name='message' rows={4} fullWidth/>
+                <Input label="TELL US ABOUT YOUR PROJECT*" variant="outlined" multiline  name='message' rows={4} fullWidth/>
                 <Button variant='contained' type='submit' color={'purple' as 'primary'} sx={{...ButtonStyle, mx: 2}}>
                     Submit
                 </Button>
@@ -121,27 +125,14 @@ const Contact: NextPage = () => {
                         </Box>
                     </Box>}
                     <Box  sx={{ flex: 3, maxWidth: '100%'}}>
-                        <Typography variant='h4' component='h1' mx={2}>
-                            Contact Us
+                        <Typography variant='h4' component='h1' mx={2} style={{ display: 'inline-block', width: 'max-content', maxWidth: 'max-content' }}>
+                            Enquire Now
+                            {largerThanSM && <span style={{...underlineStyle, background: theme.palette.purple.main}}/>}
                         </Typography>
                         <Typography mx={2} mb={2}>
-                            <span style={{ display: 'inline-block', width: 'max-content', maxWidth: '100%' }}>
-                                Book a Free Consultation or Fill Out the Form Below
-                                {largerThanSM && <span style={{...underlineStyle, background: theme.palette.yellow.main}}/>}
-                            </span>
+                            Tell us about your project & we’ll be in touch
                         </Typography>
                         {asPath.includes('success') ? <SuccessMessage /> : <Form/>}
-                        <Box sx={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', mx: 2}}>
-                            <Box>
-                                <Typography sx={{ mb: 2, mt: 2 }}>
-                                    Ready to talk about a specific project instead?
-                                </Typography>
-                                <BookButton color='secondary' />
-                            </Box>
-                            {largerThanSM && <Box sx={{maxWidth: 120, ml: 4, mt: -4}}>
-                                <Pencil/>
-                            </Box>}
-                        </Box>
                     </Box>
                 </Box>
                 </FadeInWhenVisible>

@@ -1,8 +1,7 @@
 import {Button} from "@mui/material";
-import {useState} from "react";
-import {BookingModal} from "./BookModal";
 import {SxProps} from "@mui/system";
 import {Theme} from "@mui/material/styles";
+import Link from 'next/link'
 
 interface Props {
     color?: string
@@ -12,14 +11,12 @@ interface Props {
 export const ButtonStyle = { borderRadius: 10, border: 'solid 4px black', px: 4}
 
 export const BookButton = ({color = 'primary', styles= {}}: Props) => {
-    const [isModalOpen, setIsModalOpen] = useState(false)
 
     return (
-        <>
-            <Button variant='contained' color={color as any} sx={{...ButtonStyle, ...styles}} onClick={() => setIsModalOpen(true)}>
-                BOOK A FREE CONSULTATION
+        <Link href='/contact' passHref>
+            <Button variant='contained' color={color as any} sx={{...ButtonStyle, ...styles}}>
+                ENQUIRE NOW
             </Button>
-            <BookingModal isOpen={isModalOpen} setIsOpen={setIsModalOpen}/>
-        </>
+        </Link>
     )
 }
