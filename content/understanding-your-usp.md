@@ -17,8 +17,6 @@ It is important to develop a strong USP so that you can market your company and 
 
 > Remember, your customers are inundated with marketing and overwhelmed with options. Having a strong differentiator will often be the only thing stopping them from choosing your competition over you.
 
-
-
 ![](img/disruptivo-iq15dtx-63k-unsplash.jpg)
 
 ### **Who is your USP for?**
@@ -26,8 +24,6 @@ It is important to develop a strong USP so that you can market your company and 
 Your USP is essentially a business tool, for use in your branding and marketing. While your customers will know the list of your USP thanks to your marketing messages and branding, the core proposition will be largely internal.
 
 Saying all this, it’s crucial that your USP be modelled around the needs and desires of your ideal customer. Uniqueness doesn’t count for much if it’s not something that interests your audience. Start with your customer, find out what they value that is currently not being offered by other businesses in your niche and build from there.
-
-
 
 ### **What form can your USP take?**
 
@@ -47,12 +43,8 @@ Your USP should be used to focus your marketing strategy and should give directi
 
 Revisiting your USP is something that should be factored in to your regular business planning. How often is largely up to what stage your business is at. Newer businesses will likely require more frequent visits to realign as they learn more about their ideal customer base and their competition - quarterly at least to ensure their messaging stays sharp and relevant. More seasoned businesses with a more established brand position will likely manage perfectly well with a yearly review to establish any changes to the market and other niche areas they could look at.
 
-
-
 ![](img/ian-schneider-tammbr4okv4-unsplash.jpg)
 
-
-
-
-
-> Are you planning a website launch in 2022? Our strategic brand & web packages deeply understand your dream customer base and convert them into a paying reality while guaranteeing a successful launch without the drama! Book your free 30 minute consultation to find out more.
+> Would you like to understand your USP and create digital solutions that perfectly demonstrate it? Fill out our enquiry form today to find out all the ways Lucky Night Studio can help bring your vision to life.
+>
+> [Enquire Now](https://www.luckynightstudio.co.uk/contact)
