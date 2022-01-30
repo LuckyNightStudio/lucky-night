@@ -27,7 +27,6 @@ import brandImg13 from "../../public/puppa-fresh/puppa-fresh-brand-13.jpg";
 import brandImg14 from "../../public/puppa-fresh/puppa-fresh-brand-14.jpg";
 import brandImg15 from "../../public/puppa-fresh/puppa-fresh-brand-15.jpg";
 import brandImg16 from "../../public/puppa-fresh/puppa-fresh-brand-16.jpg";
-import Masonry from '@mui/lab/Masonry';
 import Image from "next/image";
 import * as React from "react";
 import {underlineStyle} from "../../components/homepage/Section2";
@@ -237,8 +236,9 @@ const PuppaFresh: NextPage = () => {
             </FadeInWhenVisible>
             <FadeInWhenVisible>
             <Box m={2}>
-                <Masonry columns={largerThanSM ? 2 : 1} spacing={2}>
-                    <Box sx={{ width: '50%'}}>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: largerThanSM ? 'row': 'column'}}>
+                    <Box sx={{ flex: 1, p: 2}}>
+                        <Box mb={2}>
                         <a href={siteLink} target='_blank' rel="noreferrer">
                         <Image
                             src={image9.src}
@@ -249,8 +249,19 @@ const PuppaFresh: NextPage = () => {
                             placeholder='blur'
                         />
                         </a>
+                        </Box>
+                        <a href={siteLink} target='_blank' rel="noreferrer">
+                            <Image
+                                src={image11.src}
+                                alt="Puppa Fresh website mockup3"
+                                width={image11.width}
+                                height={image11.height}
+                                blurDataURL={image11.blurDataURL}
+                                placeholder='blur'
+                            />
+                        </a>
                     </Box>
-                    <Box sx={{ width: '50%'}}>
+                    <Box sx={{ flex: 1, p: 2}}>
                         <a href={siteLink} target='_blank' rel="noreferrer">
                         <Image
                             src={image10.src}
@@ -262,17 +273,7 @@ const PuppaFresh: NextPage = () => {
                         />
                         </a>
                     </Box>
-                    <Box sx={{ width: '50%'}}>
-                        <Image
-                            src={image11.src}
-                            alt="Puppa Fresh website mockup3"
-                            width={image11.width}
-                            height={image11.height}
-                            blurDataURL={image11.blurDataURL}
-                            placeholder='blur'
-                        />
-                    </Box>
-                </Masonry>
+                </Box>
             </Box>
             </FadeInWhenVisible>
             <FadeInWhenVisible>
