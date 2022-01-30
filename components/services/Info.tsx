@@ -30,8 +30,8 @@ export const Info = () => {
                             <Button variant='contained' sx={{...ButtonStyle, my: 4}} color={'green' as any}>Our Work</Button>
                         </Link>
                     </Box>
-                    <Box sx={{ flex: 1, pl: 5, height: 'max-content'}}>
-                        <Box sx={{ width: largerThanMD ? '130%' : '80%', position: 'relative', mx: 'auto', mb: largerThanMD ? 0: 8 }}>
+                    <Box sx={{ flex: 1, pl: largerThanMD ? 5 : 0, height: 'max-content'}}>
+                        <Box sx={{ width: largerThanMD ? '130%' : '100%', position: 'relative', mx: 'auto', mb: largerThanMD ? 0: 8 }}>
                             <Box sx={{ width: '30%', position: 'absolute', bottom: '-20px', left: 30, zIndex: 2 }}>
                                 <Hearts />
                             </Box>
