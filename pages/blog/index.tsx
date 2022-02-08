@@ -1,6 +1,6 @@
 import type {GetStaticProps, InferGetStaticPropsType, NextPage} from 'next'
 import {Box, Container, Typography, Card, CardMedia, CardContent, CardActions, Button} from "@mui/material";
-import { xor, intersection } from 'lodash'
+import { xor, intersection, orderBy } from 'lodash'
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
@@ -41,6 +41,14 @@ const Index: NextPage = ({posts, tags: allTags}: InferGetStaticPropsType<typeof 
         })
     }, [selectedTags])
 
+    const orderedPosts = orderBy(posts, function(post) {
+        const dateArr = post.date.split('-')
+        const date = new Date()
+        date.setFullYear(dateArr[2])
+        date.setMonth(dateArr[1] - 1)
+        date.setDate(dateArr[0])
+        return date;
+    }, 'desc');
     return (
         <Container>
             <NextSeo
@@ -72,8 +80,8 @@ const Index: NextPage = ({posts, tags: allTags}: InferGetStaticPropsType<typeof 
                         </Box>
                     ))}
                 </Box>
-                <Box sx={{display: 'flex', flexWrap: 'wrap'}}>
-                    {posts.map((post: PostProps) => (
+                <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+                    {orderedPosts.map((post: PostProps) => (
                         <Card sx={{
                             margin: 2,
                             flex: 1,
@@ -82,13 +90,20 @@ const Index: NextPage = ({posts, tags: allTags}: InferGetStaticPropsType<typeof 
                             display:  selectedTags.length === 0 || intersection(selectedTags, post.tagsList.map(({tags}) => tags)).length > 0 ? 'flex' : 'none',
                             flexDirection: 'column',
                         }} key={post.id}>
+                            <Link href={`/blog/${post.id}`} passHref>
                             <CardMedia
                                 src='image'
                                 component="img"
                                 height="200"
                                 image={post.summaryImage}
                                 alt={post.title}
+                                sx={{
+                                    '&:hover': {
+                                        cursor: 'pointer'
+                                    }
+                                }}
                             />
+                            </Link>
                             <CardContent>
                                 <Box sx={{ marginBottom: 2, display: 'flex', flexWrap: 'wrap' }}>
                                     {post?.tagsList?.map(({tags}) => (
