@@ -2,8 +2,8 @@ import type { NextPage } from 'next'
 import {Container, Box, Typography, TextField, styled, Button, useTheme, useMediaQuery} from "@mui/material";
 import {underlineStyle} from "../components/homepage/Section2";
 import * as React from "react";
-import {BookButton, ButtonStyle} from "../components/BookButton";
-import {Pencil} from "../components/icons";
+import { ButtonStyle} from "../components/BookButton";
+import Script from 'next/script'
 import Image from 'next/image'
 import {useRouter} from "next/router";
 import image2 from "../public/insta/255527567_60676265w7438425_502380147576019928_n.jpg";
@@ -163,22 +163,8 @@ const Contact: NextPage = () => {
                         Join us on <span style={{ color: theme.palette.secondary.main}}>Instagram</span>
                     </a>
                 </Typography>
-                <Box sx={{ display: 'flex' }}>
-                    {instaImages.map((img, i) => (
-                        <Box key={i} sx={{ flex: 1 }}>
-                            <a href="https://www.instagram.com/luckynightstudio/" target="_blank" rel="noreferrer">
-                                <Image
-                                    src={img.src}
-                                    alt="Picture of Louise and Naomi"
-                                    width={img.width}
-                                    height={img.height}
-                                    blurDataURL={img.blurDataURL}
-                                    placeholder='blur'
-                                />
-                            </a>
-                        </Box>
-                    ))}
-                </Box>
+                <Script src="https://apps.elfsight.com/p/platform.js" defer></Script>
+                <div className="elfsight-app-29ade5b2-2b40-477b-aad5-4a8a399cb649"></div>
             </Box>
             </FadeInWhenVisible>
             <FadeInWhenVisible>

@@ -33,3 +33,9 @@ nav a:hover {
   width: 100%;
   background: white;
 }
+
+.eapps-instagram-feed-container {
+ margin-bottom: -60px !important;
+  z-index: 199999!important;
+  position: relative;
+}
