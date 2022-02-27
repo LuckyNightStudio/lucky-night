@@ -11,6 +11,7 @@ tagsList:
   - tags: Small Business
   - tags: Marketing
   - tags: SEO
+  - tags: Squarespace
 date: 27-02-2022
 ---
 Squarespace is a great tool for a lot of young businesses, allowing complete control over content and editing of your site whenever and wherever you need. However, their template and functionality options are limited and can leave users feeling underwhelmed. Custom Squarespace templates and plugins can be the ideal solution to these issues, allowing a more customised, creative approach and ensuring your website works in the all the ways you need it to. So what are the pros and cons of these custom tools?
