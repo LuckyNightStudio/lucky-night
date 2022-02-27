@@ -68,4 +68,6 @@ I can already sense the worried looks, but unfortunately it is likely that in or
 
 So there we have it, all the pros and cons of working with a custom Squarespace template. I hope this post has provided you with a bit more information to get you started on your web design journey.
 
+
+
 > If you don’t feel the Squarespace template route is right for you, get in touch to learn more about our custom web design packages. Professionally designed, custom coded and SEO optimised, they’re a perfect fit for businesses of any size - and even better, you don’t have to do any of the hard work! Leaving you to focus on the projects you’re actually passionate about and that make you money.
