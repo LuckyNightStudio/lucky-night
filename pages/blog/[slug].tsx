@@ -33,9 +33,18 @@ const ImageComponent = ({src, alt}: {src: string, alt: string})  => {
 
 const QuoteComponent = ({children}: any) => {
     return (
-        <Box sx={{ px: 4, py: 4, my: 5, background: theme.palette.greenLight.light, borderLeft: `solid 8px ${theme.palette.green.main}`}}>
-            {children[0]?.props?.children?.map((text: string, i: number) => (
-                <Typography key={i}>
+        <Box sx={{
+            px: 4,
+            py: 4,
+            my: 5,
+            background: theme.palette.greenLight.light,
+            borderLeft: `solid 8px ${theme.palette.green.main}`,
+            '& a': {
+                textDecoration: 'underline'
+            }
+        }}>
+            {children[0]?.props?.children?.map((text: string | object, i: number) => (
+                <Typography key={i} sx={{ display: 'inline'}}>
                     {text}
                 </Typography>
             ))}
@@ -53,6 +62,11 @@ const AsideComponent = ({children}: any) => {
             ))}
         </Box>
     )
+}
+
+const PWrapper = ({ children, ...props }: any) => {
+    const ParaComponent = children[0]?.type?.name === 'ImageComponent' ? 'div' : Typography
+    return <ParaComponent>{children}</ParaComponent>
 }
 
 const options = {
@@ -94,8 +108,7 @@ const options = {
             },
         },
         p: {
-            component: Typography,
-            props: { paragraph: true },
+            component: PWrapper
         },
         li: {
             component: MarkdownListItem,
