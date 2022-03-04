@@ -22,6 +22,12 @@ const Page: NextPage = () => {
                 <Box maxWidth='sm' py={2} px={2} mx='auto' my={5}>
                     <Box >
                         <BookButton color='purple' styles={{width: '100%', mx: 'auto', my: 1, p: 2}}/>
+                        <a href='https://luckynightstudio.eo.page/9285q' target='_blank' rel="noreferrer">
+                            <Button variant='contained' sx={ButtonStyles} color='secondary'>
+                                Free Web Conversions Guide
+                            </Button>
+                        </a>
+
                         <a href='https://mailchi.mp/f2ca6a15298b/freeseochecklist-luckynightstudio' target='_blank' rel="noreferrer">
                             <Button variant='contained' sx={ButtonStyles} color={'yellow' as any}>
                                 Free SEO Checklist
