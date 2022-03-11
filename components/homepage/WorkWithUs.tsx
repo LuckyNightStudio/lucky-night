@@ -11,7 +11,7 @@ export const WorkWithUs = ({bgColor = 'purple.main', color = 'white'}: Props) =>
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     return (
-        <Box p={largerThanMD ? 4 : 1} mb={4} bgcolor={bgColor}>
+        <Box p={largerThanMD ? 3 : 1} mb={0} bgcolor={bgColor}>
             <Container>
                 <Typography variant='h4' component='h2' my={8} textAlign='center'>
                     How you can <span style={{ color }}>work with us</span>
@@ -21,8 +21,8 @@ export const WorkWithUs = ({bgColor = 'purple.main', color = 'white'}: Props) =>
                         <Box width={60} margin='auto' pb={2}>
                             <Hands1 />
                         </Box>
-                        <Typography variant='body1' fontWeight='500'>Step 1: Get In Touch</Typography>
-                        <Typography variant='body1'>Tell us about your requirements and needs and we can work out how we can help you</Typography>
+                        <Typography variant='body1' fontWeight='500'>Step 1: Book A Consultation</Typography>
+                        <Typography variant='body1'>Fill out our questionnaire so we can get to know your needs. During your consultation we’ll discuss deliverables, timings & costs.</Typography>
                     </Box>
                     <Box textAlign='center' p={4} flex={1} sx={{minWidth: '300px'}}>
                         <Box width={60} margin='auto' pb={2}>

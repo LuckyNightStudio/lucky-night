@@ -11,7 +11,7 @@ const spin = keyframes`
   }
 `;
 
-const sunStyles: any = {
+export const sunStyles: any = {
     '#sunPath1, #sunPath2': {
         transformOrigin: 'center',
         animation: `14s linear infinite normal both ${spin}`,
