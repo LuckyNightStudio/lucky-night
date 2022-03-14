@@ -37,7 +37,7 @@ export const Intro = () => {
                         icon={<Laptop />}
                         iconSize='80px'
                         color='secondary'
-                        link='/'
+                        link='/services/website-and-development'
                     />
                     <Service
                         title='DIGITAL'

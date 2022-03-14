@@ -31,7 +31,7 @@ const Services: NextPage = () => {
                         <Box sx={{ display: 'flex'}}>
                             {largerThanSM && <Box sx={{flex: 1}}>
                                 <Box sx={{width: '80%'}}>
-                                    <Eyes/>
+                                    <Eyes flip/>
                                 </Box>
                             </Box>}
                             <Box sx={{ flex: 4 }}>
@@ -46,9 +46,7 @@ const Services: NextPage = () => {
                     </Container>
                 </Box>
             </FadeInWhenVisible>
-            <FadeInWhenVisible>
-                <DownloadSection />
-            </FadeInWhenVisible>
+            <DownloadSection />
         </>
     )
 }
