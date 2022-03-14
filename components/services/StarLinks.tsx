@@ -6,6 +6,7 @@ import {theme} from "../../utils/theme";
 
 const styles = {
     p: 4, flex: 1, maxWidth: 220, minWidth: 180,
+    cursor: 'pointer',
     'svg': {
         transition: '0.5s',
     },
@@ -37,6 +38,9 @@ interface Props {
 
 export const StarLinks = ({links, text = 'Digital Design', color}: Props) => {
     const theme = useTheme();
+    const handleContactButton = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }
     return (
         <Box>
             <Container>
@@ -47,13 +51,11 @@ export const StarLinks = ({links, text = 'Digital Design', color}: Props) => {
                     </Typography>
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
                         {links.map(({img, text}, i) => (
-                            <Box sx={styles} key={i}>
-                                <Box sx={sunStyles}>
+                            <Box sx={styles} key={i} onClick={() => handleContactButton(text.replace('</br>', '').replace(' ', '_'))}>
+                                <Box sx={sunStyles} mb={2}>
                                     <SVGImage imgLink={img} />
                                 </Box>
-                                <Typography component="h4">
-                                    {text}
-                                </Typography>
+                                <Typography component="h4" dangerouslySetInnerHTML={{__html: text}} />
                             </Box>
                         ))}
                     </Box>

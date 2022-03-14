@@ -16,9 +16,9 @@ export const BottomSection = () => {
     }
 
     return (
-        <>
+        <div id="CUSTOM_DEVELOPMENT">
             <FadeInWhenVisible>
-                <Box component='section' bgcolor='pink.main' sx={{ backgroundImage: `url('${Pattern.src}')`, backgroundAttachment: 'fixed' }} px={4} py={8}>
+                <Box component='section' bgcolor='pink.main' sx={{ backgroundImage: `url('${Pattern.src}')`, backgroundAttachment: 'fixed' }} px={4} py={8} id="CUSTOM">
                     <Container maxWidth='md'>
                         <Box p={5} sx={{ backgroundColor: 'rgba(255,255,255,0.95)', borderRadius: 8}}>
                             <Typography variant='h4' textAlign='center' mb={2}>
@@ -56,6 +56,6 @@ export const BottomSection = () => {
                 </Box>
             </FadeInWhenVisible>
             <DownloadSection />
-        </>
+        </div>
     )
 }

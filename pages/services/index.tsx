@@ -26,7 +26,7 @@ const Services: NextPage = () => {
                 <WorkWithUs color={theme.palette.green.contrastText} bgColor='green.light' />
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-                <Box sx={{ p: 4, bgcolor: 'secondary.main', m: 0}}>
+                <Box sx={{ px: 4, py: 8, bgcolor: 'secondary.main', m: 0}}>
                     <Container>
                         <Box sx={{ display: 'flex'}}>
                             {largerThanSM && <Box sx={{flex: 1}}>

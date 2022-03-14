@@ -57,7 +57,7 @@ const Design: NextPage = () => {
                 </Box>
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-                <Box component='section' bgcolor='yellow.main' py={4}>
+                <Box component='section' bgcolor='yellow.main' py={4} id="BRANDING">
                     <Container>
                         <Box sx={{display: 'flex', flexWrap: 'wrap', flexDirection: small ? 'column': 'row'}}>
                             <Box sx={{flex: 2, position: 'relative'}}>
@@ -81,7 +81,7 @@ const Design: NextPage = () => {
                                 </Box>
                             </Box>
                             <Box p={4} flex={5}>
-                                <Typography component='h1' variant='body1' sx={{fontSize: '1.8rem', py: 1}}>
+                                <Typography component='h1' variant='body1' sx={{fontSize: '2.6rem', py: 1}}>
                                     BRANDING
                                 </Typography>
                                 <Typography variant='h6' component='p' color='primary.main' py={1}>
@@ -130,7 +130,6 @@ const Design: NextPage = () => {
                     </Box>
                 </Box>
             </FadeInWhenVisible>
-            <FadeInWhenVisible>
                 <Box bgcolor='yellow.main' py={4}>
                     <Container>
                         <Box sx={{ mb: 4, display: 'flex', flexWrap: 'wrap', flexDirection: largerThanMD ? 'row': 'column', alignItems: largerThanMD ?  'stretch' : 'center', justifyContent: 'center' }}>
@@ -175,9 +174,8 @@ const Design: NextPage = () => {
                         </Box>
                     </Container>
                 </Box>
-            </FadeInWhenVisible>
             <FadeInWhenVisible>
-                <Box component='section' bgcolor='purple.main' px={2} py={4} sx={{ maxWidth: '100%', overflow: 'hidden'}}>
+                <Box component='section' bgcolor='purple.main' px={2} py={4} sx={{ maxWidth: '100%', overflow: 'hidden'}} id="PRINT">
                     <Container>
                         <Box sx={{ display: 'flex'}}>
                             <Box sx={{ flex: 2, p:4 }}>
@@ -244,7 +242,7 @@ const Design: NextPage = () => {
                 </Box>
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-                <Box bgcolor='greenLight.main' component='section'>
+                <Box bgcolor='greenLight.main' component='section' id="SOCIAL_MEDIA" py={6}>
                     <Container>
                         <Box sx={{ display: 'flex', flexDirection: small ? 'column': 'row'}}>
                             <Box sx={{ flex: 1 }}>

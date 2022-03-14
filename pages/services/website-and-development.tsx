@@ -12,26 +12,26 @@ import {Box, Button, Container, Typography, useMediaQuery, useTheme} from "@mui/
 import img from '../../public/img/services/custom-website.png'
 import printImg from '../../public/img/services/print-example.png'
 import socialMediaImg from '../../public/img/services/social-media-example.png'
-import {Sun, ArrowLeft, Pencil, Hands2, Hearts} from "../../components/icons";
+import { ArrowLeft, Hearts} from "../../components/icons";
 import {BottomSection} from "../../components/services/ServicesPagesBottomSection";
 import {ServiceCard} from "../../components/ServiceCard";
 import {BookButton, ButtonStyle} from "../../components/BookButton";
 
 const links = [
     {
-        text: 'CUSTOM WEBSITES',
+        text: 'CUSTOM </br>WEBSITES',
         img: customImg
     },
     {
-        text: 'CUSTOM THEMES',
+        text: 'CUSTOM </br>THEMES',
         img: themeImg
     },
     {
-        text: 'CONTENT MANAGEMENT',
+        text: 'CONTENT </br>MANAGEMENT',
         img: cmsImg
     },
     {
-        text: 'CUSTOM DEVELOPMENT',
+        text: 'CUSTOM </br>DEVELOPMENT',
         img: devImg
     },
 ]
@@ -57,74 +57,73 @@ const Website: NextPage = () => {
                 </Box>
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-                <Box component='section' bgcolor='greenLight.main' py={4}>
-                    <Container>
-                        <Box sx={{display: 'flex', flexWrap: 'wrap', flexDirection: small ? 'column': 'row'}}>
-                            <Box sx={{flex: 2, position: 'relative'}}>
-                                <Box sx={{
-                                    position: small ? 'relative' : 'absolute',
-                                    top: 0,
-                                    right: 0,
-                                    width: small ? '90%' : '160%',
-                                    height: small ? '90%' : '160%',
-                                    pointerEvents: 'none',
-                                    zIndex: 2,
-                                    mx: 'auto',
-                                    mb: 4
-                                }}>
-                                    <Image
-                                        src={img.src}
-                                        height={img.height}
-                                        width={img.width}
-                                        alt="Custom Website example"
-                                    />
+                <>
+                    <Box component='section' bgcolor='greenLight.main' py={4} id="CUSTOM_WEBSITES">
+                        <Container>
+                            <Box sx={{display: 'flex', flexWrap: 'wrap', flexDirection: small ? 'column': 'row'}}>
+                                <Box sx={{flex: 2, position: 'relative'}}>
+                                    <Box sx={{
+                                        position: small ? 'relative' : 'absolute',
+                                        top: 0,
+                                        right: 0,
+                                        width: small ? '90%' : '160%',
+                                        height: small ? '90%' : '160%',
+                                        pointerEvents: 'none',
+                                        zIndex: 2,
+                                        mx: 'auto',
+                                        mb: 4
+                                    }}>
+                                        <Image
+                                            src={img.src}
+                                            height={img.height}
+                                            width={img.width}
+                                            alt="Custom Website example"
+                                        />
+                                    </Box>
+                                </Box>
+                                <Box p={4} flex={5}>
+                                    <Typography component='h1' variant='body1' sx={{fontSize: '2.6rem', py: 1}}>
+                                        CUSTOM WEBSITES
+                                    </Typography>
+                                    <Typography variant='h6' component='p' color='white.main' py={1}>
+                                        “Design is not just what it looks like and feels like. Design is how it works.” - Steve Jobs
+                                    </Typography>
+                                    <Typography py={1}>
+                                        Custom built websites are the perfect fit for the vast majority of small businesses. They allow you to take back hours of precious time each week that would usually be spent editing and updating, so that you can focus on the work you’re most passionate about.
+                                    </Typography>
+                                    <Typography py={1}>
+                                        Custom built sites perform better on search engines and mobile devices and can be fully customised to your unique requirements. All while taking the time pressure off of you so you can manage the million other things on your to-do list.
+                                    </Typography>
+                                    <Typography py={1}>
+                                        We offer a full scale web design service, from design through to development and can even manage hosting and email set up.
+                                    </Typography>
                                 </Box>
                             </Box>
-                            <Box p={4} flex={5}>
-                                <Typography component='h1' variant='body1' sx={{fontSize: '1.8rem', py: 1}}>
-                                    CUSTOM WEBSITES
-                                </Typography>
-                                <Typography variant='h6' component='p' color='white.main' py={1}>
-                                    “Design is not just what it looks like and feels like. Design is how it works.” - Steve Jobs
-                                </Typography>
-                                <Typography py={1}>
-                                    Custom built websites are the perfect fit for the vast majority of small businesses. They allow you to take back hours of precious time each week that would usually be spent editing and updating, so that you can focus on the work you’re most passionate about.
-                                </Typography>
-                                <Typography py={1}>
-                                    Custom built sites perform better on search engines and mobile devices and can be fully customised to your unique requirements. All while taking the time pressure off of you so you can manage the million other things on your to-do list.
-                                </Typography>
-                                <Typography py={1}>
-                                    We offer a full scale web design service, from design through to development and can even manage hosting and email set up.
+                        </Container>
+                        <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}} bgcolor='greenLight.main'>
+                            {!smallerThanMD && (<Box sx={{flex: 2, position: 'relative'}}>
+                                <Box sx={{
+                                    position: 'absolute',
+                                    top: '-10%',
+                                    left: 0,
+                                    width: '100%',
+                                    height: '100%',
+                                    pointerEvents: 'none'
+                                }}>
+                                    <Hearts />
+                                </Box>
+                            </Box>)}
+                            <Box p={4} flex={6}>
+                                <Typography align='center' variant='h6'>
+                                    The businesses we work with are colourful visionaries who understand the necessity of a strong online presence. They previously found their DIY site stressful, but thanks to our managed-for-you website solutions they now have a online presence that ranks highly on search engines, converts buyers & looks incredible.
                                 </Typography>
                             </Box>
+                            {!smallerThanMD && <Box flex={1}>
+                                <ArrowLeft/>
+                            </Box>}
                         </Box>
-                    </Container>
-                    <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}} bgcolor='greenLight.main'>
-                        {!smallerThanMD && (<Box sx={{flex: 2, position: 'relative'}}>
-                            <Box sx={{
-                                position: 'absolute',
-                                top: '-10%',
-                                left: 0,
-                                width: '100%',
-                                height: '100%',
-                                pointerEvents: 'none'
-                            }}>
-                                <Hearts />
-                            </Box>
-                        </Box>)}
-                        <Box p={4} flex={6}>
-                            <Typography align='center' variant='h6'>
-                                The businesses we work with are colourful visionaries who understand the necessity of a strong online presence. They previously found their DIY site stressful, but thanks to our managed-for-you website solutions they now have a online presence that ranks highly on search engines, converts buyers & looks incredible.
-                            </Typography>
-                        </Box>
-                        {!smallerThanMD && <Box flex={1}>
-                            <ArrowLeft/>
-                        </Box>}
                     </Box>
-                </Box>
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-                <Box bgcolor='greenLight.main' py={4}>
+                    <Box bgcolor='greenLight.main' py={4}>
                     <Container>
                         <Box sx={{ mb: 4, display: 'flex', flexWrap: 'wrap', flexDirection: largerThanMD ? 'row': 'column', alignItems: largerThanMD ?  'stretch' : 'center', justifyContent: 'center' }}>
                             <ServiceCard
@@ -155,7 +154,7 @@ const Website: NextPage = () => {
                                 handleClick={handleContactButton}
                             />
                         </Box>
-                        <Box textAlign='center'>
+                        <Box textAlign='center' mb={4}>
                             <Typography align='center' variant='h6' mb={2}>
                                 Looking for something custom or bespoke?
                             </Typography>
@@ -168,9 +167,10 @@ const Website: NextPage = () => {
                         </Box>
                     </Container>
                 </Box>
+                </>
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-                <Box component='section' bgcolor='secondary.main' px={2} py={4} sx={{ maxWidth: '100%', overflow: 'hidden'}}>
+                <Box component='section' bgcolor='secondary.main' px={2} py={5} sx={{ maxWidth: '100%', overflow: 'hidden' }} id='CUSTOM_THEMES'>
                     <Container>
                         <Box sx={{ display: 'flex'}}>
                             <Box sx={{ flex: 2, p:4 }}>
@@ -211,7 +211,7 @@ const Website: NextPage = () => {
                 </Box>
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-                <Box bgcolor='yellow.main' component='section' py={5}>
+                <Box bgcolor='yellow.main' component='section' py={5} id='CONTENT_MANAGEMENT'>
                     <Container>
                         <Box sx={{ display: 'flex', flexDirection: small ? 'column': 'row'}}>
                             <Box sx={{ flex: 1 }}>
@@ -230,12 +230,12 @@ const Website: NextPage = () => {
                                             src={socialMediaImg.src}
                                             height={socialMediaImg.height}
                                             width={socialMediaImg.width}
-                                            alt="Branding example"
+                                            alt="Custom Themes example"
                                         />
                                     </Box>
                                 </Box>
                             </Box>
-                            <Box sx={{ flex: 2, p:4 }}>
+                            <Box sx={{ flex: 2, p:4, my: 4 }}>
                                 <Typography  variant='body1' component='h2' sx={{ fontSize: '2.6rem' }}>
                                     CONTENT MANAGEMENT
                                 </Typography>
