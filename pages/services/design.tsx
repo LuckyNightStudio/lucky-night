@@ -20,19 +20,19 @@ import {BookButton, ButtonStyle} from "../../components/BookButton";
 const links = [
     {
         text: 'BRANDING',
-        img: brandImg.src
+        img: brandImg
     },
     {
         text: 'PRINT',
-        img: pintImg.src
+        img: pintImg
     },
     {
         text: 'SOCIAL MEDIA',
-        img: socialImg.src
+        img: socialImg
     },
     {
         text: 'CUSTOM',
-        img: customImg.src
+        img: customImg
     },
 ]
 
