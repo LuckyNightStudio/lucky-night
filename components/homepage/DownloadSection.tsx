@@ -39,7 +39,7 @@ export const DownloadSection = ({color ='purple.main'}: {color?: string}) => {
                                     </Button>
                                 </a>
                             </Box>
-                            <Box sx={{maxWidth: 150, marginLeft: 'auto', mt: 2}}>
+                            <Box sx={{maxWidth: 150, marginLeft: 'auto', mt: 2, flex: 1, mb: 1}}>
                                 <Eyes/>
                             </Box>
                         </Box>

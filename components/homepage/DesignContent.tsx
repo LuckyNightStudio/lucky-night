@@ -3,6 +3,7 @@ import * as React from "react";
 import {underlineStyle} from "./Section2";
 import {Eyes, Laptop, Pencil, YumComputerUpright} from "../icons";
 import {BookButton} from "../BookButton";
+import {ServiceCard} from "../ServiceCard";
 
 export const DesignContent = () => {
     const theme = useTheme();
@@ -60,37 +61,6 @@ export const DesignContent = () => {
                     </Box>
                 </Box>
             </Container>
-        </Box>
-    )
-}
-
-interface Props {
-    title: string
-    description: string
-    list: string[]
-    color: string
-    icon: JSX.Element
-    iconSize: number
-}
-
-const ServiceCard = ({title, description, list, color, icon, iconSize}: Props) => {
-    return (
-        <Box sx={{ borderRadius: 8, border: 'solid 3px', my: 4, mx: 2, textAlign: 'center', overflow: 'hidden', flex: 1, maxWidth: 420 }}>
-            <Box sx={{ background: color }} p={4}>
-                <Typography fontWeight='600' fontSize='1.8rem' mb={2}>{title}</Typography>
-                <Typography>{description}</Typography>
-            </Box>
-            <Box sx={{ background: `linear-gradient(${color} 50%, #ffffff 50%)`}}>
-                <Box sx={{ width: iconSize, m: 'auto'}}>
-                    {icon}
-                </Box>
-            </Box>
-            <Box p={4}>
-                {list.map((text) => (
-                    <Typography key={text} mb={2}>{text}</Typography>
-                ))}
-                <Typography sx={{ background: color, display: 'inline-block', px: 1, lineHeight: '0.5rem' }}>& much more</Typography>
-            </Box>
         </Box>
     )
 }

@@ -4,8 +4,6 @@ import {DownloadSection} from "../../components/homepage/DownloadSection";
 import {FadeInWhenVisible} from "../../components/FadeIn";
 import { NextSeo } from 'next-seo';
 import {Intro} from "../../components/services/Intro";
-import {Info} from "../../components/services/Info";
-import {theme} from "../../utils/theme";
 import {WholeForm} from "../contact";
 import {Container, Box, useMediaQuery, useTheme} from "@mui/material";
 import * as React from "react";
@@ -20,24 +18,20 @@ const Services: NextPage = () => {
             <NextSeo
                 title="Services - Lucky Night Studio"
                 description="We offer branding and website service, including E-commerce sites. See our packages to find out which is right for you"
-                canonical='https://www.luckynightstudio.co.uk/'
             />
             <FadeInWhenVisible>
                 <Intro />
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-                <Info />
+                <WorkWithUs color={theme.palette.green.contrastText} bgColor='green.light' />
             </FadeInWhenVisible>
             <FadeInWhenVisible>
-                <WorkWithUs color={theme.palette.purple.main} bgColor='white' />
-            </FadeInWhenVisible>
-            <FadeInWhenVisible>
-                <Box sx={{ p: 4, bgcolor: 'secondary.main'}}>
+                <Box sx={{ px: 4, py: 8, bgcolor: 'secondary.main', m: 0}}>
                     <Container>
                         <Box sx={{ display: 'flex'}}>
                             {largerThanSM && <Box sx={{flex: 1}}>
                                 <Box sx={{width: '80%'}}>
-                                    <Eyes/>
+                                    <Eyes flip/>
                                 </Box>
                             </Box>}
                             <Box sx={{ flex: 4 }}>
@@ -52,9 +46,7 @@ const Services: NextPage = () => {
                     </Container>
                 </Box>
             </FadeInWhenVisible>
-            <FadeInWhenVisible>
-                <DownloadSection />
-            </FadeInWhenVisible>
+            <DownloadSection />
         </>
     )
 }
