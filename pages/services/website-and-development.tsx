@@ -10,8 +10,8 @@ import devImg from '../../public/img/svgimgs/221-image.jpg'
 import {StarLinks} from "../../components/services/StarLinks";
 import {Box, Button, Container, Typography, useMediaQuery, useTheme} from "@mui/material";
 import img from '../../public/img/services/custom-website.png'
-import printImg from '../../public/img/services/print-example.png'
-import socialMediaImg from '../../public/img/services/social-media-example.png'
+import printImg from '../../public/img/services/custom-themes.png'
+import socialMediaImg from '../../public/img/services/cms.png'
 import { ArrowLeft, Hearts} from "../../components/icons";
 import {BottomSection} from "../../components/services/ServicesPagesBottomSection";
 import {ServiceCard} from "../../components/ServiceCard";
@@ -173,7 +173,7 @@ const Website: NextPage = () => {
                 <Box component='section' bgcolor='secondary.main' px={2} py={5} sx={{ maxWidth: '100%', overflow: 'hidden' }} id='CUSTOM_THEMES'>
                     <Container>
                         <Box sx={{ display: 'flex'}}>
-                            <Box sx={{ flex: 2, p:4 }}>
+                            <Box sx={{ flex: 3, p:4 }}>
                                 <Typography  variant='body1' component='h2' sx={{ fontSize: '2.6rem' }}>
                                     CUSTOM THEMES
                                 </Typography>
@@ -191,7 +191,7 @@ const Website: NextPage = () => {
                                         position: 'absolute',
                                         top: 0,
                                         left: 0,
-                                        width: '130%',
+                                        width: '160%',
                                         height: '100%',
                                         pointerEvents: 'none',
                                         zIndex: 2
