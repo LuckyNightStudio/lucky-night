@@ -6,7 +6,7 @@ summary: We hear a lot these days about content marketing and social selling on
   so it’s imperative that you’re making the most of it in order to build new
   relationships and get new customers through your books. So how can great web
   design be leveraged to land you more sales?
-summaryImage: img/michal-parzuchowski-nh4sxasye24-unsplash.jpg
+summaryImage: img/bb-laptop-man-1-.jpg
 tagsList:
   - tags: Marketing
   - tags: Small Business
