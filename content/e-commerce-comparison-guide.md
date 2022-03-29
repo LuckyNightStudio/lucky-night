@@ -34,6 +34,8 @@ If your website will predominantly be for selling products then again I would re
 
 
 
+
+
 ![](img/free-shipping-on-digital-product.jpg)
 
 ## Physical & Digital Items
@@ -48,9 +50,9 @@ Custom builds are always the best option, but not always suitable due to budget 
 
 If you're still not sure whether a Squarespace site or custom build is right for you, feel free to send us a message and we can chat about your needs and the best options.
 
-
-
 > [Send Us A Message](/contact)
+
+
 
 
 
