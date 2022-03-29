@@ -66,7 +66,7 @@ const AsideComponent = ({children}: any) => {
 
 const PWrapper = ({ children, ...props }: any) => {
     const ParaComponent = children[0]?.type?.name === 'ImageComponent' ? 'div' : Typography
-    return <ParaComponent>{children}</ParaComponent>
+    return <ParaComponent sx={{ mb: 4}} >{children}</ParaComponent>
 }
 
 const options = {
