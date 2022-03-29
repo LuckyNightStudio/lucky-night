@@ -6,6 +6,10 @@ summary: "So you want to sell products or services online? There are so many
   will allow you to sell online, but some are more suited than others... so
   let's take a look."
 summaryImage: img/shop-now-on-letter-board.jpg
+tagsList:
+  - tags: Small Business
+  - tags: Squarespace
+  - tags: Web Design
 date: 29-03-2022
 ---
 So you want to sell products or services online? There are so many options out there: WordPress WooCommerce, Shopify, Squarespace, custom built shop etc. What are the pros and cons of each of these? Each of these solutions will allow you to sell online, but some are more suited than others... so let's take a look.
