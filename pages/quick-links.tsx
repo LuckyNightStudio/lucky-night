@@ -27,6 +27,11 @@ const Page: NextPage = () => {
                                 RAISE MONEY FOR UKRAINE
                             </Button>
                         </a>
+                        <a href='https://mailchi.mp/4840ab47c81e/dreamcustomers' target='_blank' rel="noreferrer">
+                            <Button variant='contained' sx={ButtonStyles} color={'yellow' as any}>
+                                Free Guide to Attracting Dream Customers
+                            </Button>
+                        </a>
                         <a href='https://luckynightstudio.eo.page/9285q' target='_blank' rel="noreferrer">
                             <Button variant='contained' sx={ButtonStyles} color='secondary'>
                                 Free Web Conversions Guide
