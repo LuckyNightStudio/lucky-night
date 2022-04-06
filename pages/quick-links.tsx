@@ -22,11 +22,6 @@ const Page: NextPage = () => {
                 <Box maxWidth='sm' py={2} px={2} mx='auto' my={5}>
                     <Box >
                         <BookButton color='purple' styles={{width: '100%', mx: 'auto', my: 1, p: 2}}/>
-                        <a href='https://www.justgiving.com/fundraising/lucky-night-studio' target='_blank' rel="noreferrer">
-                            <Button variant='contained' sx={ButtonStyles} color={'greenLight' as any}>
-                                RAISE MONEY FOR UKRAINE
-                            </Button>
-                        </a>
                         <a href='https://mailchi.mp/4840ab47c81e/dreamcustomers' target='_blank' rel="noreferrer">
                             <Button variant='contained' sx={ButtonStyles} color={'yellow' as any}>
                                 Free Guide to Attracting Dream Customers
