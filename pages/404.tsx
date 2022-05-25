@@ -8,7 +8,7 @@ const Page: NextPage = () => {
         <>
             <NextSeo
                 title="Page not found | Lucky Night Studio"
-                description="Page not found, please check out homepage"
+                description="Page not found please check out homepage"
             />
             <Box>
                 <Container maxWidth={'md'} sx={{ textAlign: 'center', px: 2, py: 18, '& a': {fontWeight: 'bold'} }}>
