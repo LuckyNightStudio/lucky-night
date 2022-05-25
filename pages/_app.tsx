@@ -101,6 +101,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                   streetAddress: 'Sherwell Valley Rd',
                   addressLocality: 'Torquay',
                   addressCountry: 'UK',
+                  postalCode: 'TQ1'
               }}
           />
           <ConfettiContextProvider>
