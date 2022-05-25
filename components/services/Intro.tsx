@@ -9,7 +9,7 @@ export const Intro = () => {
     const theme = useTheme()
     return (
         <Box>
-            <Container>
+            <Container maxWidth={'md'}>
                 <Box textAlign='center' mx={2} mt={2}>
                     <Typography style={{ display: 'inline-block'}} variant='h3' component='h1' m={4}>
                         Full Scale Digital Design Agency
@@ -38,13 +38,6 @@ export const Intro = () => {
                         iconSize='80px'
                         color='secondary'
                         link='/services/website-and-development'
-                    />
-                    <Service
-                        title='DIGITAL'
-                        list={['SEO & analytics', 'Video & audio editing', 'Apps & digital products', 'Ad & PR creative']}
-                        icon={<YumComputerUpright />}
-                        iconSize='75px'
-                        color='purple'
                     />
                 </Box>
             </Container>
