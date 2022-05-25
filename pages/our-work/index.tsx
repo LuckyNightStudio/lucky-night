@@ -34,7 +34,7 @@ const work = [
         alt: 'Tired Girls Copy Club',
         link: '/our-work/tired-girls-copy-club',
         title: 'Tired Girls Copy Club',
-        sub: 'Strategy - Branding - Web Design',
+        sub: 'Strategy - Branding',
         color: 'purple.main'
     }
 ]

@@ -7,7 +7,7 @@ import ReactMarkdown from 'markdown-to-jsx';
 import Link from "next/link";
 import * as yaml from "js-yaml";
 import {theme} from "../../utils/theme";
-import {NextSeo} from "next-seo";
+import {ArticleJsonLd, NextSeo} from "next-seo";
 import * as React from "react";
 
 interface Props {
@@ -17,6 +17,7 @@ interface Props {
         name: string
         color: string
     }[]
+    slug: string
 }
 
 function MarkdownListItem(props: any) {
@@ -125,17 +126,32 @@ const options = {
     },
 };
 
-const Page: ({data, content}: Props) => JSX.Element = ({data, content, allTags = []}: Props) => {
+const Page: ({data, content, slug}: Props) => JSX.Element = ({data, content, allTags = [], slug}: Props) => {
     if(!data) {
         return <></>
     }
-    const {title, date, tagsList} = data
+    const {title, date, tagsList, summaryImage, summary} = data
     const tags: any[] = tagsList.map(({tags}) => (allTags.find(({name}) => name === tags)))
 
     return (
         <Container maxWidth='md'>
             <NextSeo
                 title={`${title} - Lucky Night Studio`}
+                description={summary}
+                openGraph={{
+                    images: [{ url: `https://www.luckynightstudio.co.uk/${summaryImage}` }]
+                }}
+            />
+            <ArticleJsonLd
+                type="Blog"
+                url={`https://www.luckynightstudio.co.uk/blog/${slug}`}
+                title={title}
+                images={[
+                    `https://www.luckynightstudio.co.uk/${summaryImage}`
+                ]}
+                datePublished={date}
+                authorName="Lucky Night Studio"
+                description={summary}
             />
             <Box component='article' px={4} py={8}>
                 <Box mb={4}>
@@ -184,6 +200,7 @@ export const getStaticProps = async (context: { params: { slug: string; }; }) =>
 
     return {
         props: {
+            slug: context.params.slug,
             data,
             content,
             allTags

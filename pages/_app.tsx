@@ -13,6 +13,16 @@ function MyApp({ Component, pageProps }: AppProps) {
                   locale: 'en_GB',
                   url: 'https://www.luckynightstudio.co.uk/',
                   site_name: 'Lucky Night Studio',
+                  description: "Strategy-led branding & web design for playful young businesses with immense ambitions",
+                  images: [
+                      {
+                          url: 'https://www.luckynightstudio.co.uk/_ipx/w_1920,q_75/%2F_next%2Fstatic%2Fmedia%2Flouise-and-naomi-img.21a67aa1.png?url=%2F_next%2Fstatic%2Fmedia%2Flouise-and-naomi-img.21a67aa1.png&w=1920&q=75',
+                          width: 406,
+                          height: 375,
+                          alt: 'Louise & Naomi at Lucky Night Studio',
+                          type: 'image/png',
+                      }
+                      ]
               }}
               twitter={{
                   handle: '@LuckyNightStudi',
