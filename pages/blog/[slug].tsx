@@ -145,7 +145,6 @@ const Page: ({data, content, slug}: Props) => JSX.Element = ({data, content, all
             <ArticleJsonLd
                 publisherLogo={'https://www.luckynightstudio.co.uk/img/logo.jpg'}
                 publisherName='Lucky Night Studio'
-                type="Blog"
                 url={`https://www.luckynightstudio.co.uk/blog/${slug}`}
                 title={title}
                 images={[
