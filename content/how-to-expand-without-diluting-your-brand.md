@@ -6,6 +6,11 @@ summary: There are only so many hours available to work in the day. Unless we
   without compromising our brand's unique positioning or diluting our business
   character?
 summaryImage: img/randy-tarampi-u2eulpekigu-unsplash.jpg
+tagsList:
+  - tags: Small Business
+  - tags: Branding
+  - tags: USP
+  - tags: Marketing
 date: 29-05-2022
 ---
 Understanding how to grow your business or expand upon your current service offerings can be the difference between your business thriving or flopping. There are only so many hours available to work in the day. Unless we learn how to build new income generators, our businesses could stagnate and leave us short of reaching our income goals.
