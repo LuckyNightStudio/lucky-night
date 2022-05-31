@@ -13,7 +13,7 @@ const Page: NextPage = () => {
             <Box>
                 <Container maxWidth={'md'} sx={{ textAlign: 'center', px: 2, py: 18, '& a': {fontWeight: 'bold'} }}>
                     <Typography variant={'h2'} component={'h1'} mb={4}>
-                        Oh no.... that page can't be found
+                        Oh no.... that page is not found
                     </Typography>
                     <Typography>
                         Check out our <Link href={'/'}>homepage</Link>, to see if the answer is there
