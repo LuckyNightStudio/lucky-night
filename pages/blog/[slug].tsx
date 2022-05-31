@@ -139,7 +139,13 @@ const Page: ({data, content, slug}: Props) => JSX.Element = ({data, content, all
                 title={`${title} - Lucky Night Studio`}
                 description={summary}
                 openGraph={{
-                    images: [{ url: `https://www.luckynightstudio.co.uk/${summaryImage}` }]
+                    images: [{
+                        url: `https://www.luckynightstudio.co.uk/${summaryImage}`,
+                        width: 330,
+                        height: 200,
+                        alt: title,
+                        type: 'image/jpg',
+                    }]
                 }}
             />
             <ArticleJsonLd
