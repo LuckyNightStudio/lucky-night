@@ -1,6 +1,5 @@
-import {Box, Button, Container, Typography, useMediaQuery, useTheme} from "@mui/material";
+import {Box, Button, Container, Typography, useTheme} from "@mui/material";
 import Script from 'next/script'
-import {LargeNav} from "./Header";
 import {Socials} from "./Social";
 import Link from "next/link";
 import {ButtonStyle} from "./BookButton";
@@ -9,7 +8,6 @@ import {Logo} from "./Logo";
 
 export const Footer = () => {
     const theme = useTheme();
-    const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Box sx={{ backgroundColor: '#000', color: '#fff'}} py={4}>
                 <footer>
@@ -32,7 +30,7 @@ export const Footer = () => {
                                 <Box sx={{ flex: 1, textAlign: 'right', my: 1 }}>
                                     <Box sx={{ minWidth: 201 }}>
                                         <Link href="/work-with-us" passHref>
-                                            <Button color={'greenLight'} variant='contained' sx={{...ButtonStyle, color: '#000', ml: 3}}>
+                                            <Button color={'greenLight' as any} variant='contained' sx={{...ButtonStyle, color: '#000', ml: 3}}>
                                                 WORK WITH US
                                             </Button>
                                         </Link>
