@@ -143,24 +143,29 @@ export const Header = () => {
     return (
         <Box p={0} m={0} component='header' sx={{ borderBottom: borderBottom}}>
             <Container>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 4}}>
-                    <Box sx={{ flex: 1 }}>
-                       <Socials />
-                    </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 4, flexWrap: 'wrap'}}>
+                    {largerThanMD && (<Box sx={{flex: 1}}>
+                        <Socials/>
+                    </Box>)}
                     <Box  sx={{ flex: 1 }}>
                         <Link href='/' passHref>
-                            <Box sx={{ cursor: 'pointer', minWidth: 190, width: largerThanMD ? 190 : '100%', m: 'auto' }} mt={1}>
+                            <Box sx={{ cursor: 'pointer', minWidth: 190, width: largerThanMD ? 190 : '100%', m: largerThanMD ? 'auto' : 0, mb: largerThanMD ? 0: 4, maxWidth: 250 }} mt={1}>
                                 <Logo  color={logoColor}/>
                             </Box>
                         </Link>
                     </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', flex: 1, justifyContent: 'flex-end', pl: 3 }}>
                         <Box>
                             <Link href={'/freebies'} passHref>
-                                <Typography component='a' variant='subtitle1' p={2}>FREEBIES</Typography>
+                                <Typography component='a' variant='subtitle1' p={2}
+                                            fontWeight={500}
+                                    sx={{ transition: '0.4s', '&:hover': {color: `${theme.palette.red.main} !important`} }}
+                                >
+                                    FREEBIES
+                                </Typography>
                             </Link>
                         </Box>
-                        <Box>
+                        <Box sx={{ minWidth: 201}}>
                             <Link href="/work-with-us" passHref>
                                 <Button color={'greenLight'} variant='contained' sx={{...ButtonStyle, color: '#000', ml: 3}}>
                                     WORK WITH US

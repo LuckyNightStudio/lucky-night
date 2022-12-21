@@ -55,9 +55,9 @@ const Form = () => {
                     <FormGroup>
                         <FormControlLabel control={<Checkbox defaultChecked />} label="ADD ME TO THE MAILING LIST" name='MailingList' />
                     </FormGroup>
-                    <Box sx={{ position: 'absolute', bottom: -20, right: -50, width: 200}}>
-                        <Eyes />
-                    </Box>
+                    {largerThanSM && (<Box sx={{position: 'absolute', bottom: -20, right: -50, width: 200}}>
+                        <Eyes/>
+                    </Box>)}
                     <Button variant='contained' type='submit' color={'purple' as 'primary'} sx={{...ButtonStyle, mx: 2}}>
                         Submit
                     </Button>
@@ -83,6 +83,9 @@ const SuccessMessage = () => {
 
 const WorkWithUs: NextPage = () => {
     const {asPath} = useRouter()
+    const theme = useTheme();
+    const largerThanMG = useMediaQuery(theme.breakpoints.up('md'));
+
     const {setShowConfetti} = useContext(ConfettiContext)
 
     useEffect(() => {
@@ -98,13 +101,13 @@ const WorkWithUs: NextPage = () => {
     return (
         <Box>
             <Container>
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 5}}>
-                    <Box p={4} sx={{ flex: 4, mr: 2 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 5, flexDirection: largerThanMG ? 'row': 'column' }}>
+                    <Box p={4} sx={{ flex: 4, mr: 2, textAlign: largerThanMG ? 'left' : 'center' }}>
                         <Typography variant={'h3'} component={'h1'} sx={{ color: '#fff'}} className={'purple'}>
                             Your <mark>fave</mark> website experts & digital cheerleaders
                         </Typography>
                     </Box>
-                    <Box sx={{ flex: 2, mt: 'auto', transform: 'translateY(30px) scale(1.1)'}}>
+                    <Box sx={{ flex: 2, mt: 'auto', transform: 'translateY(30px) scale(1.1)', p: 2, maxWidth: 400}}>
                         <Image
                             src={bannerImg.src}
                             alt={'freebies'}
@@ -116,15 +119,15 @@ const WorkWithUs: NextPage = () => {
             </Container>
             <Box bgcolor={'white.main'}>
                     <Box sx={{ display: 'flex', pt: 8 }}>
-                        <Box sx={{ flex: 3, mb: '-6px', mt: 'auto'}}>
+                        {largerThanMG && (<Box sx={{flex: 3, mb: '-6px', mt: 'auto'}}>
                             <Image
                                 src={img.src}
                                 alt={'Work with us'}
                                 height={img.height}
                                 width={img.width}
                             />
-                        </Box>
-                        <Box sx={{ flex: 4, px: 10, py: 5}}>
+                        </Box>)}
+                        <Box sx={{ flex: 4, px: largerThanMG ? 10: 4, py: largerThanMG ? 5: 2 }}>
                             <Typography variant={'h5'} mb={2}>
                                 Bold & results-driven websites for online businesses with a little extra ‘je ne sais quoi’
                             </Typography>
@@ -139,7 +142,7 @@ const WorkWithUs: NextPage = () => {
             </Box>
             <Box sx={{ backgroundColor: '#FEF6F8'}}>
                 <Container>
-                    <Box sx={{ px: 8, py: 12, textAlign: 'center'}}>
+                    <Box sx={{ px: largerThanMG ? 8 : 2, py: largerThanMG ? 12 : 4, textAlign: 'center'}}>
                         <Typography variant={'h4'} component={'h1'} mb={1}>Testimonials</Typography>
                         <Typography fontWeight={600} color={theme.palette.secondary.main} mb={5}>
                             YOU’RE IN SAFE HANDS, WE’VE DONE THIS BEFORE

@@ -1,5 +1,4 @@
-import {Box, useMediaQuery, useTheme} from "@mui/material";
-import {Logo} from "./Logo";
+import {Box } from "@mui/material";
 import {Instagram, Linkedin, Twitter} from "./icons";
 import {theme} from "../utils/theme";
 
@@ -14,10 +13,8 @@ const styles = {
 }
 
 export const Socials = ({start = true}: {start?: boolean}) => {
-    const theme = useTheme();
-    const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     return (
-        <Box sx={{display: 'flex', alignItems: 'flex-end', justifyContent: largerThanMD ? start ? 'flex-start' : 'center' : 'flex-end', flex: 1 }}>
+        <Box sx={{display: 'flex', alignItems: 'flex-end', justifyContent: start ? 'flex-start' : 'center', flex: 1 }}>
             <Box sx={styles}>
                 <a href='https://twitter.com/LuckyNightStudi' target='_blank' rel="noreferrer">
                     <Twitter/>

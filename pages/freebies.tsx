@@ -1,25 +1,29 @@
 import {NextPage} from "next";
-import {Box, Container, Typography} from "@mui/material";
+import {Box, Container, Typography, useMediaQuery, useTheme} from "@mui/material";
 import Image from "next/image";
 import img from '../public/freebies.png'
 
 const Freebies: NextPage = () => {
+    const theme = useTheme();
+    const largerThanMG = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Box>
             <Container>
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 5}}>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 5,  flexDirection: largerThanMG ? 'row': 'column'}}>
                     <Box p={4} sx={{ flex: 4 }}>
                         <Typography variant={'h3'} component={'h1'} sx={{ color: '#fff'}}>
                             Create brand magic with <mark>free</mark> curated resources
                         </Typography>
                     </Box>
                     <Box sx={{ flex: 2, mt: 'auto', mb: '-6px'}}>
-                        <Image
-                            src={img.src}
-                            alt={'freebies'}
-                            height={img.height}
-                            width={img.width}
-                        />
+                        <Box sx={{ maxWidth: 300 }}>
+                            <Image
+                                src={img.src}
+                                alt={'freebies'}
+                                height={img.height}
+                                width={img.width}
+                            />
+                        </Box>
                     </Box>
                 </Box>
             </Container>

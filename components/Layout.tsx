@@ -33,7 +33,7 @@ export const Layout = ({ children }: {children: JSX.Element}) => {
             </Head>
             {
                 (width > 0 && height > 0) && (
-                    <Box sx={{position: 'sticky', top: 0, left: 0, zIndex: 1500, overflow: 'hidden', height: height }} className='confetti'>
+                    <Box sx={{position: 'sticky', top: 0, left: 0, zIndex: 1500 }} className='confetti'>
                         <DynamicConfetti width={width} height={height} numberOfPieces={showConfetti ? 600 : 0} />
                     </Box>
                 )

@@ -1,15 +1,17 @@
 import type { NextPage } from 'next'
 import {NextSeo} from "next-seo";
-import {Container, Box, Typography, Button} from "@mui/material";
+import { Box, Typography, Button, useTheme, useMediaQuery} from "@mui/material";
 import {ButtonStyle} from "../components/BookButton";
 import * as React from "react";
-import {theme} from "../utils/theme";
 import Image from "next/image";
 import phone from '../public/homepage/phone.png'
 import laptop from '../public/homepage/laptop.png'
 import {Eyes2} from "../components/icons";
 
 const Home: NextPage = () => {
+    const theme = useTheme();
+    const largerThanLG = useMediaQuery(theme.breakpoints.up('lg'));
+    const largerThanMG = useMediaQuery(theme.breakpoints.up('md'));
   return (
     <>
         <NextSeo
@@ -18,8 +20,8 @@ const Home: NextPage = () => {
         />
       <Box sx={{ maxWidth: '100vw', maxHeight: 'calc(100vh - 110px)', overflow: 'hidden'}}>
           <Box sx={{ display: 'flex'}}>
-              <Box sx={{ flex: 4 }}>
-                  <Box sx={{ width: '85%', ml: 'auto', mr: 2}}>
+              {largerThanMG && (<Box sx={{flex: 4}}>
+                  <Box sx={{width: '85%', ml: 'auto', mt: 'auto', mr: 2}}>
                       <Image src={phone.src}
                              alt={'Phone with website on'}
                              width={phone.width}
@@ -27,7 +29,7 @@ const Home: NextPage = () => {
                              blurDataURL={phone.blurDataURL}
                              placeholder='blur'/>
                   </Box>
-              </Box>
+              </Box>)}
               <Box sx={{ textAlign: 'center', flex: 5, p: 3 }}>
                   <Typography component={'h4'} sx={{ fontSize: '2.3em', color: theme.palette.red.main, fontWeight: 600, mb: 4, mt: 8 }}>COMING SOON</Typography>
                   <Typography component={'h1'} variant={'h2'} mb={3}>Squarespace templates & digital assets</Typography>
@@ -43,9 +45,14 @@ const Home: NextPage = () => {
                       </Button>
                   </a>
               </Box>
-              <Box sx={{ flex: 4, minHeight: 'calc(100vh - 110px)', position: 'relative', span: { minHeight: '80%', mt: '60px !important' }}}>
-                  <Box sx={{ position: 'absolute', top: 0, left: '30%', width: 180 }}>
-                      <Eyes2 />
+              {largerThanLG && (<Box sx={{
+                  flex: 4,
+                  minHeight: 'calc(100vh - 110px)',
+                  position: 'relative',
+                  span: {minHeight: '80%', mt: '60px !important'}
+              }}>
+                  <Box sx={{position: 'absolute', top: 0, left: '30%', width: 180}}>
+                      <Eyes2/>
                   </Box>
                   <Image src={laptop.src}
                          alt={'Laptop with website on'}
@@ -55,7 +62,7 @@ const Home: NextPage = () => {
                          objectPosition={'left center'}
                          blurDataURL={laptop.blurDataURL}
                          placeholder='blur'/>
-              </Box>
+              </Box>)}
           </Box>
       </Box>
     </>

@@ -1,4 +1,4 @@
-import {createTheme} from "@mui/material/styles";
+import {createTheme, responsiveFontSizes} from "@mui/material/styles";
 
 declare module '@mui/material/styles' {
     interface Palette {
@@ -23,7 +23,7 @@ declare module '@mui/material/styles' {
     }
 }
 
-export const theme = createTheme({
+const defaultTheme = createTheme({
     palette: {
         primary: {
             main: '#27bb8e',
@@ -96,3 +96,5 @@ export const theme = createTheme({
         fontFamily: 'roc-grotesk,sans-serif',
     },
 });
+
+export const theme = responsiveFontSizes(defaultTheme)
