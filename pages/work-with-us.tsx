@@ -1,8 +1,8 @@
 import {NextPage} from "next";
 import {Box, Container, Typography, useMediaQuery, useTheme, Button, TextField, Checkbox, FormGroup, FormControlLabel} from "@mui/material";
 import Image from "next/image";
-import bannerImg from '../public/workWithUsBanner.png'
-import img from '../public/workWithUs.png'
+import bannerImg from '../public/work/workWithUsBanner.png'
+import img from '../public/work/workWithUs.png'
 import { ButtonStyle } from "../components/BookButton";
 import styled from "@emotion/styled";
 import {useRouter} from "next/router";
