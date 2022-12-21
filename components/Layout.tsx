@@ -18,7 +18,7 @@ export const Layout = ({ children }: {children: JSX.Element}) => {
     const {pathname} = useRouter()
     const [width, height] = useWindowSize()
     const {showConfetti} = useContext(ConfettiContext)
-    const bgColor = pathname === '/' ? '#FEF6F8' : '#D4C0F2'
+    const bgColor = pathname === '/' ? '#FEF6F8' : pathname === '/freebies' ? '#F69FB9' : '#D4C0F2'
     return (
         <ThemeProvider theme={theme}>
             <Head>
@@ -33,12 +33,12 @@ export const Layout = ({ children }: {children: JSX.Element}) => {
             </Head>
             {
                 (width > 0 && height > 0) && (
-                    <Box sx={{position: 'sticky', top: 0, left: 0, zIndex: 1500 }} className='confetti'>
+                    <Box sx={{position: 'sticky', top: 0, left: 0, zIndex: 1500, overflow: 'hidden', height: height }} className='confetti'>
                         <DynamicConfetti width={width} height={height} numberOfPieces={showConfetti ? 600 : 0} />
                     </Box>
                 )
             }
-            <Box bgcolor={bgColor}>
+            <Box bgcolor={bgColor} p={0} m={0}>
                 <Header />
                 <main>{children}</main>
             </Box>

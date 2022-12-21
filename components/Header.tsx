@@ -137,8 +137,11 @@ export const Header = () => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     const smallerThanMD = useMediaQuery(theme.breakpoints.down('md'));
+    const {pathname} = useRouter()
+    const borderBottom = pathname === '/' ? 'none' : 'solid 2px #fff'
+    const logoColor = pathname === '/' ? theme.palette.secondary.main : '#fff'
     return (
-        <Box p={0} m={0} component='header'>
+        <Box p={0} m={0} component='header' sx={{ borderBottom: borderBottom}}>
             <Container>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 4}}>
                     <Box sx={{ flex: 1 }}>
@@ -147,7 +150,7 @@ export const Header = () => {
                     <Box  sx={{ flex: 1 }}>
                         <Link href='/' passHref>
                             <Box sx={{ cursor: 'pointer', minWidth: 190, width: largerThanMD ? 190 : '100%', m: 'auto' }} mt={1}>
-                                <Logo  color={theme.palette.secondary.main}/>
+                                <Logo  color={logoColor}/>
                             </Box>
                         </Link>
                     </Box>

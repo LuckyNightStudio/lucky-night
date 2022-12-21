@@ -13,14 +13,11 @@ const styles = {
     }
 }
 
-export const Socials = ({includeLogo = false}: {includeLogo: boolean}) => {
+export const Socials = ({start = true}: {start?: boolean}) => {
     const theme = useTheme();
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     return (
-        <Box sx={{display: 'flex', alignItems: 'flex-end', justifyContent: largerThanMD ? 'flex-start' : 'flex-end', flex: 1}}>
-            {includeLogo && <Box width='100px' mr={largerThanMD ? 4 : 'auto'}>
-                <Logo type='footer'/>
-            </Box>}
+        <Box sx={{display: 'flex', alignItems: 'flex-end', justifyContent: largerThanMD ? start ? 'flex-start' : 'center' : 'flex-end', flex: 1 }}>
             <Box sx={styles}>
                 <a href='https://twitter.com/LuckyNightStudi' target='_blank' rel="noreferrer">
                     <Twitter/>

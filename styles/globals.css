@@ -34,8 +34,10 @@ nav a:hover {
   background: white;
 }
 
-.eapps-instagram-feed-container {
- margin-bottom: -60px !important;
-  z-index: 199999!important;
-  position: relative;
+mark {
+  background:#E71B09 !important;
+  color: #fff;
+}
+.purple mark {
+  background:#9ED8BF !important;
 }
