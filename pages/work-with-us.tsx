@@ -9,7 +9,6 @@ import {useRouter} from "next/router";
 import {useContext, useEffect} from "react";
 import {ConfettiContext} from "../components/context/ConfettiContext";
 import {Eyes} from "../components/icons";
-import {theme} from "../utils/theme";
 
 
 const Input = styled(TextField)({
