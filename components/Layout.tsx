@@ -7,6 +7,7 @@ import {useWindowSize} from '@react-hook/window-size'
 import {useContext} from "react";
 import {ConfettiContext} from "./context/ConfettiContext";
 import dynamic from "next/dynamic";
+import {useRouter} from "next/router";
 
 const DynamicConfetti = dynamic(() => import('react-confetti'), {
     ssr: false
@@ -14,14 +15,16 @@ const DynamicConfetti = dynamic(() => import('react-confetti'), {
 
 
 export const Layout = ({ children }: {children: JSX.Element}) => {
+    const {pathname} = useRouter()
     const [width, height] = useWindowSize()
     const {showConfetti} = useContext(ConfettiContext)
+    const bgColor = pathname === '/' ? '#FEF6F8' : '#D4C0F2'
     return (
         <ThemeProvider theme={theme}>
             <Head>
                 <title>Lucky Night Studio</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <meta name="description" content="Strategy-led branding & web design for playful young businesses with immense ambitions" />
+                <meta name="description" content="Providers of Squarespace templates & digital assets" />
                 <meta name="p:domain_verify" content="701955f314f687328349d8e2b6719dcf"/>
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="stylesheet" href="https://use.typekit.net/kbe1tld.css" />
@@ -35,9 +38,11 @@ export const Layout = ({ children }: {children: JSX.Element}) => {
                     </Box>
                 )
             }
-            <Header />
-            <main>{children}</main>
-            <Footer />
+            <Box bgcolor={bgColor}>
+                <Header />
+                <main>{children}</main>
+            </Box>
+            {pathname !== '/' && <Footer/>}
         </ThemeProvider>
     )
 }

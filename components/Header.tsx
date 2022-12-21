@@ -1,13 +1,15 @@
-import {Container, Box, Typography, useMediaQuery, useTheme, Slide, Modal, keyframes} from "@mui/material";
+import {Container, Box, Typography, useMediaQuery, useTheme, Slide, Modal, keyframes, Button} from "@mui/material";
 import {Logo} from "./Logo";
 import {motion} from "framer-motion";
 import Link from 'next/link'
 import {CSSProperties, useEffect, useState} from "react";
 import {SxProps} from "@mui/system";
 import {Theme} from "@mui/material/styles";
-import {BookButton} from "./BookButton";
+import {BookButton, ButtonStyle} from "./BookButton";
 import {Heart, Moon, Star, Triangle} from "./icons";
 import {useRouter} from "next/router";
+import * as React from "react";
+import {Socials} from "./Social";
 
 const pages = [
     {title: 'Services', link: '/services', Icon: Star},
@@ -65,20 +67,20 @@ export const LargeNav = ({isFooter = false}: {isFooter?: boolean}) => {
                         variants={list}
                     >
                         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-                        {pages.map(({title, link, Icon}) => (
-                                <Link href={link} passHref key={title}>
-                                    <motion.div
-                                        style={{cursor: 'pointer', color: pathname.includes(link.replace('#', '')) ? 'white' : 'inherit'}}
-                                        variants={item}>
-                                        <div style={iconContainerStyle} >
-                                            {(pathname.includes(link.replace('#', ''))) && (
-                                                <Icon />
-                                            )}
-                                        </div>
-                                        <Typography component='a' variant='subtitle1' p={2}>{title}</Typography>
-                                    </motion.div>
-                                </Link>
-                        ))}
+                            {pages.map(({title, link, Icon}) => (
+                                    <Link href={link} passHref key={title}>
+                                        <motion.div
+                                            style={{ cursor: 'pointer', color: pathname.includes(link.replace('#', '')) ? 'white' : 'inherit'}}
+                                            variants={item}>
+                                            <div style={iconContainerStyle} >
+                                                {(pathname.includes(link.replace('#', ''))) && (
+                                                    <Icon />
+                                                )}
+                                            </div>
+                                            <Typography component='a' variant='subtitle1' p={2}>{title}</Typography>
+                                        </motion.div>
+                                    </Link>
+                            ))}
                         </Box>
                     </motion.div>
                 </Box>
@@ -136,19 +138,33 @@ export const Header = () => {
     const largerThanMD = useMediaQuery(theme.breakpoints.up('md'));
     const smallerThanMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
-        <Box bgcolor='secondary.main' p={0} m={0} component='header'>
+        <Box p={0} m={0} component='header'>
             <Container>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 4}}>
-                    {!largerThanMD && <Box sx={{ flex: 1}}/>}
-                    <Box sx={{flex: 2}}>
+                    <Box sx={{ flex: 1 }}>
+                       <Socials />
+                    </Box>
+                    <Box  sx={{ flex: 1 }}>
                         <Link href='/' passHref>
-                            <Box sx={{ cursor: 'pointer', minWidth: 190, width: largerThanMD ? 190 : '100%' }} mt={1}>
-                                <Logo />
+                            <Box sx={{ cursor: 'pointer', minWidth: 190, width: largerThanMD ? 190 : '100%', m: 'auto' }} mt={1}>
+                                <Logo  color={theme.palette.secondary.main}/>
                             </Box>
                         </Link>
                     </Box>
-                    {largerThanMD && <LargeNav />}
-                    {smallerThanMD && <SmallNav />}
+                    <Box sx={{ display: 'flex', alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
+                        <Box>
+                            <Link href={'/freebies'} passHref>
+                                <Typography component='a' variant='subtitle1' p={2}>FREEBIES</Typography>
+                            </Link>
+                        </Box>
+                        <Box>
+                            <Link href="/work-with-us" passHref>
+                                <Button color={'greenLight'} variant='contained' sx={{...ButtonStyle, color: '#000', ml: 3}}>
+                                    WORK WITH US
+                                </Button>
+                            </Link>
+                        </Box>
+                    </Box>
                 </Box>
             </Container>
         </Box>
