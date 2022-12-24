@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import {Layout} from "../components/Layout";
-import {ConfettiContextProvider} from "../components/context/ConfettiContext";
 import { DefaultSeo } from 'next-seo';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -20,11 +19,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                   cardType: 'summary_large_image'
               }}
           />
-          <ConfettiContextProvider>
             <Layout>
                 <Component {...pageProps} />
             </Layout>
-          </ConfettiContextProvider>
       </>
   )
 }

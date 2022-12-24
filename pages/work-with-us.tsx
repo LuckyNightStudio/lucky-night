@@ -6,8 +6,7 @@ import img from '../public/work/workWithUs.png'
 import { ButtonStyle } from "../components/BookButton";
 import styled from "@emotion/styled";
 import {useRouter} from "next/router";
-import {useContext, useEffect} from "react";
-import {ConfettiContext} from "../components/context/ConfettiContext";
+import { useEffect } from "react";
 import {Eyes} from "../components/icons";
 
 
@@ -83,39 +82,31 @@ const SuccessMessage = () => {
 const WorkWithUs: NextPage = () => {
     const {asPath} = useRouter()
     const theme = useTheme();
+    const {pathname} = useRouter()
     const largerThanMG = useMediaQuery(theme.breakpoints.up('md'));
-
-    const {setShowConfetti} = useContext(ConfettiContext)
-
-    useEffect(() => {
-        if(asPath.includes('success')) {
-            setShowConfetti(true)
-            setTimeout(() => setShowConfetti(false), 60 * 60)
-        }
-        return () => {
-            setShowConfetti(false)
-        }
-    }, [asPath, setShowConfetti])
+    const bgcolor = pathname === '/' ? '#FEF6F8' : pathname === '/freebies' ? '#F69FB9' : '#D4C0F2'
 
     return (
         <Box>
-            <Container>
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 5, flexDirection: largerThanMG ? 'row': 'column' }}>
-                    <Box p={4} sx={{ flex: 4, mr: 2, textAlign: largerThanMG ? 'left' : 'center' }}>
-                        <Typography variant={'h3'} component={'h1'} sx={{ color: '#fff'}} className={'purple'}>
-                            Your <mark>fave</mark> website experts & digital cheerleaders
-                        </Typography>
+            <Box bgcolor={bgcolor}>
+                <Container>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', pt: 5, flexDirection: largerThanMG ? 'row': 'column' }}>
+                        <Box p={4} sx={{ flex: 4, mr: 2, textAlign: largerThanMG ? 'left' : 'center' }}>
+                            <Typography variant={'h3'} component={'h1'} sx={{ color: '#fff'}} className={'purple'}>
+                                Your <mark>fave</mark> website experts & digital cheerleaders
+                            </Typography>
+                        </Box>
+                        <Box sx={{ flex: 2, mt: 'auto', transform: 'translateY(30px) scale(1.1)', p: 2, maxWidth: 400}}>
+                            <Image
+                                src={bannerImg.src}
+                                alt={'freebies'}
+                                height={bannerImg.height}
+                                width={bannerImg.width}
+                            />
+                        </Box>
                     </Box>
-                    <Box sx={{ flex: 2, mt: 'auto', transform: 'translateY(30px) scale(1.1)', p: 2, maxWidth: 400}}>
-                        <Image
-                            src={bannerImg.src}
-                            alt={'freebies'}
-                            height={bannerImg.height}
-                            width={bannerImg.width}
-                        />
-                    </Box>
-                </Box>
-            </Container>
+                </Container>
+            </Box>
             <Box bgcolor={'white.main'}>
                     <Box sx={{ display: 'flex', pt: 8 }}>
                         {largerThanMG && (<Box sx={{flex: 3, mb: '-6px', mt: 'auto'}}>

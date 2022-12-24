@@ -7,18 +7,22 @@ import Image from "next/image";
 import phone from '../public/homepage/phone.png'
 import laptop from '../public/homepage/laptop.png'
 import {Eyes2} from "../components/icons";
+import {useRouter} from "next/router";
 
 const Home: NextPage = () => {
     const theme = useTheme();
+    const {pathname} = useRouter()
     const largerThanLG = useMediaQuery(theme.breakpoints.up('lg'));
     const largerThanMG = useMediaQuery(theme.breakpoints.up('md'));
-  return (
+    const bgcolor = pathname === '/' ? '#FEF6F8' : pathname === '/freebies' ? '#F69FB9' : '#D4C0F2'
+
+    return (
     <>
         <NextSeo
             title="Lucky Night Studio"
             description="Providing Squarespace templates & digital assets"
         />
-      <Box sx={{ maxWidth: '100vw', maxHeight: 'calc(100vh - 110px)', overflow: 'hidden'}}>
+      <Box bgcolor={bgcolor} sx={{ maxWidth: '100vw', maxHeight: 'calc(100vh - 110px)', overflow: 'hidden'}}>
           <Box sx={{ display: 'flex'}}>
               {largerThanMG && (<Box sx={{flex: 4}}>
                   <Box sx={{width: '85%', ml: 'auto', mt: 'auto', mr: 2}}>

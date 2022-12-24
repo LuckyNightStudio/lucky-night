@@ -12,8 +12,9 @@ export const Header = () => {
     const {pathname} = useRouter()
     const borderBottom = pathname === '/' ? 'none' : 'solid 2px #fff'
     const logoColor = pathname === '/' ? theme.palette.secondary.main : '#fff'
+    const bgcolor = pathname === '/' ? '#FEF6F8' : pathname === '/freebies' ? '#F69FB9' : '#D4C0F2'
     return (
-        <Box p={0} m={0} component='header' sx={{ borderBottom: borderBottom}}>
+        <Box p={0} m={0} component='header' sx={{ borderBottom: borderBottom}} bgcolor={bgcolor}>
             <Container>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', py: 4, flexWrap: 'wrap'}}>
                     {largerThanMD && (<Box sx={{flex: 1}}>

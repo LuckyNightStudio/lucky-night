@@ -9,7 +9,7 @@ import {Logo} from "./Logo";
 export const Footer = () => {
     const theme = useTheme();
     return (
-        <Box sx={{ backgroundColor: '#000', color: '#fff'}} py={4}>
+        <Box py={4} bgcolor={'#000'} color='#fff'>
                 <footer>
                     <Typography  fontWeight={600} color={theme.palette.secondary.main} mb={5} textAlign={'center'}>
                         CONNECT WITH US DIGITALLY
