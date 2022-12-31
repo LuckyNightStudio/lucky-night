@@ -25,7 +25,7 @@ const Freebies: NextPage = () => {
                             Create brand magic with <mark>free</mark> curated resources
                         </Typography>
                     </Box>
-                    <Box sx={{ flex: 2, mt: 'auto', mb: '-6px'}}>
+                    <Box sx={{ flex: 2, mt: 'auto', mb: '-8px'}}>
                         <Box sx={{ maxWidth: largerThanMG ? img.width : 300 }}>
                             <Image
                                 src={img.src}
@@ -59,9 +59,9 @@ const Freebies: NextPage = () => {
                                 10 FREE Instagram templates in Canva
                             </Typography>
                             <Typography mb={2} fontWeight={600}>
-                                DIY not your bag? Whether you want a quick and dirty Squarespace site or a built-from-the-ground-up masterpiece, we’ve got the skills and experience.                            </Typography>
+                                Capture the attention of your followers with these organic & colourful Instagram templates. Including functional designs like testimonials, blog posts, infographics and quotes, these templates have everything you need to make your audience say ‘woooowwww’.                            </Typography>
                             <Typography mb={2}>
-                                We’re working on honing our core services right now. Until then, fill in the form for a chat about availability & prices.
+                                All you’ll need to access these templates is a FREE Canva account. Update the text, replace images and pop in your brand colours and you’ll be good to go!
                             </Typography>
                             <a href='https://mailchi.mp/luckynightstudio/10-free-instagram-posts-in-canva' target='_blank' rel="noreferrer">
                                 <Button variant='contained' sx={{ ...ButtonStyle, mt:4 }} color={'purple' as any} >
@@ -84,18 +84,15 @@ const Freebies: NextPage = () => {
                                     width={img2.width}
                                 />
                             </Box>
-                            <Box sx={{ width: 150, position: 'absolute', bottom: 0, left: -20 }}>
-                                <Square />
-                            </Box>
                         </Box>
                         <Box sx={{ flex: 3, py: 6}} >
                             <Typography variant={'h5'} mb={2}>
                                 FREE 10 page guide: Craft Your Unique Brand Statement
                             </Typography>
                             <Typography mb={2} fontWeight={600}>
-                                DIY not your bag? Whether you want a quick and dirty Squarespace site or a built-from-the-ground-up masterpiece, we’ve got the skills and experience.                            </Typography>
+                                Get to know your brand’s unique superpowers, differentiate yourself from the competition and start creating content that actually works for your brand with this new free guide.                            </Typography>
                             <Typography mb={2}>
-                                We’re working on honing our core services right now. Until then, fill in the form for a chat about availability & prices.
+                                Create a statement that captures the unique essence of your brand and carves out your unique market position with this in-depth free guide. No more copying what everyone else is doing, instead craft effective assets that your audience love and that will make you money!
                             </Typography>
                             <a href='https://mailchi.mp/luckynightstudio/r3k0u71mir' target='_blank' rel="noreferrer">
                                 <Button variant='contained' sx={{ ...ButtonStyle, mt:4 }} color={'secondary'} >

@@ -37,6 +37,7 @@ nav a:hover {
 mark {
   background:#E71B09 !important;
   color: #fff;
+  display: inline-block;
 }
 .purple mark {
   background:#9ED8BF !important;

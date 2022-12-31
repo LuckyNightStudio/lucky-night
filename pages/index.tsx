@@ -30,14 +30,14 @@ const Home: NextPage = () => {
                              alt={'Phone with website on'}
                              width={phone.width}
                              height={phone.height}
-                             blurDataURL={phone.blurDataURL}
-                             placeholder='blur'/>
+                             quality={100}
+                             />
                   </Box>
               </Box>)}
               <Box sx={{ textAlign: 'center', flex: 5, p: 3 }}>
-                  <Typography component={'h4'} sx={{ fontSize: '2.3em', color: theme.palette.red.main, fontWeight: 600, mb: 4, mt: 8 }}>COMING SOON</Typography>
+                  <Typography component={'h4'} sx={{ fontSize: '1.5em', color: theme.palette.red.main, fontWeight: 600, mb: 8, mt: 8 }}>COMING SOON</Typography>
                   <Typography component={'h1'} variant={'h2'} mb={3}>Squarespace templates & digital assets</Typography>
-                  <Typography>
+                  <Typography fontWeight={600} sx={{ letterSpacing: '.1rem'}}>
                       Build an unstoppable & enviable brand with professionally designed digital assets.
                   </Typography>
                   <Typography mb={5}>
@@ -64,8 +64,8 @@ const Home: NextPage = () => {
                          height={laptop.height}
                          objectFit='cover'
                          objectPosition={'left center'}
-                         blurDataURL={laptop.blurDataURL}
-                         placeholder='blur'/>
+                         quality={100}
+                         />
               </Box>)}
           </Box>
       </Box>
