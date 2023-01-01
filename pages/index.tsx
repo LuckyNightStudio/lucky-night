@@ -22,7 +22,7 @@ const Home: NextPage = () => {
             title="Lucky Night Studio"
             description="Providing Squarespace templates & digital assets"
         />
-      <Box bgcolor={bgcolor} sx={{ maxWidth: '100vw', maxHeight: 'calc(100vh - 110px)', overflow: 'hidden'}}>
+      <Box bgcolor={bgcolor} sx={{ maxWidth: '100vw', maxHeight: 'calc(100vh - 110px)', overflow: largerThanLG ? 'hidden' : 'inherit' }}>
           <Box sx={{ display: 'flex'}}>
               {largerThanMG && (<Box sx={{flex: 4}}>
                   <Box sx={{width: '85%', ml: 'auto', mt: 'auto', mr: 2}}>
