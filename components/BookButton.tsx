@@ -8,7 +8,7 @@ interface Props {
     styles?:  SxProps<Theme>
 }
 
-export const ButtonStyle = { borderRadius: 6, border: 'solid 6px black', px: 4}
+export const ButtonStyle = { borderRadius: 5, border: 'solid 3px black', px: 4}
 
 export const BookButton = ({color = 'primary', styles= {}}: Props) => {
 

@@ -3,11 +3,9 @@ import {Box, ThemeProvider} from '@mui/material'
 import Head from "next/head";
 import {Header} from "./Header";
 import {Footer} from "./Footer";
-import {useRouter} from "next/router";
 
 
 export const Layout = ({ children }: {children: JSX.Element}) => {
-    const {pathname} = useRouter()
     return (
         <ThemeProvider theme={theme}>
             <Head>
@@ -24,7 +22,7 @@ export const Layout = ({ children }: {children: JSX.Element}) => {
                 <Header />
                 <main>{children}</main>
             </Box>
-            {pathname !== '/' && <Footer/>}
+            <Footer/>
         </ThemeProvider>
     )
 }

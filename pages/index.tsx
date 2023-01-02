@@ -22,10 +22,10 @@ const Home: NextPage = () => {
             title="Lucky Night Studio"
             description="Providing Squarespace templates & digital assets"
         />
-      <Box bgcolor={bgcolor} sx={{ maxWidth: '100vw', maxHeight: 'calc(100vh - 110px)', overflow: largerThanLG ? 'hidden' : 'inherit' }}>
-          <Box sx={{ display: 'flex'}}>
+      <Box bgcolor={bgcolor}>
+          <Box sx={{ display: 'flex', mb: largerThanMG ? '-60px' : 0}}>
               {largerThanMG && (<Box sx={{flex: 4}}>
-                  <Box sx={{width: '85%', ml: 'auto', mt: 'auto', mr: 2}}>
+                  <Box sx={{width: '82%', ml: 'auto', mt: 'auto', mr: 2}}>
                       <Image src={phone.src}
                              alt={'Phone with website on'}
                              width={phone.width}
@@ -69,6 +69,7 @@ const Home: NextPage = () => {
               </Box>)}
           </Box>
       </Box>
+        {largerThanMG && <Box sx={{ height: '40px', width: '100%'}} bgcolor={'#000'}></Box>}
     </>
   )
 }
